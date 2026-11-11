@@ -1,0 +1,24 @@
+@font-face{font-family:"Syne";src:url(public/fonts/Syne-Variable.ttf) format("truetype");font-weight:400 800;font-display:swap}
+@font-face{font-family:"Poiret One";src:url(public/fonts/PoiretOne-Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+:root{
+  --ground:#141416;--ground-2:#1A1A1C;--surface:#222224;--edge:#2D2D30;
+  --peach:#F4A07C;--peach-deep:#E8875E;--ink:#EDE6DD;--muted:#B4B0AA;--quiet:#8E8E92;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--ground);color:var(--ink);font-family:"Syne",system-ui,sans-serif}
+body{position:relative;overflow:hidden}
+.pattern{position:relative;isolation:isolate}
+.pattern:before{content:"";position:absolute;inset:0;background:url(public/img/pattern-bistro.png) 0 0/450px repeat;opacity:.04;z-index:-1;pointer-events:none}
+img{display:block;max-width:100%}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;font-size:18px;font-weight:600;border:2px solid var(--peach);color:var(--peach);text-decoration:none;white-space:nowrap}
+.btn.primary{background:var(--peach);color:#141416}
+
+/* Motivi della carta da parati: solo versioni chiare. --o = intensità, --bg = fondo della sezione */
+.mot{--bg:20 20 22;--o:.05;background:linear-gradient(rgb(var(--bg) / calc(1 - var(--o))) 0 0),var(--img) var(--px,0px) var(--py,0px)/var(--s) repeat,rgb(var(--bg))!important}
+.mot::before{display:none!important}
+.m-rombi{--img:url(public/img/motivi/rombi-concentrici-chiaro.svg);--s:150px}
+.m-graticcio{--img:url(public/img/motivi/graticcio-linee-chiaro.svg);--s:112.5px 110.6px}
+.m-vichy{--img:url(public/img/motivi/quadretti-vichy-chiaro.svg);--s:64px}
+.m-rombini{--img:url(public/img/motivi/rombini-chiaro.svg);--s:60px}
+.m-arlecchino{--img:url(public/img/motivi/arlecchino-chiaro.svg);--s:110px}
+.zz{height:30px;background:linear-gradient(rgb(20 20 22 / .8) 0 0),url(public/img/motivi/zigzag-chiaro.svg) 0 0/34px 30px repeat-x,#141416}

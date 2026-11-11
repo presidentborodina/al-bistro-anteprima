@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pizzeria e cene al Gallaratese, Milano | Al Bistrò</title>
+<link rel="stylesheet" href="base.css"><link rel="stylesheet" href="chalk.css">
+<style>
+body{overflow:auto}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--peach);color:#141416}
+.hand{font-family:"Poiret One",sans-serif;font-weight:400;line-height:1.05}
+em{font-style:normal;color:var(--peach)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.ghost{background:rgba(17,17,17,.55)}
+.act{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.util{background:#0B0B0C;font-size:14px;color:#D8D2C9}
+.util .wrap{height:42px;display:flex;align-items:center;gap:28px}
+.dot{display:inline-flex;align-items:center;gap:8px;color:var(--peach)}
+.dot:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--peach)}
+.util .sp{margin-left:auto;display:flex;gap:22px}
+.nav{background:var(--ground);border-bottom:1px solid var(--edge);position:sticky;top:0;z-index:20}
+.nav .wrap{height:84px;display:flex;align-items:center;gap:36px}
+.nav img{height:56px;width:auto}
+.nav ul{list-style:none;display:flex;gap:24px;font-size:15px;font-weight:500;margin-left:auto}
+.nav li a{padding:10px 0;text-decoration:underline 2px transparent;text-underline-offset:10px}
+.nav li a[aria-current]{color:var(--peach);text-decoration-color:var(--peach)}
+.nav .book{min-height:44px;padding:0 18px;font-size:15px}
+.chips{display:none}
+/* testata */
+.head{position:relative;min-height:520px;padding-top:96px;overflow:hidden;display:flex;align-items:flex-end}
+.head img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.4) saturate(.85)}
+.head:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 62%,rgba(255,255,255,.06) 62% 65%,transparent 65%)}
+.head .wrap{position:relative;z-index:1;width:100%;padding-bottom:52px;color:#FBF7F1}
+.crumb{font-size:14px;color:#E0D9CF}
+.head h1{font-size:clamp(52px,6vw,88px);margin-top:12px;max-width:16ch}
+.head p{font-size:19px;color:#E9E2D8;margin-top:14px}
+/* in breve */
+.breve{padding:96px 0}
+.breve .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:start}
+.breve h2{font-size:52px}
+.breve p.lead{font-size:17px;line-height:1.7;color:#D8D2C9;margin-top:18px;max-width:60ch}
+.list{list-style:none;margin-top:26px;border-top:1px solid var(--edge)}
+.list li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--edge);font-size:16px;line-height:1.5}
+.list b{font-weight:600;color:var(--peach)}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:12px;border:12px solid #2D2D30;background:#2D2D30}
+.pics img{width:100%;height:460px;object-fit:cover}
+/* fascia dettagli */
+.band{background:var(--surface);padding:90px 0;position:relative;isolation:isolate}
+.band:before{content:"";position:absolute;inset:0;background:url(public/img/pattern-bistro.png) center/450px repeat;opacity:.05;z-index:-1}
+.band h2{font-size:52px;text-align:center}
+.tre{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}
+.tre h3{font-size:34px}
+.tre p{font-size:16px;line-height:1.7;color:#D8D2C9;margin-top:12px}
+/* arrivo */
+.arrivo{padding:96px 0}
+.arrivo .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.arrivo h2{font-size:52px}
+.arrivo h3{font-size:16px;font-weight:700;margin-top:26px}
+.arrivo p{font-size:16px;line-height:1.7;color:#D8D2C9;margin-top:6px}
+.map{aspect-ratio:4/3;border:12px solid #2D2D30;background:#1E1E20;display:flex;align-items:center;justify-content:center;color:var(--quiet);font-size:15px}
+/* domande */
+.faq{padding:0 0 96px}
+.faq h2{font-size:52px;margin-bottom:28px}
+.faq details{border-top:1px solid var(--edge)}
+.faq details:last-of-type{border-bottom:1px solid var(--edge)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 0;font-size:19px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--peach);font-size:26px;line-height:1}
+.faq details[open] summary:after{content:"–"}
+.faq details p{padding:0 0 22px;font-size:16px;line-height:1.7;color:#D8D2C9;max-width:70ch}
+/* modulo */
+.form{background:var(--surface);padding:90px 0}
+.form .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:64px}
+.form h2{font-size:52px}
+.form p{font-size:16px;line-height:1.7;color:#D8D2C9;margin-top:16px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600}
+label.full{grid-column:1/3}
+input,textarea{font:16px Syne,sans-serif;color:var(--ink);background:var(--ground);border:1px solid #4A4A4E;padding:14px 16px;min-height:52px}
+input:focus,textarea:focus{outline:2px solid var(--peach);outline-offset:2px}
+label.check{flex-direction:row;align-items:flex-start;gap:12px;font-weight:400;font-size:14px;line-height:1.5;color:#D8D2C9}
+label.check input{min-height:0;width:20px;height:20px;padding:0;margin-top:1px;accent-color:var(--peach);flex-shrink:0}
+label.check a{color:var(--peach);text-decoration:underline;text-underline-offset:3px}
+form .btn{grid-column:1/3;justify-self:start;cursor:pointer;font-family:Syne,sans-serif}
+/* altri servizi */
+.altri{padding:90px 0}
+.altri h2{font-size:44px;text-align:center;margin-bottom:36px}
+.vetri{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;background:#2D2D30;padding:10px}
+.v{position:relative;height:220px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;color:#FBF7F1}
+.v img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(.85)}
+.v>*:not(img){position:relative}
+.v h3{font-size:28px}
+.v span{font-size:14px;color:var(--peach);margin-top:6px}
+footer{background:#0B0B0C;padding:60px 0 0;font-size:15px;color:#D8D2C9}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px}
+footer img{height:60px;width:auto}
+footer h4{font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
+footer li{list-style:none;line-height:1.9}
+footer .ore div{display:flex;justify-content:space-between;gap:16px;line-height:1.9}
+footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;font-size:13px;color:var(--quiet)}
+@media (max-width:900px){
+  .util .hide,.util .sp{display:none}.util .wrap{gap:16px;font-size:13px}
+  .nav .wrap{height:64px;gap:14px}.nav img{height:40px}.nav ul{display:none}
+  .nav .book{margin-left:auto;min-height:40px;padding:0 14px;font-size:14px}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;background:var(--ground);border-bottom:1px solid var(--edge);position:sticky;top:64px;z-index:19;scrollbar-width:none}
+  .chips a{flex:0 0 auto;border:1px solid var(--edge);padding:9px 14px;font-size:14px;white-space:nowrap}
+  .chips a[aria-current]{border-color:var(--peach);color:var(--peach)}
+  .head{min-height:440px;padding-top:64px}.head h1{font-size:42px}.head p{font-size:16px}
+  .breve,.arrivo,.altri{padding:60px 0}.band,.form{padding:60px 0}.faq{padding-bottom:60px}
+  .breve .wrap,.arrivo .wrap,.form .wrap{grid-template-columns:1fr;gap:32px}
+  .breve h2,.band h2,.arrivo h2,.faq h2,.form h2{font-size:38px}
+  .list li{grid-template-columns:1fr;gap:2px}
+  .pics img{height:240px}
+  .tre{grid-template-columns:1fr;gap:28px}
+  form{grid-template-columns:1fr}label.full,form .btn{grid-column:1}
+  .act{flex-direction:column}
+  .vetri{grid-template-columns:1fr 1fr}.v{height:150px}.v h3{font-size:22px}
+  footer .cols{grid-template-columns:1fr;gap:28px}
+}
+.head.sera img{filter:brightness(.36) sepia(.45) saturate(1.4) hue-rotate(-10deg)}
+.center{text-align:center;justify-content:center}
+.sub{font-size:16px;color:#D8D2C9;margin-top:12px;line-height:1.6}
+.serate{padding:0 0 90px}
+.serate .box{border:12px solid #2D2D30;background:#222224;padding:36px 44px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;position:relative}
+.kick{font-size:14px;color:var(--peach);font-weight:600}
+.serate h2{font-size:52px;margin-top:6px}
+.serate p{font-size:16px;color:#D8D2C9;margin-top:10px}
+.esempio{grid-column:1/3;font-size:13px!important;color:#9A968F!important;border-top:1px dashed #4A4A4E;padding-top:12px;margin-top:0!important}
+.carta{position:relative}
+
+.carta h2,.pizze h2{font-size:56px}
+.cols4{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:48px}
+.cols4 h3{font-size:34px;margin-bottom:6px}
+.cols4 h3:not(:first-child){margin-top:30px}
+.rows{list-style:none}
+.rows li{display:flex;align-items:baseline;gap:10px;padding:7px 0;font-size:15.5px;color:#E4DED5}
+.rows li:after{content:"";order:1;flex:1;border-bottom:1px dotted #6A6A70;transform:translateY(-4px)}
+.rows li b{order:2;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+.pizze{padding:90px 0}
+.fasce{margin-top:40px;border-top:1px solid var(--edge)}
+.fascia{display:grid;grid-template-columns:140px 1fr;gap:30px;padding:24px 0;border-bottom:1px solid var(--edge);align-items:baseline}
+.prezzo{font-family:"Poiret One",sans-serif;font-size:48px;color:var(--peach);line-height:1}
+.nomi{font-size:18px;line-height:1.75;color:#E4DED5}
+.galleria{padding:0 0 90px}
+.g{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:260px 260px;gap:12px;background:#2D2D30;padding:12px}
+.g img{width:100%;height:100%;object-fit:cover}
+.g .a{grid-row:1/3}.g .d{grid-column:2/4}
+.fixed{position:relative;clip-path:inset(0);color:#FBF7F1;text-align:center}
+.fixed .bg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;filter:brightness(.3) sepia(.4) saturate(1.3)}
+.fixed .in{padding:110px 24px;display:flex;flex-direction:column;align-items:center}
+.fixed blockquote{font-size:clamp(38px,4.6vw,64px);max-width:20ch}
+.cite{color:var(--peach);margin-top:14px;font-size:16px}
+.faq{padding-top:96px}
+.tabs{position:sticky;top:84px;z-index:15;background:rgba(20,20,22,.94);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);backdrop-filter:blur(6px)}
+.tabs .wrap{display:flex;gap:6px;align-items:center;height:60px}
+.tabs a{padding:10px 16px;font-size:15px;font-weight:600;color:#D8D2C9}
+.tabs a.on{color:var(--peach);box-shadow:inset 0 -2px 0 var(--peach)}
+.tabs .tb{margin-left:auto;color:var(--peach)}
+.carta{padding:100px 0 110px}
+.carta h2{font-size:64px}
+.card{margin-top:52px;border:14px solid #2D2D30;background:#18181A;padding:56px 64px;display:grid;grid-template-columns:1fr 1fr;gap:72px;position:relative}
+.card:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 64%,rgba(255,255,255,.025) 64% 67%,transparent 67%);pointer-events:none}
+.sez{font-size:42px;color:var(--peach);margin-bottom:8px}
+.sez:not(:first-child){margin-top:44px}
+.dl{list-style:none}
+.dl li{padding:14px 0;border-bottom:1px solid #2A2A2E}
+.dl p{display:flex;align-items:baseline;gap:12px;font-size:19px;font-weight:600;color:var(--ink)}
+.dl p:after{content:"";order:1;flex:1;border-bottom:1px dotted #6A6A70;transform:translateY(-5px)}
+.dl b{order:2;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;white-space:nowrap}
+.dl small{display:block;font-size:15px;line-height:1.55;color:#B4B0AA;margin-top:5px;max-width:46ch}
+.pizze{background:var(--surface);position:relative;isolation:isolate}
+.pizze:before{content:"";position:absolute;inset:0;background:url(public/img/pattern-bistro.png) center/450px repeat;opacity:.05;z-index:-1}
+.bere{padding:64px 0}
+.bere .wrap{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center}
+.bere h2{font-size:44px}
+.br{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:8px 36px}
+.br li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #2A2A2E;font-size:15px;color:#D8D2C9}
+.br b{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+@media (max-width:900px){
+  .tabs{top:64px}.tabs .wrap{height:52px;overflow-x:auto}.tabs a{padding:8px 10px;font-size:14px;white-space:nowrap}
+  .carta h2{font-size:44px}
+  .card{grid-template-columns:1fr;gap:0;padding:26px 20px;border-width:8px}.sez{font-size:34px}.ccol+.ccol .sez:first-child{margin-top:44px}
+  .dl p{font-size:17px}
+  .bere .wrap{grid-template-columns:1fr;gap:16px}.br{grid-template-columns:1fr 1fr}
+}.count{text-align:center;margin-top:10px;font-size:18px;color:#E4DED5}
+.count b{font-family:"Poiret One",sans-serif;font-weight:400;font-size:64px;color:var(--peach);vertical-align:-10px;margin-right:6px}
+.pz{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;margin-top:48px}
+.fx{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--peach);padding-bottom:10px;border-bottom:1px solid var(--edge)}
+.fx:not(:first-child){margin-top:34px}
+.pl{list-style:none}
+.pl li{padding:12px 0;border-bottom:1px solid #26262A}
+.pl p{display:flex;align-items:baseline;gap:10px;font-size:18px;font-weight:600;color:var(--ink)}
+.pl p:after{content:"";order:1;flex:1;border-bottom:1px dotted #6A6A70;transform:translateY(-5px)}
+.pl b{order:2;font-variant-numeric:tabular-nums;color:var(--peach);font-weight:600}
+.pl small{display:block;font-size:14.5px;line-height:1.5;color:#B4B0AA;margin-top:4px}
+.pl i,.sub i{font-style:normal;color:var(--peach)}
+.pzfoto{margin-top:30px;border:10px solid #2D2D30}
+.pzfoto img{width:100%;height:260px;object-fit:cover}
+@media (max-width:900px){.pz{grid-template-columns:1fr;gap:0}.pzcol .fx{margin-top:34px}.pzfoto img{height:200px}}@media (max-width:900px){
+  .serate .box{grid-template-columns:1fr;padding:24px;border-width:8px}.serate h2{font-size:36px}.esempio{grid-column:1}
+  .carta,.pizze{padding:60px 0}.carta h2,.pizze h2{font-size:40px}
+  .cols4{grid-template-columns:1fr;gap:28px}
+  .fascia{grid-template-columns:1fr;gap:8px}.prezzo{font-size:38px}.nomi{font-size:16px}
+  .g{grid-template-columns:1fr 1fr;grid-template-rows:200px 160px 160px;padding:8px;gap:8px}.g .a{grid-row:auto;grid-column:1/3}.g .d{grid-column:1/3}
+  .fixed .in{padding:80px 20px}
+  .faq{padding-top:60px}
+}</style></head>
+<body class="pattern">
+<div class="util"><div class="wrap"><span class="dot">Aperto ora</span><span>391 176 1595</span><span class="hide">info@albistro.it</span><span class="hide">Via delle Ande 16, Gallaratese, Milano</span><span class="sp"><span>Facebook</span><span>Instagram</span><span>EN</span></span></div></div>
+<header class="nav"><div class="wrap"><img src="foto/logo-bianco.png" alt="Al Bistrò Milano">
+<ul><li><a href="#">Caffetteria</a></li><li><a href="#">Business Lunch</a></li><li><a href="cene-e-pizza.html" aria-current="page">Cene e pizza</a></li><li><a href="#">Menù</a></li><li><a href="#">Catering</a></li><li><a href="#">Feste ed eventi</a></li><li><a href="assemblee-e-riunioni.html">Assemblee e riunioni</a></li><li><a href="contatti.html">Contatti</a></li></ul>
+<a class="btn primary book" href="#">Prenota</a></div></header>
+<nav class="chips" aria-label="Servizi"><a href="#">Caffetteria</a><a href="#">Business Lunch</a><a href="cene-e-pizza.html" aria-current="page">Cene e pizza</a><a href="#">Menù</a><a href="#">Catering</a><a href="#">Feste ed eventi</a><a href="assemblee-e-riunioni.html">Assemblee e riunioni</a><a href="contatti.html">Contatti</a></nav>
+
+<section class="head sera"><img src="foto/reali/image00040-1-scaled.jpeg" alt="">
+<div class="wrap"><p class="crumb">Al Bistrò · Cene e pizza</p><h1 class="hand chalk">Pizzeria e cene<br><em>al Gallaratese</em>, Milano</h1>
+<p>Venerdì e sabato sera, cucina e pizzeria dalle 18.45 alle 22.30. Pizza sottile e croccante, lievitazione naturale di 24 ore.</p>
+<div class="act"><a class="btn primary" href="#">Prenota il tavolo su WhatsApp</a><a class="btn ghost" href="#cucina">Il menù della cena</a></div></div></section>
+
+<section class="breve"><div class="wrap">
+  <div><h2 class="hand chalk">La sera <em>al Bistrò</em></h2>
+  <p class="lead">Il venerdì e il sabato sera la cucina e la pizzeria lavorano insieme: tartare e taglieri, paccheri ai frutti di mare, galletto, tagliata, burger, il gran fritto, oppure una delle 28 pizze.</p>
+  <p class="lead">La pizza: impasto classico a lunga lievitazione con farine nobili: leggero, fragrante e digeribile. Lievita 24 ore in modo naturale, poi va nel forno a cupola davanti a te, al banco della pizzeria a vista. Pomodoro San Marzano e fiordilatte di Salerno DOP.</p>
+  <p class="lead">La pizza la puoi anche comporre tu: scegli gli ingredienti, sempre, a pranzo e a cena.</p>
+  <ul class="list">
+    <li><b>Cena</b><span>Venerdì e sabato, cucina dalle 18.45 alle 22.30, si chiude con l'ultimo cliente</span></li>
+    <li><b>Pranzo</b><span>Dal lunedì al sabato, 11.45-14.30: pizza e bibita 14 €</span></li>
+    <li><b>Prezzi</b><span>Margherita 10 €, ventotto pizze da 10 a 15 €</span></li>
+    <li><b>Asporto</b><span>Negli stessi orari: ordina su WhatsApp e passa a ritirare</span></li>
+    <li><b>Dove</b><span>Sala con pizzeria a vista, sala delle feste vetrata e riscaldata</span></li>
+  </ul></div>
+  <div class="pics"><img src="foto/reali/image00045-scaled.jpeg" alt="Le pizze nel forno a cupola"><img src="foto/d.jpeg" alt="Pizza al salame piccante appena sfornata"></div>
+</div></section>
+
+<section class="serate"><div class="wrap"><div class="box mot m-vichy" style="--bg:26 26 28;--o:.05;--s:120px">
+  <div><p class="kick">Prossima serata</p><h2 class="hand">Venerdì 20 novembre · <em>DJ set</em></h2><p>Cena e pizza dalle 18.45, musica dalle 21. Prenota il tavolo, i posti sono limitati.</p></div>
+  <a class="btn primary" href="#">Prenota per venerdì</a>
+  <p class="esempio">Esempio di annuncio: il blocco compare solo quando c'è una serata in programma.</p>
+</div></div></section>
+
+<nav class="tabs" aria-label="Sezioni del menù"><div class="wrap"><a href="#cucina" class="on">La cucina</a><a href="#pizze">Le pizze</a><a href="#bere">Da bere</a><a href="#" class="tb">Prenota il tavolo</a></div></nav>
+
+<section class="carta" id="cucina"><div class="wrap">
+  <h2 class="hand center chalk">La cucina <em>della sera</em></h2>
+  <p class="sub center">Venerdì e sabato dalle 18.45 alle 22.30. Coperto 2 €. Allergeni indicati sul menù: chiedi al personale.</p>
+  <div class="card">
+    <div class="ccol">
+      <h3 class="sez hand">Appetizers</h3>
+      <ul class="dl">
+        <li><p><span>Patatas bravas</span><b>6</b></p></li>
+        <li><p><span>Polpette Bistrò fritte</span><b>8</b></p><small>servite con la salsa</small></li>
+        <li><p><span>Parmigiana di melanzane</span><b>8</b></p><small>classica</small></li>
+        <li><p><span>Tris di tartare dello chef</span><b>12</b></p><small>degustazione</small></li>
+        <li><p><span>Tagliere di salumi e formaggi</span><b>12</b></p><small>salumi e formaggi DOP, cipolla caramellata</small></li>
+        <li><p><span>Salmone marinato agli agrumi</span><b>12</b></p><small>con finocchi e arancia</small></li>
+      </ul>
+      <h3 class="sez hand">Nell'acqua che bolle</h3>
+      <ul class="dl">
+        <li><p><span>Spaghetti Bistrò al pomodoro</span><b>12</b></p><small>olio evo e basilico fresco</small></li>
+        <li><p><span>Trofie al pesto ligure</span><b>12</b></p><small>con patate e fagiolini</small></li>
+        <li><p><span>Tagliatelle al ragù bolognese</span><b>13</b></p></li>
+        <li><p><span>Paccheri ai frutti di mare</span><b>13</b></p></li>
+      </ul>
+    </div>
+    <div class="ccol">
+      <h3 class="sez hand">Sul fuoco vivace</h3>
+      <ul class="dl">
+        <li><p><span>Galletto Bistrò</span><b>18</b></p><small>galletto alla griglia speziato, patate dippers, salsa dello chef, crostone di pane</small></li>
+        <li><p><span>Salmone teriyaki</span><b>18</b></p><small>grigliato, con patate al forno e avocado</small></li>
+        <li><p><span>Bistrò wraps</span><b>18</b></p><small>piadina con pollo grigliato, crema di pomodori secchi, parmigiano, insalata e salsa BBQ, patate dippers</small></li>
+        <li><p><span>Burger Bistrò</span><b>18 · maxi 24</b></p><small>cheddar fuso, bacon, insalata, pomodoro, cipolla caramellata, salsa BBQ, patate dippers</small></li>
+        <li><p><span>Tagliata Bistrò</span><b>24</b></p><small>rucola, scaglie di parmigiano, patate al forno</small></li>
+        <li><p><span>Grigliata Bistrò</span><b>24</b></p><small>tagliata di manzo, supreme di pollo, salamella, patate al forno e salsa BBQ</small></li>
+        <li><p><span>Gran fritto Bistrò</span><b>24</b></p><small>calamari, anelli, ciuffi e mazzancolle con misticanza</small></li>
+      </ul>
+      <h3 class="sez hand">Le insalatone</h3>
+      <ul class="dl">
+        <li><p><span>Esotic</span><b>15</b></p><small>romana, gamberi, pachino, mango, avocado, mandorle, salsa cocktail</small></li>
+        <li><p><span>Cesar</span><b>15</b></p><small>romana, pollo grill, grana, chips di pancetta, pachino, salsa cesar, crostini</small></li>
+        <li><p><span>Nizzarda</span><b>15</b></p><small>romana, patate, fagiolini, uova sode, tonno, pachino, olive, acciughe</small></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+<section class="pizze mot m-vichy" id="pizze" style="--bg:34 34 36;--o:.06"><div class="wrap">
+  <h2 class="hand center chalk">Le <em>pizze</em></h2>
+  <p class="count"><b>28</b> pizze a cena, 19 a pranzo in formula con la bibita</p>
+  <p class="sub center">Tutte con pomodoro San Marzano e fiordilatte di Salerno DOP, salvo le <i>bianche</i>. Puoi aggiungere o togliere quello che vuoi: ingrediente in più 1 €.</p>
+  <div class="pz">
+    <div class="pzcol">
+      <h3 class="fx">Classiche · 10 €</h3>
+      <ul class="pl">
+        <li><p><span>Margherita</span><b>10</b></p><small>basilico</small></li>
+        <li><p><span>Marinara</span><b>10</b></p><small>aglio, origano, olio evo · senza mozzarella</small></li>
+        <li><p><span>Siciliana</span><b>10</b></p><small>acciughe, capperi, origano · senza mozzarella</small></li>
+        <li><p><span>Napoli</span><b>10</b></p><small>acciughe, origano</small></li>
+      </ul>
+      <h3 class="fx">12 €</h3>
+      <ul class="pl">
+        <li><p><span>Romana</span><b>12</b></p><small>acciughe, capperi, olive nere, origano</small></li>
+        <li><p><span>Funghi</span><b>12</b></p><small>funghi champignon</small></li>
+        <li><p><span>Tonno e cipolla</span><b>12</b></p><small>tonno, cipolla rossa di Tropea</small></li>
+        <li><p><span>Salsiccia</span><b>12</b></p><small>salsiccia a coltello</small></li>
+        <li><p><span>Diavola</span><b>12</b></p><small>salame piccante calabrese DOP</small></li>
+        <li><p><span>Prosciutto cotto</span><b>12</b></p><small>prosciutto cotto</small></li>
+        <li><p><span>Würstel e patatine</span><b>12</b></p><small>würstel, patatine fritte</small></li>
+      </ul>
+    </div>
+    <div class="pzcol">
+      <h3 class="fx">13 €</h3>
+      <ul class="pl">
+        <li><p><span>Prosciutto crudo</span><b>13</b></p><small>crudo di Parma DOP</small></li>
+        <li><p><span>Zola</span><b>13</b></p><small>gorgonzola IGP</small></li>
+        <li><p><span>Ortolana</span><b>13</b></p><small>melanzane e zucchine grigliate, peperoni</small></li>
+        <li><p><span>Capricciosa</span><b>13</b></p><small>funghi, carciofi, acciughe, capperi</small></li>
+        <li><p><span>Bufalina</span><b>13</b></p><small>bufala campana DOP</small></li>
+        <li><p><span>Quattro stagioni</span><b>13</b></p><small>prosciutto cotto, funghi, carciofi, olive nere</small></li>
+        <li><p><span>Prosciutto cotto e funghi</span><b>13</b></p><small>prosciutto cotto, funghi</small></li>
+        <li><p><span>Calzone farcito</span><b>13</b></p><small>prosciutto cotto, funghi, olive</small></li>
+        <li><p><span>Salsiccia e friarielli</span><b>13</b></p><small>provola, salsiccia, friarielli</small></li>
+        <li><p><span>Speck e zola</span><b>13</b></p><small><i>bianca</i> · gorgonzola IGP, speck IGP</small></li>
+        <li><p><span>Salsiccia e patate al forno</span><b>13</b></p><small><i>bianca</i> · provola, salsiccia, patate al forno</small></li>
+      </ul>
+    </div>
+    <div class="pzcol">
+      <h3 class="fx">Speciali · 15 €</h3>
+      <ul class="pl">
+        <li><p><span>Mortadella</span><b>15</b></p><small><i>bianca</i> · provola, burrata campana DOP, mortadella, granella di pistacchi</small></li>
+        <li><p><span>Superdiavola</span><b>15</b></p><small>salame piccante calabrese DOP, gorgonzola IGP</small></li>
+        <li><p><span>Parmigiana</span><b>15</b></p><small>melanzane alla parmigiana</small></li>
+        <li><p><span>5 Formaggi</span><b>15</b></p><small><i>bianca</i> · gorgonzola, brie, provola, Parmigiano Reggiano</small></li>
+        <li><p><span>Focaccia delicata</span><b>15</b></p><small>bresaola punta d'anca, pomodorini, rucola, Parmigiano Reggiano</small></li>
+        <li><p><span>Gamberetti e rucola</span><b>15</b></p><small>gamberetti, rucola</small></li>
+      </ul>
+      <h3 class="fx">E poi</h3>
+      <ul class="pl">
+        <li><p><span>Focaccia bianca</span><b>6</b></p><small>anche a pranzo</small></li>
+        <li><p><span>La tua pizza</span><b>+1</b></p><small>scegli tu gli ingredienti, ognuno 1 € in più</small></li>
+      </ul>
+      <figure class="pzfoto"><img src="foto/reali/image00004-scaled.jpeg" alt="Il pizzaiolo al banco con le pizze pronte da infornare"></figure>
+    </div>
+  </div>
+</div></section>
+
+<section class="bere" id="bere"><div class="wrap">
+  <h2 class="hand">Da <em>bere</em></h2>
+  <ul class="br">
+    <li><span>Acqua 0,75 l</span><b>2</b></li><li><span>Bibite</span><b>3</b></li><li><span>Birra piccola · media</span><b>4 · 6</b></li><li><span>Calice di vino</span><b>4 · 5</b></li><li><span>Vino ½ l · 1 l</span><b>8 · 14</b></li><li><span>Caffè · speciale</span><b>1,50 · 2</b></li><li><span>Amari e liquori</span><b>4 · 5</b></li>
+  </ul>
+</div></section>
+<section class="galleria"><div class="wrap"><div class="g">
+  <img class="a" src="foto/reali/image00004-scaled.jpeg" alt="Il pizzaiolo al banco con le pizze in fila">
+  <img class="b" src="foto/reali/image00043-1-scaled.jpeg" alt="Pizze nel forno a cupola">
+  <img class="c" src="foto/wa1.jpeg" alt="La sala con i tavoli apparecchiati">
+  <img class="d" src="foto/wa2.jpeg" alt="La veranda di Al Bistrò in via delle Ande">
+</div></div></section>
+
+<section class="fixed voci"><img class="bg" src="foto/d.jpeg" alt="">
+  <div class="in"><blockquote class="hand">«Le pizze hanno un impasto veramente soffice.»</blockquote><p class="cite">Alessandro, recensione Google</p>
+  <div class="act center"><a class="btn primary" href="#">Prenota il tavolo</a><a class="btn ghost" href="#">Chiama il 391 176 1595</a></div></div>
+</section>
+
+<section class="faq"><div class="wrap">
+  <h2 class="hand">Domande <em>frequenti</em></h2>
+  <details open><summary>Siete aperti a cena tutti i giorni?</summary><p>No: a cena siamo aperti il venerdì e il sabato, cucina e pizzeria dalle 18.45 alle 22.30. Dal lunedì al sabato la pizza c'è anche a pranzo.</p></details>
+  <details><summary>Il forno è a legna?</summary><p>No, è un forno a cupola elettrico. La pizza è sottile e croccante, con impasto a lievitazione naturale di 24 ore.</p></details>
+  <details><summary>Fate la pizza da asporto?</summary><p>Sì, negli orari della cucina: ordina su WhatsApp al 391 176 1595 e passa a ritirare.</p></details>
+  <details><summary>Siamo in tanti, avete posto?</summary><p>Per i gruppi c'è la sala delle feste, vetrata e riscaldata, fino a 48 persone. Scrivici su WhatsApp con data e numero.</p></details>
+  <details><summary>Dove si parcheggia la sera?</summary><p>Posti auto a strisce bianche e blu lungo viale De Gasperi e in via delle Ande. Metro M1 Uruguay a 10 minuti a piedi.</p></details>
+</div></section>
+
+<footer><div class="wrap"><div class="cols">
+  <div><img src="foto/logo-bianco.png" alt="Al Bistrò Milano"><p style="margin-top:16px;line-height:1.7">Bar, ristorante e pizzeria<br>Via delle Ande 16, 20151 Milano</p></div>
+  <div><h4>Contatti</h4><ul><li>391 176 1595</li><li>WhatsApp 391 176 1595</li><li>info@albistro.it</li></ul></div>
+  <div class="ore"><h4>Orari</h4><div><span>Lun-gio</span><span>7.30-15.30</span></div><div><span>Ven</span><span>7.30-15.30 · 18.45-22.30</span></div><div><span>Sab</span><span>8.30-15.30 · 18.45-22.30</span></div><div><span>Dom</span><span>chiuso</span></div></div>
+  <div><h4>Seguici</h4><ul><li>Facebook</li><li>Instagram</li></ul></div>
+</div><div class="legal">P.IVA 09975970964 · Privacy · Cookie</div></div></footer>
+<script src="chalk.js"></script>
+</body></html>

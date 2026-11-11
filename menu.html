@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Menù e prezzi, Al Bistrò Gallaratese Milano</title>
+<link rel="stylesheet" href="base.css">
+<style>
+body{overflow:auto}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--peach);color:#141416}
+.hand{font-family:"Poiret One",sans-serif;font-weight:400;line-height:1.05}
+em{font-style:normal;color:var(--peach)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.ghost{background:rgba(17,17,17,.55)}
+.act{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.util{background:#0B0B0C;font-size:14px;color:#D8D2C9}
+.util .wrap{height:42px;display:flex;align-items:center;gap:28px}
+.dot{display:inline-flex;align-items:center;gap:8px;color:var(--peach)}
+.dot:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--peach)}
+.util .sp{margin-left:auto;display:flex;gap:22px}
+.nav{background:var(--ground);border-bottom:1px solid var(--edge);position:sticky;top:0;z-index:20}
+.nav .wrap{height:84px;display:flex;align-items:center;gap:36px}
+.nav img{height:56px;width:auto}
+.nav ul{list-style:none;display:flex;gap:24px;font-size:15px;font-weight:500;margin-left:auto}
+.nav li a{padding:10px 0;text-decoration:underline 2px transparent;text-underline-offset:10px}
+.nav li a[aria-current]{color:var(--peach);text-decoration-color:var(--peach)}
+.nav .book{min-height:44px;padding:0 18px;font-size:15px}
+.chips{display:none}
+/* testata */
+.head{position:relative;min-height:520px;padding-top:96px;overflow:hidden;display:flex;align-items:flex-end}
+.head img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.4) saturate(.85)}
+.head:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 62%,rgba(255,255,255,.06) 62% 65%,transparent 65%)}
+.head .wrap{position:relative;z-index:1;width:100%;padding-bottom:52px;color:#FBF7F1}
+.crumb{font-size:14px;color:#E0D9CF}
+.head h1{font-size:clamp(52px,6vw,88px);margin-top:12px;max-width:16ch}
+.head p{font-size:19px;color:#E9E2D8;margin-top:14px}
+/* in breve */
+.breve{padding:96px 0}
+.breve .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:start}
+.breve h2{font-size:52px}
+.breve p.lead{font-size:17px;line-height:1.7;color:#D8D2C9;margin-top:18px;max-width:60ch}
+.list{list-style:none;margin-top:26px;border-top:1px solid var(--edge)}
+.list li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--edge);font-size:16px;line-height:1.5}
+.list b{font-weight:600;color:var(--peach)}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:12px;border:12px solid #2D2D30;background:#2D2D30}
+.pics img{width:100%;height:460px;object-fit:cover}
+/* fascia dettagli */
+.band{background:var(--surface);padding:90px 0;position:relative;isolation:isolate}
+.band:before{content:"";position:absolute;inset:0;background:url(public/img/pattern-bistro.png) center/450px repeat;opacity:.05;z-index:-1}
+.band h2{font-size:52px;text-align:center}
+.tre{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}
+.tre h3{font-size:34px}
+.tre p{font-size:16px;line-height:1.7;color:#D8D2C9;margin-top:12px}
+/* arrivo */
+.arrivo{padding:96px 0}
+.arrivo .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.arrivo h2{font-size:52px}
+.arrivo h3{font-size:16px;font-weight:700;margin-top:26px}
+.arrivo p{font-size:16px;line-height:1.7;color:#D8D2C9;margin-top:6px}
+.map{aspect-ratio:4/3;border:12px solid #2D2D30;background:#1E1E20;display:flex;align-items:center;justify-content:center;color:var(--quiet);font-size:15px}
+/* domande */
+.faq{padding:0 0 96px}
+.faq h2{font-size:52px;margin-bottom:28px}
+.faq details{border-top:1px solid var(--edge)}
+.faq details:last-of-type{border-bottom:1px solid var(--edge)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 0;font-size:19px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--peach);font-size:26px;line-height:1}
+.faq details[open] summary:after{content:"–"}
+.faq details p{padding:0 0 22px;font-size:16px;line-height:1.7;color:#D8D2C9;max-width:70ch}
+/* modulo */
+.form{background:var(--surface);padding:90px 0}
+.form .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:64px}
+.form h2{font-size:52px}
+.form p{font-size:16px;line-height:1.7;color:#D8D2C9;margin-top:16px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600}
+label.full{grid-column:1/3}
+input,textarea{font:16px Syne,sans-serif;color:var(--ink);background:var(--ground);border:1px solid #4A4A4E;padding:14px 16px;min-height:52px}
+input:focus,textarea:focus{outline:2px solid var(--peach);outline-offset:2px}
+label.check{flex-direction:row;align-items:flex-start;gap:12px;font-weight:400;font-size:14px;line-height:1.5;color:#D8D2C9}
+label.check input{min-height:0;width:20px;height:20px;padding:0;margin-top:1px;accent-color:var(--peach);flex-shrink:0}
+label.check a{color:var(--peach);text-decoration:underline;text-underline-offset:3px}
+form .btn{grid-column:1/3;justify-self:start;cursor:pointer;font-family:Syne,sans-serif}
+/* altri servizi */
+.altri{padding:90px 0}
+.altri h2{font-size:44px;text-align:center;margin-bottom:36px}
+.vetri{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;background:#2D2D30;padding:10px}
+.v{position:relative;height:220px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;color:#FBF7F1}
+.v img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(.85)}
+.v>*:not(img){position:relative}
+.v h3{font-size:28px}
+.v span{font-size:14px;color:var(--peach);margin-top:6px}
+footer{background:#0B0B0C;padding:60px 0 0;font-size:15px;color:#D8D2C9}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px}
+footer img{height:60px;width:auto}
+footer h4{font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
+footer li{list-style:none;line-height:1.9}
+footer .ore div{display:flex;justify-content:space-between;gap:16px;line-height:1.9}
+footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;font-size:13px;color:var(--quiet)}
+@media (max-width:900px){
+  .util .hide,.util .sp{display:none}.util .wrap{gap:16px;font-size:13px}
+  .nav .wrap{height:64px;gap:14px}.nav img{height:40px}.nav ul{display:none}
+  .nav .book{margin-left:auto;min-height:40px;padding:0 14px;font-size:14px}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;background:var(--ground);border-bottom:1px solid var(--edge);position:sticky;top:64px;z-index:19;scrollbar-width:none}
+  .chips a{flex:0 0 auto;border:1px solid var(--edge);padding:9px 14px;font-size:14px;white-space:nowrap}
+  .chips a[aria-current]{border-color:var(--peach);color:var(--peach)}
+  .head{min-height:440px;padding-top:64px}.head h1{font-size:42px}.head p{font-size:16px}
+  .breve,.arrivo,.altri{padding:60px 0}.band,.form{padding:60px 0}.faq{padding-bottom:60px}
+  .breve .wrap,.arrivo .wrap,.form .wrap{grid-template-columns:1fr;gap:32px}
+  .breve h2,.band h2,.arrivo h2,.faq h2,.form h2{font-size:38px}
+  .list li{grid-template-columns:1fr;gap:2px}
+  .pics img{height:240px}
+  .tre{grid-template-columns:1fr;gap:28px}
+  form{grid-template-columns:1fr}label.full,form .btn{grid-column:1}
+  .act{flex-direction:column}
+  .vetri{grid-template-columns:1fr 1fr}.v{height:150px}.v h3{font-size:22px}
+  footer .cols{grid-template-columns:1fr;gap:28px}
+}
+.mhead{padding:84px 0 40px;text-align:center}
+.mhead h1{font-size:clamp(56px,6.4vw,92px);margin-top:10px}
+.mhead .lead{font-size:18px;color:#D8D2C9;margin-top:16px}
+.mhead .lead a,.note a{color:var(--peach);text-decoration:underline;text-underline-offset:3px}
+.jump{display:flex;justify-content:center;gap:10px;margin-top:28px;flex-wrap:wrap}
+.jump a{border:1px solid var(--edge);padding:12px 18px;font-size:15px}
+.jump a:hover{border-color:var(--peach);color:var(--peach)}
+.menus{padding:30px 0 90px}
+.menus .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:#2D2D30;padding:12px;max-width:1264px}
+.m{background:var(--ground);display:flex;flex-direction:column;scroll-margin-top:100px}
+.m .ph{position:relative;height:210px;overflow:hidden}
+.m .ph img{width:100%;height:100%;object-fit:cover;filter:brightness(.72) saturate(.9)}
+.m .in{padding:26px 28px 30px;display:flex;flex-direction:column;flex:1}
+.m h2{font-size:46px}
+.when{color:var(--peach);font-size:15px;margin-top:8px}
+.m h3{font-size:15px;font-weight:700;letter-spacing:.04em;margin-top:22px;color:var(--ink)}
+.rows{list-style:none;margin-top:14px}
+.rows li{display:flex;align-items:baseline;gap:10px;padding:7px 0;font-size:16px;color:#E4DED5}
+.rows li span{flex:0 1 auto}
+.rows li:after{content:"";order:1;flex:1;border-bottom:1px dotted #6A6A70;transform:translateY(-4px)}
+.rows li b{order:2;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink)}
+.note{font-size:14px;line-height:1.6;color:#B4B0AA;margin-top:16px}
+.go{margin-top:auto;padding-top:22px;font-size:15px;font-weight:600;color:var(--peach)}
+.info{background:var(--surface);padding:70px 0}
+.info .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.info h2{font-size:34px}
+.info p{font-size:16px;line-height:1.7;color:#D8D2C9;margin-top:10px}
+@media (max-width:900px){
+  .mhead{padding:48px 0 24px}.mhead h1{font-size:48px}.mhead .lead{font-size:16px}
+  .menus .wrap{grid-template-columns:1fr;padding:8px;gap:8px;margin:0 16px}
+  .m .ph{height:170px}.m h2{font-size:38px}
+  .info{padding:48px 0}.info .wrap{grid-template-columns:1fr;gap:26px}
+}</style></head>
+<body class="pattern">
+<div class="util"><div class="wrap"><span class="dot">Aperto ora</span><span>391 176 1595</span><span class="hide">info@albistro.it</span><span class="hide">Via delle Ande 16, Gallaratese, Milano</span><span class="sp"><span>Facebook</span><span>Instagram</span><span>EN</span></span></div></div>
+<header class="nav"><div class="wrap"><img src="foto/logo-bianco.png" alt="Al Bistrò Milano">
+<ul><li><a href="#">Caffetteria</a></li><li><a href="#">Business Lunch</a></li><li><a href="cene-e-pizza.html">Cene e pizza</a></li><li><a href="#" aria-current="page">Menù</a></li><li><a href="#">Catering</a></li><li><a href="#">Feste ed eventi</a></li><li><a href="assemblee-e-riunioni.html">Assemblee e riunioni</a></li><li><a href="contatti.html">Contatti</a></li></ul>
+<a class="btn primary book" href="#">Prenota</a></div></header>
+<nav class="chips" aria-label="Servizi"><a href="#">Caffetteria</a><a href="#">Business Lunch</a><a href="cene-e-pizza.html">Cene e pizza</a><a href="#" aria-current="page">Menù</a><a href="#">Catering</a><a href="#">Feste ed eventi</a><a href="assemblee-e-riunioni.html">Assemblee e riunioni</a><a href="contatti.html">Contatti</a></nav>
+
+<section class="mhead"><div class="wrap">
+  <p class="crumb">Al Bistrò · Menù</p>
+  <h1 class="hand">Menù e <em>prezzi</em></h1>
+  <p class="lead">Colazione, Business Lunch, cene e pizza: i prezzi sono quelli del locale, il conto è quello. <a href="#">English menu</a></p>
+  <nav class="jump" aria-label="Vai al menù"><a href="#colazione">Colazione</a><a href="#pranzo">Business Lunch</a><a href="#cena">Cene e pizza</a></nav>
+</div></section>
+
+<section class="menus mot m-graticcio" data-snap="110.6" style="--o:.05"><div class="wrap">
+
+  <article class="m" id="colazione">
+    <div class="ph"><img src="foto/reali/image00108-scaled.jpeg" alt="Il banco delle brioche"></div>
+    <div class="in">
+      <h2 class="hand">Colazione</h2>
+      <p class="when">Lun-ven dalle 7.30, sabato dalle 8.30</p>
+      <ul class="rows">
+        <li><span>Caffè espresso</span><b>1,30</b></li>
+        <li><span>Cappuccino</span><b>1,80</b></li>
+        <li><span>Brioche</span><b>1,80</b></li>
+        <li><span>Spremuta d'arancia</span><b>4,00</b></li>
+        <li><span>Torte fatte in casa, a fetta</span><b>4,50</b></li>
+        <li><span>Pizza al trancio</span><b>4,00</b></li>
+        <li><span>Focaccia farcita</span><b>7,00</b></li>
+      </ul>
+      <p class="note">A colazione nessun coperto, anche al tavolo.</p>
+      <a class="go" href="#">Il listino completo della caffetteria</a>
+    </div>
+  </article>
+
+  <article class="m" id="pranzo">
+    <div class="ph"><img src="foto/pranzo-00009.jpeg" alt="Farfalle con carciofi del Business Lunch"></div>
+    <div class="in">
+      <h2 class="hand">Business Lunch</h2>
+      <p class="when">Lun-sab, cucina 11.45-14.30</p>
+      <ul class="rows">
+        <li><span>Primo del giorno</span><b>13,00</b></li>
+        <li><span>Primo e contorno</span><b>16,00</b></li>
+        <li><span>Secondo e contorno</span><b>18,00</b></li>
+        <li><span>Insalatona</span><b>15,00</b></li>
+        <li><span>Pokè</span><b>18,00</b></li>
+        <li><span>Piatto unico</span><b>20,00</b></li>
+        <li><span>Piatto dello chef</span><b>25,00</b></li>
+      </ul>
+      <h3>La pizza a pranzo</h3>
+      <ul class="rows">
+        <li><span>Pizza e bibita</span><b>14,00</b></li>
+        <li><span>Pizza e birra piccola o calice</span><b>15,00</b></li>
+        <li><span>Pizza e birra media</span><b>17,00</b></li>
+      </ul>
+      <p class="note">Coperto 1 €. I primi e tre secondi cambiano ogni giorno: <a href="#">il menù di oggi</a>.</p>
+      <a class="go" href="#">Il Business Lunch</a>
+    </div>
+  </article>
+
+  <article class="m" id="cena">
+    <div class="ph"><img src="foto/reali/image00040-1-scaled.jpeg" alt="Il pizzaiolo sforna una pizza"></div>
+    <div class="in">
+      <h2 class="hand">Cene e pizza</h2>
+      <p class="when">Venerdì e sabato, cucina 18.45-22.30</p>
+      <ul class="rows">
+        <li><span>Margherita</span><b>10,00</b></li>
+        <li><span>Diavola</span><b>12,00</b></li>
+        <li><span>Bufalina</span><b>13,00</b></li>
+        <li><span>Mortadella, burrata e pistacchi</span><b>15,00</b></li>
+        <li><span>Spaghetti Bistrò al pomodoro</span><b>12,00</b></li>
+        <li><span>Tagliatelle al ragù</span><b>13,00</b></li>
+        <li><span>Galletto alla griglia</span><b>18,00</b></li>
+        <li><span>Tagliata</span><b>24,00</b></li>
+      </ul>
+      <p class="note">Ventotto pizze da 10 a 15 €, antipasti, primi, secondi e insalatone. Coperto 2 €.</p>
+      <a class="go" href="#">Il menù completo della cena e le pizze</a>
+    </div>
+  </article>
+
+</div></section>
+
+<section class="info"><div class="wrap">
+  <div><h2 class="hand">Allergeni</h2><p>Ogni piatto riporta i numeri degli allergeni di legge. Per intolleranze, celiachia o un piatto senza lattosio chiedi al personale: lo prepariamo.</p></div>
+  <div><h2 class="hand">Da asporto</h2><p>Tutto il menù negli orari della cucina: ordina su WhatsApp al 391 176 1595 e passa a ritirare. A pranzo anche con Glovo e Deliveroo, 12-14.</p></div>
+  <div><h2 class="hand">Pagamenti</h2><p>Carte, contactless, Satispay e buoni pasto Satispay, anche per un caffè.</p></div>
+</div></section>
+
+<footer><div class="wrap"><div class="cols">
+  <div><img src="foto/logo-bianco.png" alt="Al Bistrò Milano"><p style="margin-top:16px;line-height:1.7">Bar, ristorante e pizzeria<br>Via delle Ande 16, 20151 Milano</p></div>
+  <div><h4>Contatti</h4><ul><li>391 176 1595</li><li>WhatsApp 391 176 1595</li><li>info@albistro.it</li></ul></div>
+  <div class="ore"><h4>Orari</h4><div><span>Lun-gio</span><span>7.30-15.30</span></div><div><span>Ven</span><span>7.30-15.30 · 18.45-22.30</span></div><div><span>Sab</span><span>8.30-15.30 · 18.45-22.30</span></div><div><span>Dom</span><span>chiuso</span></div></div>
+  <div><h4>Seguici</h4><ul><li>Facebook</li><li>Instagram</li></ul></div>
+</div><div class="legal">P.IVA 09975970964 · Privacy · Cookie</div></div></footer>
+<script src="align.js"></script>
+</body></html>
