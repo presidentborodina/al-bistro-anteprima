@@ -164,6 +164,7 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
 .dl p{display:flex;align-items:baseline;gap:12px;font-size:19px;font-weight:600;color:var(--ink)}
 .dl p:after{content:"";order:1;flex:1;border-bottom:1px dotted #6A6A70;transform:translateY(-5px)}
 .dl b{order:2;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;white-space:nowrap}
+.dl li.np p:after{display:none}
 .dl small{display:block;font-size:15px;line-height:1.55;color:#B4B0AA;margin-top:5px;max-width:46ch}
 .pizze{background:var(--surface);position:relative;isolation:isolate}
 .pizze:before{content:"";position:absolute;inset:0;background:url(assets/img/pattern-bistro.png) center/450px repeat;opacity:.05;z-index:-1}
@@ -216,14 +217,14 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
 
 <section class="breve"><div class="wrap">
   <div><h2 class="hand chalk">La colazione <em>al Bistrò</em></h2>
-  <p class="lead">Ogni mattina caffè della nostra miscela arabica, cappuccino, brioche di pasticceria vuote o ripiene di marmellata, crema e cioccolato, biscotti di pasta frolla. Le torte sono fatte in casa e cambiano ogni giorno: crostate, cheesecake, torta al cioccolato.</p>
+  <p class="lead">Ogni mattina caffè della nostra miscela arabica, cappuccino e marocchino. Al banco c'è la pasticceria fresca del giorno: brioche vuote o ripiene di marmellata, crema e cioccolato, pain au chocolat, girelle, biscotti di pasta frolla. Le crostate le facciamo noi e cambiano ogni giorno.</p>
   <p class="lead">Per chi ha fame a qualsiasi ora c'è anche la pizza al trancio e la focaccia farcita.</p>
   <ul class="list">
     <li><b>Orari</b><span>Lun-ven dalle 7.30, sabato dalle 8.30, fino alle 15.30</span></li>
     <li><b>Al tavolo</b><span>Colazione al tavolo fino alle 11.30, poi al banco</span></li>
     <li><b>Coperto</b><span>A colazione nessun coperto, anche al tavolo</span></li>
     <li><b>Pagamenti</b><span>Carte, contactless e Satispay, anche per un caffè</span></li>
-    <li><b>Wi-Fi</b><span>Gratuito, e la valigia sta accanto al tavolo</span></li>
+    <li><b>Wi-Fi</b><span>Gratuito</span></li>
   </ul></div>
   <div class="pics"><img src="foto/reali/image00013-scaled.jpeg" alt="Crostata fatta in casa"><img src="foto/reali/image00108-scaled.jpeg" alt="Il banco delle brioche"></div>
 </div></section>
@@ -235,26 +236,21 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
     <div class="ccol">
       <h3 class="sez hand">Caffè</h3>
       <ul class="dl">
-        <li><p><span>Espresso</span><b>1,30</b></p></li>
-        <li><p><span>Decaffeinato · americano · orzo · ginseng</span><b>1,50</b></p></li>
-        <li><p><span>Macchiatone</span><b>1,60</b></p></li>
+        <li><p><span>Caffè</span><b>1,30</b></p></li>
         <li><p><span>Cappuccino</span><b>1,80</b></p></li>
-        <li><p><span>Marocchino · corretto</span><b>1,80</b></p></li>
-        <li><p><span>Cappuccino speciale · latte macchiato</span><b>2,00</b></p></li>
-        <li><p><span>Doppio</span><b>2,50</b></p></li>
-        <li><p><span>Shakerato</span><b>3,50</b></p></li>
-        <li><p><span>Tè e infusi</span><b>3,00</b></p></li>
-        <li><p><span>Cioccolata · con panna</span><b>4,00 · 5,00</b></p></li>
+        <li><p><span>Marocchino</span><b>1,80</b></p></li>
+        <li class="np"><p><span>E poi</span></p><small>Decaffeinato, americano, orzo, ginseng, macchiatone, latte macchiato, doppio, shakerato, tè e infusi, cioccolata calda.</small></li>
       </ul>
     </div>
     <div class="ccol">
-      <h3 class="sez hand">Dolce e salato</h3>
+      <h3 class="sez hand">Pasticceria fresca</h3>
       <ul class="dl">
-        <li><p><span>Brioche</span><b>1,80</b></p></li>
-        <li><p><span>Brioche Bistrò</span><b>2,30</b></p></li>
-        <li><p><span>Biscotto · grande</span><b>0,50 · 1,00</b></p></li>
-        <li><p><span>Pasticceria mignon</span><b>2,00</b></p></li>
-        <li><p><span>Torte fatte in casa, a fetta</span><b>4,50 · 6,00</b></p></li>
+        <li class="np"><p><span>Brioche</span></p><small>Vuote o ripiene di marmellata, crema e cioccolato.</small></li>
+        <li class="np"><p><span>Pain au chocolat e girelle</span></p><small>Fresche ogni mattina, insieme alla pasticceria mignon e ai biscotti di pasta frolla.</small></li>
+        <li class="np"><p><span>Crostate fatte da noi</span></p><small>A fetta, cambiano ogni giorno.</small></li>
+      </ul>
+      <h3 class="sez hand">Salato</h3>
+      <ul class="dl">
         <li><p><span>Pizza al trancio</span><b>4,00</b></p></li>
         <li><p><span>Maxi toast</span><b>6,00</b></p></li>
         <li><p><span>Focaccia farcita</span><b>7,00</b></p></li>
