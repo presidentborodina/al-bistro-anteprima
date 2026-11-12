@@ -140,7 +140,9 @@ footer .legal{margin-top:56px;border-top:1px solid var(--edge);padding:18px 0;fo
   .invito{padding:56px 0}.invito .box{grid-template-columns:1fr;padding:28px 24px;gap:20px;border-width:8px}.invito h2{font-size:38px}
   footer .cols{grid-template-columns:1fr;gap:30px}footer .legal{flex-direction:column;gap:6px}
 }
-/* logo sulla vetrina del carosello */
+/* logo sulla vetrina del carosello; il blocco sale per lasciare spazio uguale sopra e sopra i comandi */
+.slide .txt{padding-bottom:84px}
+@media (max-width:900px){.slide .txt{padding-bottom:56px}}
 .slide .txt img.vlogo{position:static;inset:auto;width:auto;height:150px;object-fit:contain;margin-bottom:22px;opacity:.94;filter:drop-shadow(0 2px 14px rgba(0,0,0,.45))}
 .slide h1,.slide h2{font-size:clamp(48px,5.8vw,82px)}
 @media (max-width:900px){.slide .txt img.vlogo{height:96px;margin-bottom:14px}.slide h1,.slide h2{font-size:44px}}
