@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Al Bistrò, ristorante pizzeria e bar al Gallaratese, Milano</title>
+<link rel="stylesheet" href="base.css"><link rel="stylesheet" href="chalk.css">
+<style>
+body{overflow:auto}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--peach);color:#141416}
+.hand{font-family:"Poiret One",sans-serif;font-weight:400;line-height:1.05}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+/* barra e menù */
+.util{background:#0B0B0C;font-size:14px;color:#D8D2C9}
+.util .wrap{height:42px;display:flex;align-items:center;gap:28px}
+.dot{display:inline-flex;align-items:center;gap:8px;color:var(--peach)}
+.dot:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--peach)}
+.util .sp{margin-left:auto;display:flex;gap:22px}
+.ico{width:15px;height:15px;vertical-align:-2px;margin-right:7px;fill:none;stroke:currentColor;stroke-width:1.8}
+.nav{background:var(--ground);border-bottom:1px solid var(--edge);position:sticky;top:0;z-index:20}
+.nav .wrap{height:84px;display:flex;align-items:center;gap:36px}
+.nav img{height:56px;width:auto}
+.nav ul{list-style:none;display:flex;gap:24px;font-size:15px;font-weight:500;margin-left:auto}
+.nav li a{padding:10px 0;text-decoration:underline 2px transparent;text-underline-offset:10px}
+.nav li a:hover,.nav li a[aria-current]{color:var(--peach);text-decoration-color:var(--peach)}
+.nav .book{min-height:44px;padding:0 18px;font-size:15px}
+.chips{display:none}
+/* carosello */
+.hero{position:relative;height:calc(100vh - 126px);min-height:560px;max-height:780px;overflow:hidden;background:#111}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.slide.on{opacity:1}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(.85)}
+.slide.sera img{filter:brightness(.36) sepia(.5) saturate(1.5) hue-rotate(-12deg)}
+.slide .txt{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;color:#FBF7F1}
+.slide h1,.slide h2{font-size:clamp(56px,7vw,96px)}
+em{font-style:normal;color:var(--peach)}
+.when{margin-top:14px;font-size:19px;color:var(--peach)}
+.sub{margin-top:12px;font-size:17px;line-height:1.6;color:#E9E2D8;max-width:640px}
+.act{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;justify-content:center}
+.ghost{background:rgba(17,17,17,.55)}
+.drop{transform:translateY(-36px);opacity:0;transition:transform 1s cubic-bezier(.16,1,.3,1),opacity 1s ease}
+.slide.on .drop{transform:none;opacity:1}
+.slide.on .d2{transition-delay:.15s}.slide.on .d3{transition-delay:.3s}.slide.on .d4{transition-delay:.45s}
+.ctrl{position:absolute;left:0;right:0;bottom:26px;display:flex;justify-content:center;gap:14px;z-index:5}
+.ctrl button{background:none;border:0;cursor:pointer;color:#FBF7F1;font:500 14px Syne,sans-serif;display:flex;align-items:center;gap:8px;padding:10px 12px;opacity:.75}
+.ctrl button[aria-pressed=true]{opacity:1;color:var(--peach)}
+.ctrl button i{display:block;width:34px;height:3px;background:currentColor}
+/* chi siamo */
+.intro{padding:110px 0}
+.intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.intro h1 .hand{display:block;font-size:64px;font-weight:400}
+.intro h1 .tag{display:block;font-family:Syne,sans-serif}
+.intro .tag{font-size:17px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.intro p{font-size:17px;line-height:1.7;color:#D8D2C9;margin-top:18px;max-width:60ch}
+.intro p b{color:var(--ink);font-weight:600}
+.frame{border:12px solid #2D2D30;position:relative}
+.frame img{width:100%;aspect-ratio:4/3.4;object-fit:cover}
+.frame:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 62%,rgba(255,255,255,.06) 62% 65%,transparent 65%)}
+.facts{display:grid;grid-template-columns:286px auto;column-gap:14px;margin-top:34px;margin-bottom:16px;font-size:15px;color:var(--muted)}
+.facts span{padding:4px 0}
+.intro .act .btn:first-child{width:286px}
+.facts b{display:block;font-family:"Poiret One",sans-serif;font-weight:400;font-size:44px;color:var(--peach);line-height:1;margin-bottom:8px}
+/* fasce a fondo fisso */
+.fixed{position:relative;clip-path:inset(0);color:#FBF7F1;text-align:center}
+.fixed .bg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.fixed.cena .bg{filter:brightness(.32) sepia(.5) saturate(1.5) hue-rotate(-12deg)}
+.fixed.voci .bg{filter:brightness(.28) saturate(.7)}
+.fixed .in{padding:120px 24px;display:flex;flex-direction:column;align-items:center}
+.fixed h2{font-size:clamp(48px,5.6vw,80px)}
+/* servizi */
+.servizi{padding:110px 0}
+.servizi .head{text-align:center;max-width:760px;margin:0 auto 48px}
+.servizi .head h2{font-size:56px}
+.servizi .head p{font-size:17px;line-height:1.7;color:#D8D2C9;margin-top:16px}
+.vetri{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.vetri .v{outline:8px solid #2D2D30;outline-offset:-8px}
+.v{position:relative;min-height:330px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:26px 28px;color:#FBF7F1}
+.v img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.4) saturate(.85);transition:transform .8s cubic-bezier(.16,1,.3,1),filter .8s}
+.v:hover img{transform:scale(1.04);filter:brightness(.5) saturate(.9)}
+.v:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 62%,rgba(255,255,255,.06) 62% 65%,transparent 65%);pointer-events:none}
+.v>*:not(img){position:relative;z-index:1}
+.v h3{font-size:44px}
+.v .o{font-size:15px;color:var(--peach);margin-top:8px}
+.v p{font-size:15px;line-height:1.55;color:#E4DED5;margin-top:6px;max-width:42ch}
+.v .go{margin-top:14px;font-size:15px;font-weight:600;color:var(--peach);display:inline-flex;gap:8px;align-items:center}
+.v .go svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+/* recensioni */
+.quotes{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 80px)/3);gap:40px;max-width:1100px;margin:40px auto 0;text-align:left;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.quotes::-webkit-scrollbar{display:none}
+.quotes blockquote{scroll-snap-align:start}
+.qnav{display:none;justify-content:center;gap:12px;margin-top:26px}
+.qnav.on{display:flex}
+.qnav button{width:48px;height:48px;border:1px solid var(--peach);background:rgba(17,17,17,.55);color:var(--peach);font-size:20px;cursor:pointer}
+.quotes blockquote{font-family:"Poiret One",sans-serif;font-size:28px;line-height:1.3}
+.quotes cite{display:block;font-style:normal;font-family:Syne,sans-serif;font-size:15px;color:var(--peach);margin-top:12px}
+.score{margin-top:44px;font-size:17px;color:#E9E2D8}
+/* invito */
+.invito{padding:90px 0}
+.invito .box{border:12px solid #2D2D30;background:var(--surface);display:grid;grid-template-columns:1.2fr 1fr auto;gap:40px;align-items:center;padding:44px 52px}
+.invito h2{font-size:48px}
+.invito p{font-size:16px;line-height:1.7;color:#D8D2C9}
+.invito .act{margin-top:0;flex-direction:column}
+/* piè di pagina */
+footer{background:#0B0B0C;padding:70px 0 0;font-size:15px;color:#D8D2C9}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px}
+footer img{height:64px;width:auto}
+footer h4{font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
+footer li{list-style:none;line-height:1.9}
+footer .ore div{display:flex;justify-content:space-between;gap:16px;font-variant-numeric:tabular-nums;line-height:1.9}
+footer .legal{margin-top:56px;border-top:1px solid var(--edge);padding:18px 0;font-size:13px;color:var(--quiet);display:flex;justify-content:space-between}
+.serata{padding:0 0 90px}
+.serata .box{border:12px solid #2D2D30;background:#222224;padding:34px 44px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.serata .kick{font-size:14px;color:var(--peach);font-weight:600}
+.serata h2{font-size:50px;margin-top:6px}
+.serata p{font-size:16px;color:#D8D2C9;margin-top:10px}
+.serata .esempio{grid-column:1/3;font-size:13px;color:#9A968F;border-top:1px dashed #4A4A4E;padding-top:12px;margin-top:0}
+@media (max-width:900px){.serata .box{grid-template-columns:1fr;padding:22px;border-width:8px}.serata h2{font-size:34px}.serata .esempio{grid-column:1}}.come{list-style:none}
+.come li{display:flex;flex-direction:column;gap:2px;padding:10px 0;border-bottom:1px solid #34343A}
+.come li:last-child{border-bottom:0}
+.come b{font-size:16px;font-weight:600;color:var(--ink)}
+.come span{font-size:15px;color:#C9C3BA;line-height:1.5}
+@media (prefers-reduced-motion:reduce){.slide,.drop,.v img{transition:none}}
+@media (max-width:900px){
+  .util .hide,.util .sp{display:none}.util .wrap{gap:16px;font-size:13px}
+  .nav .wrap{height:64px;gap:14px}.nav img{height:40px}.nav ul{display:none}
+  .nav .book{margin-left:auto;min-height:40px;padding:0 14px;font-size:14px}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;background:var(--ground);border-bottom:1px solid var(--edge);position:sticky;top:64px;z-index:19;scrollbar-width:none}
+  .chips a{flex:0 0 auto;border:1px solid var(--edge);padding:9px 14px;font-size:14px;white-space:nowrap}
+  .chips a[aria-current]{border-color:var(--peach);color:var(--peach)}
+  .hero{height:620px;min-height:0}
+  .slide h1,.slide h2{font-size:50px}.sub{font-size:15px}
+  .act{flex-direction:column;width:100%;max-width:340px}
+  .ctrl button span{display:none}
+  .intro,.servizi{padding:64px 0}
+  .intro .wrap{grid-template-columns:1fr;gap:36px}.intro h1 .hand{font-size:46px}
+  .fixed .in{padding:80px 20px}
+  .servizi .head h2{font-size:40px}
+  .vetri{grid-template-columns:1fr;gap:18px}.v{min-height:240px}.v h3{font-size:36px}
+  .quotes{grid-auto-columns:85%;gap:24px}.quotes blockquote{font-size:24px}
+  .invito{padding:56px 0}.invito .box{grid-template-columns:1fr;padding:28px 24px;gap:20px;border-width:8px}.invito h2{font-size:38px}
+  footer .cols{grid-template-columns:1fr;gap:30px}footer .legal{flex-direction:column;gap:6px}
+}
+@media (min-width:901px){
+  header.nav .wrap{height:112px;transition:height .35s ease}
+  header.nav img{height:80px;transition:height .35s ease}
+  body.scorre header.nav .wrap{height:84px}
+  body.scorre header.nav img{height:56px}
+}
+@media (max-width:900px){header.nav img{height:48px}}.slide .txt img.vlogo{position:static;inset:auto;width:auto;height:150px;object-fit:contain;margin-bottom:22px;opacity:.94;filter:drop-shadow(0 2px 14px rgba(0,0,0,.45))}
+.slide h1,.slide h2{font-size:clamp(48px,5.8vw,82px)}
+@media (max-width:900px){.slide .txt img.vlogo{height:96px;margin-bottom:14px}.slide h1,.slide h2{font-size:44px}}footer .cols>div:first-child img{height:120px}
+@media (max-width:900px){footer .cols>div:first-child img{height:100px}}.var-badge{position:fixed;left:16px;bottom:16px;z-index:50;background:var(--peach);color:#141416;font-size:14px;font-weight:600;padding:10px 14px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+</style></head><body class="pattern"><div class="var-badge">Prova 1 + 3 + 5 · testata, vetrina, piè di pagina</div>
+<div class="util"><div class="wrap">
+  <span class="dot">Aperto ora</span>
+  <a href="#"><svg class="ico" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>391 176 1595</a>
+  <a class="hide" href="#"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>info@albistro.it</a>
+  <a class="hide" href="#"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Via delle Ande 16, Gallaratese, Milano</a>
+  <span class="sp"><a href="https://www.facebook.com/albistromilano/" target="_blank" rel="noopener">Facebook</a><a href="#">Instagram</a><a href="#">EN</a></span>
+</div></div>
+<header class="nav"><div class="wrap">
+  <a href="index.html" aria-current="page" aria-label="Al Bistrò, home"><img src="foto/logo-bianco.png" alt="Al Bistrò Milano"><span class="claim">Ristorante<br>Pizzeria<br>Caffetteria</span></a>
+  <ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="caffetteria.html">Caffetteria</a></li><li><a href="pranzo.html">Pranzo</a></li><li><a href="cene-e-pizza.html">Cene e pizza</a></li><li><a href="menu.html">Menù</a></li><li><a href="catering.html">Catering</a></li><li><a href="feste-ed-eventi.html">Feste ed eventi</a></li><li><a href="assemblee-e-riunioni.html">Assemblee e riunioni</a></li><li><a href="contatti.html">Contatti</a></li></ul>
+  <a class="btn primary book" href="https://wa.me/393911761595" target="_blank" rel="noopener">Prenota</a>
+</div></header>
+<nav class="chips" aria-label="Servizi"><a href="index.html" aria-current="page">Home</a><a href="caffetteria.html">Caffetteria</a><a href="pranzo.html">Pranzo</a><a href="cene-e-pizza.html">Cene e pizza</a><a href="menu.html">Menù</a><a href="catering.html">Catering</a><a href="feste-ed-eventi.html">Feste ed eventi</a><a href="assemblee-e-riunioni.html">Assemblee e riunioni</a><a href="contatti.html">Contatti</a></nav>
+
+<section class="hero" aria-roledescription="carosello" aria-label="Al Bistrò oggi">
+  <div class="slide on"><img src="foto/wa1.jpeg" alt="">
+    <div class="txt"><img class="vlogo drop" src="foto/logo-bianco.png" alt=""><h2 class="hand chalk">Business Lunch</h2><p class="when drop d2">Aperto ora, cucina fino alle 14.30</p>
+    <p class="sub drop d3">Dal lunedì al venerdì, menù diverso ogni giorno. Primo 13 € · secondo e contorno 18 € · insalatone 15 € · pokè 18 € · pizza e bibita 14 €</p>
+    <div class="act drop d4"><a class="btn primary" href="https://wa.me/393911761595" target="_blank" rel="noopener">Scrivi su WhatsApp</a><a class="btn ghost" href="pranzo.html">Il menù di oggi</a></div></div></div>
+  <div class="slide sera"><img src="foto/reali/image00040-1-scaled.jpeg" alt="">
+    <div class="txt"><img class="vlogo drop" src="foto/logo-bianco.png" alt=""><h2 class="hand chalk">Cena <em>e pizza</em></h2><p class="when drop d2">Giovedì, venerdì e sabato dalle 18.45</p>
+    <p class="sub drop d3">Pizza a lievitazione naturale di 24 ore, cucina fino alle 22.30, sala delle feste vetrata e riscaldata.</p>
+    <div class="act drop d4"><a class="btn primary" href="https://wa.me/393911761595" target="_blank" rel="noopener">Prenota il tavolo</a><a class="btn ghost" href="cene-e-pizza.html#pizze">Le pizze</a></div></div></div>
+  <div class="slide"><img src="foto/reali/image00082-scaled.jpeg" alt="">
+    <div class="txt"><img class="vlogo drop" src="foto/logo-bianco.png" alt=""><h2 class="hand chalk">Feste e <em>catering</em></h2><p class="when drop d2">Sala delle feste fino a 48 persone</p>
+    <p class="sub drop d3">Catering dal 2020 nella vostra sede, oppure da noi, con musica fino alle 24.</p>
+    <div class="act drop d4"><a class="btn primary" href="catering.html#modulo">Chiedi un preventivo</a><a class="btn ghost" href="feste-ed-eventi.html">La sala</a></div></div></div>
+  <div class="ctrl"><button aria-pressed="true" data-i="0"><i></i><span>Pranzo</span></button><button aria-pressed="false" data-i="1"><i></i><span>Cena</span></button><button aria-pressed="false" data-i="2"><i></i><span>Feste</span></button><button aria-pressed="false" id="pause">Pausa</button></div>
+</section>
+
+<section class="intro"><div class="wrap">
+  <div>
+    <h1 class="intro-h1"><span class="hand">Al Bistrò</span><span class="tag">Ristorante, pizzeria e caffetteria al Gallaratese, Milano</span></h1>
+    <p>In <b>via delle Ande 16</b>, a 10 minuti a piedi dalla metro M1 Uruguay e a 15 dal terminal bus di Lampugnano. Dal 2018 siamo il locale del quartiere: <b>colazione dalle 7.30</b>, il <b>Business Lunch</b> con il menù che cambia ogni giorno, la <b>pizza a lievitazione naturale di 24 ore</b> e la cena del giovedì, del venerdì e del sabato.</p>
+    <p>Claudio e il suo staff vi accolgono nella sala con la pizzeria a vista, nella sala delle feste vetrata e riscaldata e, d'estate, in giardino.</p>
+    <div class="facts"><span><b>2018</b>apertura</span><span><b>124</b>posti in tre spazi</span></div>
+    <div class="act" style="justify-content:flex-start"><a class="btn primary" href="contatti.html">Come arrivare</a><a class="btn" href="menu.html">Il menù</a></div>
+  </div>
+  <figure class="frame"><img src="foto/wa2.jpeg" alt="La veranda di Al Bistrò in via delle Ande"></figure>
+</div></section>
+
+<section class="serata"><div class="wrap"><div class="box mot m-vichy" style="--bg:26 26 28;--o:.05;--s:120px">
+  <div><p class="kick">Prossima serata</p><h2 class="hand">Venerdì 20 novembre · <em>DJ set</em></h2><p>Cena e pizza dalle 18.45, musica dalle 21.</p></div>
+  <a class="btn primary" href="https://wa.me/393911761595" target="_blank" rel="noopener">Prenota per venerdì</a>
+  <p class="esempio">Esempio di annuncio: il blocco compare solo quando c'è una serata in programma.</p>
+</div></div></section>
+<section class="fixed cena"><img class="bg" src="foto/d.jpeg" alt="">
+  <div class="in"><h2 class="hand">Prenota il tuo tavolo <em>per la cena</em></h2>
+  <p class="sub">Giovedì, venerdì e sabato, cucina e pizzeria dalle 18.45 alle 22.30. Si chiude con l'ultimo cliente. Dal 1° dicembre anche il giovedì.</p>
+  <div class="act"><a class="btn primary" href="https://wa.me/393911761595" target="_blank" rel="noopener">Prenota su WhatsApp</a><a class="btn ghost" href="tel:+393911761595">Chiama il 391 176 1595</a></div></div>
+</section>
+
+<section class="servizi"><div class="wrap">
+  <div class="head"><h2 class="hand chalk">Dalla colazione <em>alla cena</em></h2><p>Un solo indirizzo per il caffè del mattino, il pranzo di lavoro, la pizza del weekend, la festa di compleanno e l'assemblea di condominio.</p></div>
+  <div class="vetri">
+    <a class="v" href="caffetteria.html"><img src="foto/reali/image00108-scaled.jpeg" alt=""><h3 class="hand">Caffetteria</h3><p class="o">Dalle 7.30, sabato dalle 8.30</p><p>Caffè 1,30 €, brioche fresche ogni mattina, crostate fatte da noi. A colazione nessun coperto.</p><span class="go">Scopri <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="v" href="pranzo.html"><img src="foto/pranzo-00009.jpeg" alt=""><h3 class="hand">Pranzo</h3><p class="o">Lun-sab, 11.45-14.30</p><p>Dal lunedì al venerdì il Business Lunch con il menù del giorno; il sabato il menù della sera e le pizze.</p><span class="go">Il pranzo <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="v" href="cene-e-pizza.html"><img src="foto/reali/image00045-scaled.jpeg" alt=""><h3 class="hand">Cene e pizza</h3><p class="o">Gio-sab, dalle 18.45</p><p>Pizza sottile e croccante, lievitazione 24 ore. Margherita 10 €.</p><span class="go">Le pizze <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="v" href="catering.html"><img src="foto/reali/image00035-scaled.jpeg" alt=""><h3 class="hand">Catering</h3><p class="o">Dal 2020</p><p>Aperitivi, buffet e ricevimenti nella vostra sede: casa, azienda, villa. Oppure da noi.</p><span class="go">Chiedi un preventivo <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="v" href="feste-ed-eventi.html"><img src="foto/reali/image00153-scaled.jpeg" alt=""><h3 class="hand">Feste ed eventi</h3><p class="o">Fino a 48 persone</p><p>Sala delle feste vetrata e riscaldata, separata dal ristorante. Musica fino alle 24.</p><span class="go">La sala <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="v" href="assemblee-e-riunioni.html"><img src="foto/wa2.jpeg" alt=""><h3 class="hand">Assemblee e riunioni</h3><p class="o">La sera, fino a 50 persone</p><p>Per assemblee condominiali e riunioni, con Wi-Fi e prese. Una quindicina di studi ci ha già scelto.</p><span class="go">Prenota la serata <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</div></section>
+
+<section class="fixed voci"><img class="bg" src="foto/wa1.jpeg" alt="">
+  <div class="in"><h2 class="hand">Dicono <em>di noi</em></h2>
+  <!-- Recensioni: per aggiungerne una, copia un blocco <blockquote> qui sotto. Sul sito vero si aggiungono in src/data/recensioni.json. Da 4 in su compaiono le frecce. -->
+  <div class="quotes" id="quotes">
+    <blockquote>«Il top al Gallaratese. Claudio e il suo staff sono persone molto disponibili.»<cite>Luca, Google</cite></blockquote>
+    <blockquote>«Le pizze hanno un impasto veramente soffice.»<cite>Alessandro, Google</cite></blockquote>
+    <blockquote>«Piatti sempre diversi e con ingredienti freschissimi.»<cite>Danila, Google</cite></blockquote>
+  </div>
+  <div class="qnav" id="qnav"><button type="button" aria-label="Recensione precedente" data-d="-1">&#8592;</button><button type="button" aria-label="Recensione successiva" data-d="1">&#8594;</button></div>
+  <div class="act"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Al+Bistr%C3%B2+Via+delle+Ande+16+Milano" target="_blank" rel="noopener">Leggi le recensioni</a></div></div>
+</section>
+
+<section class="invito"><div class="wrap"><div class="box">
+  <h2 class="hand">Ti aspettiamo <em>in via delle Ande 16</em></h2>
+  <ul class="come"><li><b>Metro M1 Uruguay</b><span>10 minuti a piedi</span></li><li><b>Terminal bus Lampugnano</b><span>15 minuti a piedi</span></li><li><b>In macchina</b><span>posti auto in viale De Gasperi e in via delle Ande</span></li></ul>
+  <div class="act"><a class="btn primary" href="https://wa.me/393911761595" target="_blank" rel="noopener">Scrivi su WhatsApp</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Al+Bistr%C3%B2+Via+delle+Ande+16+Milano" target="_blank" rel="noopener">Indicazioni</a></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><img src="foto/logo-bianco.png" alt="Al Bistrò Milano"><p style="margin-top:16px;line-height:1.7">Ristorante, pizzeria e caffetteria<br>Via delle Ande 16, 20151 Milano</p></div>
+    <div><h4>Contatti</h4><ul><li>391 176 1595</li><li>WhatsApp 391 176 1595</li><li>info@albistro.it</li></ul></div>
+    <div class="ore"><h4>Orari</h4><div><span>Lun-mer</span><span>7.30-15.30</span></div><div><span>Gio-ven</span><span>7.30-15.30 · 18.45-22.30</span></div><div><span>Sab</span><span>8.30-15.30 · 18.45-22.30</span></div><div><span>Dom</span><span>chiuso</span></div><div><span>Tabaccheria</span><span>fino alle 19</span></div></div>
+    <div><h4>Seguici</h4><ul><li>Facebook</li><li>Instagram</li></ul></div>
+  </div>
+  <div class="legal"><span>P.IVA 09975970964</span><span>Privacy · Cookie</span></div>
+</div></footer>
+<script>
+const s=[...document.querySelectorAll('.slide')],b=[...document.querySelectorAll('.ctrl button[data-i]')],p=document.getElementById('pause');
+let i=0,t=null;const still=matchMedia('(prefers-reduced-motion: reduce)').matches||location.hash==='#still';
+function go(n){s[i].classList.remove('on');b[i].setAttribute('aria-pressed','false');i=n;s[i].classList.add('on');b[i].setAttribute('aria-pressed','true');if(window.chalkPlay)chalkPlay(s[i])}
+function play(){t=setInterval(()=>go((i+1)%s.length),6000)}
+b.forEach(x=>x.onclick=()=>{go(+x.dataset.i);clearInterval(t);if(p.getAttribute('aria-pressed')==='false')play()});
+p.onclick=()=>{const on=p.getAttribute('aria-pressed')==='true';p.setAttribute('aria-pressed',String(!on));p.textContent=on?'Pausa':'Riprendi';on?play():clearInterval(t)};
+if(!still)play();
+</script>
+<script>
+(function(){const q=document.getElementById('quotes'),n=document.getElementById('qnav');if(!q||!n)return;
+function chk(){n.classList.toggle('on',q.scrollWidth>q.clientWidth+4)}
+n.querySelectorAll('button').forEach(b=>b.onclick=()=>q.scrollBy({left:(+b.dataset.d)*q.clientWidth,behavior:'smooth'}));
+addEventListener('resize',chk);chk();})();
+</script><script src="chalk.js"></script>
+<script>(function(){var b=document.body;function f(){b.classList.toggle("scorre",scrollY>40)}addEventListener("scroll",f,{passive:true});f()})()</script>
+</body></html>
