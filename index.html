@@ -137,6 +137,10 @@ footer .legal{margin-top:56px;border-top:1px solid var(--edge);padding:18px 0;fo
   .invito{padding:56px 0}.invito .box{grid-template-columns:1fr;padding:28px 24px;gap:20px;border-width:8px}.invito h2{font-size:38px}
   footer .cols{grid-template-columns:1fr;gap:30px}footer .legal{flex-direction:column;gap:6px}
 }
+/* logo sulla vetrina del carosello */
+.slide .txt img.vlogo{position:static;inset:auto;width:auto;height:150px;object-fit:contain;margin-bottom:22px;opacity:.94;filter:drop-shadow(0 2px 14px rgba(0,0,0,.45))}
+.slide h1,.slide h2{font-size:clamp(48px,5.8vw,82px)}
+@media (max-width:900px){.slide .txt img.vlogo{height:96px;margin-bottom:14px}.slide h1,.slide h2{font-size:44px}}
 </style></head><body class="pattern">
 <div class="util"><div class="wrap">
   <span class="dot">Aperto ora</span>
@@ -154,15 +158,15 @@ footer .legal{margin-top:56px;border-top:1px solid var(--edge);padding:18px 0;fo
 
 <section class="hero" aria-roledescription="carosello" aria-label="Al Bistrò oggi">
   <div class="slide on"><img src="foto/wa1.jpeg" alt="">
-    <div class="txt"><h2 class="hand chalk">Business Lunch</h2><p class="when drop d2">Aperto ora, cucina fino alle 14.30</p>
+    <div class="txt"><img class="vlogo drop" src="foto/logo-bianco.png" alt=""><h2 class="hand chalk">Business Lunch</h2><p class="when drop d2">Aperto ora, cucina fino alle 14.30</p>
     <p class="sub drop d3">Dal lunedì al venerdì, menù diverso ogni giorno. Primo 13 € · secondo e contorno 18 € · insalatone 15 € · pokè 18 € · pizza e bibita 14 €</p>
     <div class="act drop d4"><a class="btn primary" href="https://wa.me/393911761595" target="_blank" rel="noopener">Scrivi su WhatsApp</a><a class="btn ghost" href="pranzo.html">Il menù di oggi</a></div></div></div>
   <div class="slide sera"><img src="foto/reali/image00040-1-scaled.jpeg" alt="">
-    <div class="txt"><h2 class="hand chalk">Cena <em>e pizza</em></h2><p class="when drop d2">Giovedì, venerdì e sabato dalle 18.45</p>
+    <div class="txt"><img class="vlogo drop" src="foto/logo-bianco.png" alt=""><h2 class="hand chalk">Cena <em>e pizza</em></h2><p class="when drop d2">Giovedì, venerdì e sabato dalle 18.45</p>
     <p class="sub drop d3">Pizza a lievitazione naturale di 24 ore, cucina fino alle 22.30, sala delle feste vetrata e riscaldata.</p>
     <div class="act drop d4"><a class="btn primary" href="https://wa.me/393911761595" target="_blank" rel="noopener">Prenota il tavolo</a><a class="btn ghost" href="cene-e-pizza.html#pizze">Le pizze</a></div></div></div>
   <div class="slide"><img src="foto/reali/image00082-scaled.jpeg" alt="">
-    <div class="txt"><h2 class="hand chalk">Feste e <em>catering</em></h2><p class="when drop d2">Sala delle feste fino a 48 persone</p>
+    <div class="txt"><img class="vlogo drop" src="foto/logo-bianco.png" alt=""><h2 class="hand chalk">Feste e <em>catering</em></h2><p class="when drop d2">Sala delle feste fino a 48 persone</p>
     <p class="sub drop d3">Catering dal 2020 nella vostra sede, oppure da noi, con musica fino alle 24.</p>
     <div class="act drop d4"><a class="btn primary" href="catering.html#modulo">Chiedi un preventivo</a><a class="btn ghost" href="feste-ed-eventi.html">La sala</a></div></div></div>
   <div class="ctrl"><button aria-pressed="true" data-i="0"><i></i><span>Pranzo</span></button><button aria-pressed="false" data-i="1"><i></i><span>Cena</span></button><button aria-pressed="false" data-i="2"><i></i><span>Feste</span></button><button aria-pressed="false" id="pause">Pausa</button></div>
@@ -244,4 +248,5 @@ function chk(){n.classList.toggle('on',q.scrollWidth>q.clientWidth+4)}
 n.querySelectorAll('button').forEach(b=>b.onclick=()=>q.scrollBy({left:(+b.dataset.d)*q.clientWidth,behavior:'smooth'}));
 addEventListener('resize',chk);chk();})();
 </script><script src="chalk.js"></script>
+<script>(function(){var b=document.body;function f(){b.classList.toggle("scorre",scrollY>40)}addEventListener("scroll",f,{passive:true});f()})()</script>
 </body></html>

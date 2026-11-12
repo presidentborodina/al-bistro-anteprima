@@ -35,3 +35,13 @@ header.nav .wrap>a:first-child{display:flex;align-items:center;gap:12px;flex:0 0
   nav.chips a[aria-current]{border-color:var(--peach);color:var(--peach)}
 }
 @media (max-width:900px){.claim{font-size:11px;line-height:1.3;letter-spacing:.06em;padding-left:10px}header.nav .wrap>a:first-child{gap:10px}}
+/* logo più grande (scelta 1+3+5 del 12/11/2026): testata alta in cima alla pagina, si riduce scorrendo; piè di pagina */
+@media (min-width:901px){
+  header.nav .wrap{height:112px;transition:height .35s ease}
+  header.nav img{height:80px;transition:height .35s ease}
+  body.scorre header.nav .wrap{height:84px}
+  body.scorre header.nav img{height:56px}
+}
+@media (max-width:900px){header.nav img{height:48px}}
+footer .cols>div:first-child img{height:120px}
+@media (max-width:900px){footer .cols>div:first-child img{height:50px}}
