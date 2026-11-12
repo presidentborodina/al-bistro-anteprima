@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Catering aziendale e a domicilio a Milano | Al Bistrò</title>
+<link rel="stylesheet" href="base.css">
+<style>
+body{overflow:auto}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--peach);color:#141416}
+.hand{font-family:"Poiret One",sans-serif;font-weight:400;line-height:1.05}
+em{font-style:normal;color:var(--peach)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.ghost{background:rgba(17,17,17,.55)}
+.act{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.util{background:#0B0B0C;font-size:14px;color:#D8D2C9}
+.util .wrap{height:42px;display:flex;align-items:center;gap:28px}
+.dot{display:inline-flex;align-items:center;gap:8px;color:var(--peach)}
+.dot:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--peach)}
+.util .sp{margin-left:auto;display:flex;gap:22px}
+.nav{background:var(--ground);border-bottom:1px solid var(--edge);position:sticky;top:0;z-index:20}
+.nav .wrap{height:84px;display:flex;align-items:center;gap:36px}
+.nav img{height:56px;width:auto}
+.nav ul{list-style:none;display:flex;gap:24px;font-size:15px;font-weight:500;margin-left:auto}
+.nav li a{padding:10px 0;text-decoration:underline 2px transparent;text-underline-offset:10px}
+.nav li a[aria-current]{color:var(--peach);text-decoration-color:var(--peach)}
+.nav .book{min-height:44px;padding:0 18px;font-size:15px}
+.chips{display:none}
+/* testata */
+.head{position:relative;min-height:520px;padding-top:96px;overflow:hidden;display:flex;align-items:flex-end}
+.head img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.4) saturate(.85)}
+.head:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 62%,rgba(255,255,255,.06) 62% 65%,transparent 65%)}
+.head .wrap{position:relative;z-index:1;width:100%;padding-bottom:52px;color:#FBF7F1}
+.crumb{font-size:14px;color:#E0D9CF}
+.head h1{font-size:clamp(52px,6vw,88px);margin-top:12px;max-width:16ch}
+.head p{font-size:19px;color:#E9E2D8;margin-top:14px}
+/* in breve */
+.breve{padding:96px 0}
+.breve .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:start}
+.breve h2{font-size:52px}
+.breve p.lead{font-size:17px;line-height:1.7;color:#D8D2C9;margin-top:18px;max-width:60ch}
+.list{list-style:none;margin-top:26px;border-top:1px solid var(--edge)}
+.list li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--edge);font-size:16px;line-height:1.5}
+.list b{font-weight:600;color:var(--peach)}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:12px;border:12px solid #2D2D30;background:#2D2D30}
+.pics img{width:100%;height:460px;object-fit:cover}
+/* fascia dettagli */
+.band{background:var(--surface);padding:90px 0;position:relative;isolation:isolate}
+.band:before{content:"";position:absolute;inset:0;background:url(assets/img/pattern-bistro.png) center/450px repeat;opacity:.05;z-index:-1}
+.band h2{font-size:52px;text-align:center}
+.tre{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}
+.tre h3{font-size:34px}
+.tre p{font-size:16px;line-height:1.7;color:#D8D2C9;margin-top:12px}
+/* arrivo */
+.arrivo{padding:96px 0}
+.arrivo .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.arrivo h2{font-size:52px}
+.arrivo h3{font-size:16px;font-weight:700;margin-top:26px}
+.arrivo p{font-size:16px;line-height:1.7;color:#D8D2C9;margin-top:6px}
+.map{aspect-ratio:4/3;border:12px solid #2D2D30;background:#1E1E20;display:flex;align-items:center;justify-content:center;color:var(--quiet);font-size:15px}
+/* domande */
+.faq{padding:0 0 96px}
+.faq h2{font-size:52px;margin-bottom:28px}
+.faq details{border-top:1px solid var(--edge)}
+.faq details:last-of-type{border-bottom:1px solid var(--edge)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 0;font-size:19px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--peach);font-size:26px;line-height:1}
+.faq details[open] summary:after{content:"–"}
+.faq details p{padding:0 0 22px;font-size:16px;line-height:1.7;color:#D8D2C9;max-width:70ch}
+/* modulo */
+.form{background:var(--surface);padding:90px 0}
+.form .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:64px}
+.form h2{font-size:52px}
+.form p{font-size:16px;line-height:1.7;color:#D8D2C9;margin-top:16px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600}
+label.full{grid-column:1/3}
+input,textarea,select{font:16px Syne,sans-serif;color:var(--ink);background:#1B1B1E;border:1px solid #8E8E92;padding:14px 16px;min-height:52px;color-scheme:dark;border-radius:0}
+input:hover,textarea:hover{border-color:#B4B0AA}
+input::placeholder,textarea::placeholder{color:#A7A7A7;opacity:1}
+@supports selector(::-webkit-calendar-picker-indicator){
+  input[type=date],input[type=time]{background-repeat:no-repeat;background-position:right 14px center;background-size:22px;padding-right:50px}
+  input[type=date]{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F4A07C' stroke-width='1.8' stroke-linecap='round'%3E%3Crect x='3.5' y='5' width='17' height='15.5' rx='1.5'/%3E%3Cpath d='M3.5 10h17M8 3v4M16 3v4'/%3E%3C/svg%3E")}
+  input[type=time]{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F4A07C' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='8.5'/%3E%3Cpath d='M12 7.5V12l3 2'/%3E%3C/svg%3E")}
+  input::-webkit-calendar-picker-indicator{opacity:0;cursor:pointer;width:28px;height:28px;margin-right:-6px}
+}
+input:focus,textarea:focus{outline:2px solid var(--peach);outline-offset:2px}
+label.check{flex-direction:row;align-items:flex-start;gap:12px;font-weight:400;font-size:14px;line-height:1.5;color:#D8D2C9}
+label.check input{min-height:0;width:20px;height:20px;padding:0;margin-top:1px;accent-color:var(--peach);flex-shrink:0}
+label.check a{color:var(--peach);text-decoration:underline;text-underline-offset:3px}
+form .btn{grid-column:1/3;justify-self:start;cursor:pointer;font-family:Syne,sans-serif}
+/* altri servizi */
+.altri{padding:90px 0}
+.altri h2{font-size:44px;text-align:center;margin-bottom:36px}
+.vetri{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;background:#2D2D30;padding:10px}
+.v{position:relative;height:220px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;color:#FBF7F1}
+.v img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(.85)}
+.v>*:not(img){position:relative}
+.v h3{font-size:28px}
+.v span{font-size:14px;color:var(--peach);margin-top:6px}
+footer{background:#0B0B0C;padding:60px 0 0;font-size:15px;color:#D8D2C9}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px}
+footer img{height:60px;width:auto}
+footer h4{font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
+footer li{list-style:none;line-height:1.9}
+footer .ore div{display:flex;justify-content:space-between;gap:16px;line-height:1.9}
+footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;font-size:13px;color:var(--quiet)}
+@media (max-width:900px){
+  .util .hide,.util .sp{display:none}.util .wrap{gap:16px;font-size:13px}
+  .nav .wrap{height:64px;gap:14px}.nav img{height:40px}.nav ul{display:none}
+  .nav .book{margin-left:auto;min-height:40px;padding:0 14px;font-size:14px}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;background:var(--ground);border-bottom:1px solid var(--edge);position:sticky;top:64px;z-index:19;scrollbar-width:none}
+  .chips a{flex:0 0 auto;border:1px solid var(--edge);padding:9px 14px;font-size:14px;white-space:nowrap}
+  .chips a[aria-current]{border-color:var(--peach);color:var(--peach)}
+  .head{min-height:440px;padding-top:64px}.head h1{font-size:42px}.head p{font-size:16px}
+  .breve,.arrivo,.altri{padding:60px 0}.band,.form{padding:60px 0}.faq{padding-bottom:60px}
+  .breve .wrap,.arrivo .wrap,.form .wrap{grid-template-columns:1fr;gap:32px}
+  .breve h2,.band h2,.arrivo h2,.faq h2,.form h2{font-size:38px}
+  .list li{grid-template-columns:1fr;gap:2px}
+  .pics img{height:240px}
+  .tre{grid-template-columns:1fr;gap:28px}
+  form{grid-template-columns:1fr}label.full,form .btn{grid-column:1}
+  .act{flex-direction:column}
+  .vetri{grid-template-columns:1fr 1fr}.v{height:150px}.v h3{font-size:22px}
+  footer .cols{grid-template-columns:1fr;gap:28px}
+}
+</style></head><body class="pattern">
+<div class="util"><div class="wrap"><span class="dot">Aperto ora</span><span>391 176 1595</span><span class="hide">info@albistro.it</span><span class="hide">Via delle Ande 16, Gallaratese, Milano</span><span class="sp"><span>Facebook</span><span>Instagram</span><span>EN</span></span></div></div>
+<header class="nav"><div class="wrap"><a href="index.html"><img src="foto/logo-bianco.png" alt="Al Bistrò Milano"></a>
+<ul><li><a href="index.html">Home</a></li><li><a href="caffetteria.html">Caffetteria</a></li><li><a href="business-lunch.html">Business Lunch</a></li><li><a href="cene-e-pizza.html">Cene e pizza</a></li><li><a href="menu.html">Menù</a></li><li><a href="catering.html" aria-current="page">Catering</a></li><li><a href="feste-ed-eventi.html">Feste ed eventi</a></li><li><a href="assemblee-e-riunioni.html">Assemblee e riunioni</a></li><li><a href="contatti.html">Contatti</a></li></ul>
+<a class="btn primary book" href="https://wa.me/393911761595" target="_blank" rel="noopener">Prenota</a></div></header>
+<nav class="chips" aria-label="Servizi"><a href="index.html">Home</a><a href="caffetteria.html">Caffetteria</a><a href="business-lunch.html">Business Lunch</a><a href="cene-e-pizza.html">Cene e pizza</a><a href="menu.html">Menù</a><a href="catering.html" aria-current="page">Catering</a><a href="feste-ed-eventi.html">Feste ed eventi</a><a href="assemblee-e-riunioni.html">Assemblee e riunioni</a><a href="contatti.html">Contatti</a></nav>
+
+<section class="head"><img src="foto/reali/image00035-scaled.jpeg" alt="">
+<div class="wrap"><p class="crumb">Al Bistrò · Catering</p><h1 class="hand">Catering aziendale e a domicilio <em>a Milano</em></h1>
+<p>Aperitivi, buffet e ricevimenti nella vostra sede: casa, azienda, villa. Oppure da noi, nella sala delle feste. Dal 2020.</p>
+<div class="act"><a class="btn primary" href="#modulo">Chiedi un preventivo</a><a class="btn ghost" href="https://wa.me/393911761595" target="_blank" rel="noopener">Scrivi su WhatsApp</a></div></div></section>
+
+<section class="breve"><div class="wrap">
+  <div><h2 class="hand">Il catering <em>in breve</em></h2>
+  <p class="lead">Dal 2020 portiamo la cucina del Bistrò nelle aziende e nelle case della zona: il finger food dell'aperitivo in ufficio, il buffet per il pranzo di lavoro, il ricevimento per una festa di famiglia. Consegniamo e allestiamo all'ora concordata, pronto da mettere in tavola.</p>
+  <ul class="list">
+    <li><b>Cosa</b><span>Aperitivo, buffet di pranzo, ricevimento</span></li>
+    <li><b>Dove</b><span>Nella vostra sede: casa, azienda, villa.<br>Oppure da noi, nella sala delle feste</span></li>
+    <li><b>Persone</b><span>Nessun minimo: la proposta la facciamo sul vostro numero</span></li>
+    <li><b>Allestimento</b><span>Monouso eco con tovaglioli di carta, oppure ceramica, vetro, acciaio e tovagliato di cotone</span></li>
+    <li><b>Intolleranze</b><span>Piatti vegetariani, senza glutine e senza lattosio</span></li>
+    <li><b>Prezzo</b><span>Su misura: dipende dal menù, dalle persone e dal servizio</span></li>
+  </ul></div>
+  <div class="pics"><img src="foto/reali/image00075-scaled.jpeg" alt="Focacce tagliate a quadrotti per un buffet"><img src="foto/reali/image00082-scaled.jpeg" alt="Buffet di verdure, olive e formaggi"></div>
+</div></section>
+
+<section class="band mot m-rombini" data-snap="110.6" style="--bg:26 26 28;--o:.05;--s:112.5px 110.6px;--px:16.55px;--py:-19.3px"><div class="wrap">
+  <h2 class="hand">Tre modi <em>di farlo</em></h2>
+  <div class="tre">
+    <div><h3 class="hand">Aperitivo in ufficio</h3><p>Finger food, rotoli farciti, verdure crude con le salse, focaccia a quadrotti. Per festeggiare un traguardo, accogliere un cliente o chiudere la settimana.</p></div>
+    <div><h3 class="hand">Buffet di pranzo</h3><p>Insalate di pasta, caprese, focacce, verdure e formaggi, i dolci fatti da noi. Per una riunione che dura tutto il giorno o un corso di formazione.</p></div>
+    <div><h3 class="hand">Ricevimento</h3><p>Compleanni, comunioni, battesimi, anniversari. Il menù lo costruiamo insieme, con le porzioni calcolate sul numero degli invitati.</p></div>
+  </div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <h2 class="hand">Domande <em>frequenti</em></h2>
+  <details open><summary>Quanto costa il catering a persona?</summary><p>Ogni catering è fatto su misura: il prezzo dipende dal menù, dal numero di persone e dal servizio. Scriveteci data, persone e tipo di evento: vi rispondiamo con una proposta e un prezzo.</p></details>
+  <details><summary>Per quante persone fate il catering?</summary><p>Dal piccolo aperitivo in ufficio al ricevimento: non c'è un minimo, la proposta la facciamo sul vostro numero.</p></details>
+  <details><summary>Piatti, bicchieri e tovaglie chi li porta?</summary><p>Li portiamo noi, come preferite: monouso professionale in materiale eco con tovaglioli di carta, oppure piatti in ceramica, calici in vetro, posate in acciaio e tovagliato di cotone.</p></details>
+  <details><summary>Ci sono vegetariani e un celiaco: come fate?</summary><p>Ogni proposta può avere piatti vegetariani, senza glutine e senza lattosio. Basta scriverlo nel modulo.</p></details>
+  <details><summary>Con quanto anticipo devo chiedere?</summary><p>Prima ci scrivete, meglio è. Per una data vicina chiamateci direttamente al 391 176 1595.</p></details>
+  <details><summary>Possiamo fare l'evento da voi?</summary><p>Sì: la sala delle feste è vetrata e riscaldata, separata dal ristorante, e tiene fino a 48 persone. D'estate c'è anche il giardino.</p></details>
+</div></section>
+
+<section class="form" id="modulo"><div class="wrap">
+  <div><h2 class="hand">Chiedi <em>un preventivo</em></h2><p>Compilate il modulo o scrivete su WhatsApp al 391 176 1595. Vi risponde Claudio con una proposta e il prezzo.</p>
+  <div class="act"><a class="btn" href="https://wa.me/393911761595" target="_blank" rel="noopener">Scrivi su WhatsApp</a><a class="btn" href="mailto:info@albistro.it">Scrivi una email</a></div></div>
+  <form onsubmit="return false">
+    <label>Nome e cognome<input autocomplete="name"></label>
+    <label>Azienda (facoltativo)<input autocomplete="organization"></label>
+    <label>Telefono<input type="tel" autocomplete="tel"></label>
+    <label>Email<input type="email" autocomplete="email"></label>
+    <label>Data dell'evento<input type="date"></label>
+    <label>Numero di persone<input inputmode="numeric" placeholder="per esempio 30"></label>
+    <label>Tipo di evento<select><option>Aperitivo</option><option>Buffet di pranzo</option><option>Ricevimento</option><option>Altro</option></select></label>
+    <label>Dove<select><option>Nella nostra sede</option><option>Da voi, al Bistrò</option></select></label>
+    <label class="full">Note: indirizzo, intolleranze, idee (facoltativo)<textarea rows="3"></textarea></label>
+    <label class="check full"><input type="checkbox" required> <span>Ho letto l'<a href="#">informativa privacy</a> e acconsento al trattamento dei dati per rispondere alla mia richiesta. (obbligatorio)</span></label>
+    <label class="check full"><input type="checkbox"> <span>Acconsento a ricevere comunicazioni su serate ed eventi di Al Bistrò. (facoltativo)</span></label>
+    <button class="btn primary" type="submit">Chiedi un preventivo</button>
+  </form>
+</div></section>
+
+<section class="altri"><div class="wrap"><h2 class="hand">Gli altri <em>servizi</em></h2>
+<div class="vetri">
+  <a class="v" href="caffetteria.html"><img src="foto/a.jpeg" alt=""><h3 class="hand">Caffetteria</h3><span>Dalle 7.30</span></a>
+  <a class="v" href="business-lunch.html"><img src="foto/c.jpeg" alt=""><h3 class="hand">Business Lunch</h3><span>Lun-sab</span></a>
+  <a class="v" href="cene-e-pizza.html"><img src="foto/d.jpeg" alt=""><h3 class="hand">Cena e pizza</h3><span>Ven-sab</span></a>
+  <a class="v" href="assemblee-e-riunioni.html"><img src="foto/wa1.jpeg" alt=""><h3 class="hand">Assemblee e riunioni</h3><span>Lun-gio sera</span></a>
+  <a class="v" href="feste-ed-eventi.html"><img src="foto/wa1.jpeg" alt=""><h3 class="hand">Feste ed eventi</h3><span>Fino a 48</span></a>
+</div></div></section>
+
+<footer><div class="wrap"><div class="cols">
+  <div><img src="foto/logo-bianco.png" alt="Al Bistrò Milano"><p style="margin-top:16px;line-height:1.7">Bar, ristorante e pizzeria<br>Via delle Ande 16, 20151 Milano</p></div>
+  <div><h4>Contatti</h4><ul><li>391 176 1595</li><li>WhatsApp 391 176 1595</li><li>info@albistro.it</li></ul></div>
+  <div class="ore"><h4>Orari</h4><div><span>Lun-gio</span><span>7.30-15.30</span></div><div><span>Ven</span><span>7.30-15.30 · 18.45-22.30</span></div><div><span>Sab</span><span>8.30-15.30 · 18.45-22.30</span></div><div><span>Dom</span><span>chiuso</span></div></div>
+  <div><h4>Seguici</h4><ul><li>Facebook</li><li>Instagram</li></ul></div>
+</div><div class="legal">P.IVA 09975970964 · Privacy · Cookie</div></div></footer>
+<script src="align.js"></script>
+</body></html>
