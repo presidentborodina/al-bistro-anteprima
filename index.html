@@ -42,6 +42,9 @@ em{font-style:normal;color:var(--peach)}
 .ctrl button{background:none;border:0;cursor:pointer;color:#FBF7F1;font:500 14px Syne,sans-serif;display:flex;align-items:center;gap:8px;padding:10px 12px;opacity:.75}
 .ctrl button[aria-pressed=true]{opacity:1;color:var(--peach)}
 .ctrl button i{display:block;width:34px;height:3px;background:currentColor}
+.ctrl #pause{min-width:44px;min-height:44px;justify-content:center}
+.ctrl .pp{width:16px;height:16px;fill:currentColor}
+.ctrl #pause[aria-pressed=true]{color:#FBF7F1}
 /* chi siamo */
 .intro{padding:110px 0}
 .intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
@@ -127,7 +130,7 @@ footer .legal{margin-top:56px;border-top:1px solid var(--edge);padding:18px 0;fo
   .hero{height:620px;min-height:0}
   .slide h1,.slide h2{font-size:50px}.sub{font-size:15px}
   .act{flex-direction:column;width:100%;max-width:340px}
-  .ctrl button span{display:none}
+  .ctrl{gap:4px;bottom:16px}.ctrl button{font-size:13px;gap:6px;padding:10px 8px}.ctrl button i{width:16px}
   .intro,.servizi{padding:64px 0}
   .intro .wrap{grid-template-columns:1fr;gap:36px}.intro h1 .hand{font-size:46px}
   .fixed .in{padding:80px 20px}
@@ -169,7 +172,7 @@ footer .legal{margin-top:56px;border-top:1px solid var(--edge);padding:18px 0;fo
     <div class="txt"><img class="vlogo drop" src="foto/logo-bianco.png" alt=""><h2 class="hand chalk">Feste e <em>catering</em></h2><p class="when drop d2">Sala delle feste fino a 48 persone</p>
     <p class="sub drop d3">Catering dal 2020 nella vostra sede, oppure da noi, con musica fino alle 24.</p>
     <div class="act drop d4"><a class="btn primary" href="catering.html#modulo">Chiedi un preventivo</a><a class="btn ghost" href="feste-ed-eventi.html">La sala</a></div></div></div>
-  <div class="ctrl"><button aria-pressed="true" data-i="0"><i></i><span>Pranzo</span></button><button aria-pressed="false" data-i="1"><i></i><span>Cena</span></button><button aria-pressed="false" data-i="2"><i></i><span>Feste</span></button><button aria-pressed="false" id="pause">Pausa</button></div>
+  <div class="ctrl"><button aria-pressed="true" data-i="0"><i></i><span>Pranzo</span></button><button aria-pressed="false" data-i="1"><i></i><span>Cena</span></button><button aria-pressed="false" data-i="2"><i></i><span>Feste</span></button><button aria-pressed="false" id="pause" aria-label="Ferma lo scorrimento delle immagini" title="Ferma"><svg class="pp" viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="3" width="10" height="10"/></svg></button></div>
 </section>
 
 <section class="intro"><div class="wrap">
@@ -239,7 +242,7 @@ let i=0,t=null;const still=matchMedia('(prefers-reduced-motion: reduce)').matche
 function go(n){s[i].classList.remove('on');b[i].setAttribute('aria-pressed','false');i=n;s[i].classList.add('on');b[i].setAttribute('aria-pressed','true');if(window.chalkPlay)chalkPlay(s[i])}
 function play(){t=setInterval(()=>go((i+1)%s.length),6000)}
 b.forEach(x=>x.onclick=()=>{go(+x.dataset.i);clearInterval(t);if(p.getAttribute('aria-pressed')==='false')play()});
-p.onclick=()=>{const on=p.getAttribute('aria-pressed')==='true';p.setAttribute('aria-pressed',String(!on));p.textContent=on?'Pausa':'Riprendi';on?play():clearInterval(t)};
+p.onclick=()=>{const on=p.getAttribute('aria-pressed')==='true';p.setAttribute('aria-pressed',String(!on));p.querySelector('svg').innerHTML=on?'<rect x="3" y="3" width="10" height="10"/>':'<path d="M4 2.5v11l9.5-5.5z"/>';p.setAttribute('aria-label',on?'Ferma lo scorrimento delle immagini':'Riprendi lo scorrimento delle immagini');p.title=on?'Ferma':'Riprendi';on?play():clearInterval(t)};
 if(!still)play();
 </script>
 <script>
