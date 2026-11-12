@@ -22,3 +22,16 @@ img{display:block;max-width:100%}
 .m-rombini{--img:url(assets/img/motivi/rombini-chiaro.svg);--s:60px}
 .m-arlecchino{--img:url(assets/img/motivi/arlecchino-chiaro.svg);--s:110px}
 .zz{height:30px;background:linear-gradient(rgb(20 20 22 / .8) 0 0),url(assets/img/motivi/zigzag-chiaro.svg) 0 0/34px 30px repeat-x,#141416}
+/* menu in alto: mai a capo; più stretto sui portatili, a pastiglie sotto i 1100 px */
+header.nav li a{white-space:nowrap}
+@media (min-width:901px) and (max-width:1260px){
+  header.nav .wrap{gap:22px}
+  header.nav ul{gap:16px;font-size:14px}
+}
+@media (min-width:901px) and (max-width:1100px){
+  header.nav ul{display:none}
+  header.nav .book{margin-left:auto}
+  nav.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 24px;background:var(--ground);border-bottom:1px solid var(--edge);position:sticky;top:84px;z-index:19;scrollbar-width:none}
+  nav.chips a{flex:0 0 auto;border:1px solid var(--edge);padding:9px 14px;font-size:14px;white-space:nowrap}
+  nav.chips a[aria-current]{border-color:var(--peach);color:var(--peach)}
+}
