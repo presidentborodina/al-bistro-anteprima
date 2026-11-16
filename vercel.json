@@ -1,6 +1,8 @@
 {
   "routes": [
     { "src": "/(.*)", "has": [ { "type": "host", "value": "www.albistro.it" } ], "status": 308, "headers": { "Location": "https://albistro.it/$1" } },
+    { "src": "/(.*)", "has": [ { "type": "host", "value": "albistromilano.it" } ], "status": 308, "headers": { "Location": "https://albistro.it/$1" } },
+    { "src": "/(.*)", "has": [ { "type": "host", "value": "www.albistromilano.it" } ], "status": 308, "headers": { "Location": "https://albistro.it/$1" } },
     { "src": "/(.*)", "missing": [ { "type": "host", "value": "albistro.it" } ], "headers": { "X-Robots-Tag": "noindex, nofollow" }, "continue": true },
     { "src": "/robots\\.txt", "has": [ { "type": "host", "value": "albistro.it" } ], "dest": "/robots-ponte.txt" },
     { "src": "/(?!assets/|foto/|base\\.css$).*", "has": [ { "type": "host", "value": "albistro.it" } ], "dest": "/ponte.html" },
