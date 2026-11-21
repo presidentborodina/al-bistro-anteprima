@@ -82,9 +82,9 @@ footer .ore div span{white-space:nowrap}
 /* la foto non viene animata direttamente (ha un filtro: su Safari l'opacita' animata la fa sfarfallare a fine corsa):
    sopra la foto c'e' un velo del colore di fondo che si dissolve; in home sfuma l'intero riquadro dello slider */
 @keyframes velo-out{from{opacity:1}to{opacity:0}}
-section.head::after{content:"";position:absolute;inset:0;z-index:0;background:var(--ground);pointer-events:none;animation:velo-out 1.1s ease both}
+section.head::before{content:"";position:absolute;inset:0;z-index:1;background:var(--ground);pointer-events:none;animation:velo-out 1.1s ease both}
 .hero{animation:foto-in 1.1s ease both}
 @media (prefers-reduced-motion:reduce){
-  section.head::after{display:none}.hero{animation:none}
+  section.head::before{display:none}.hero{animation:none}
   ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
 }
