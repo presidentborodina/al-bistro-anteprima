@@ -56,6 +56,7 @@
     sr.className = 'chalk-sr';
     sr.textContent = label;
     el.textContent = '';
+    el.classList.add('ck-built');
     el.appendChild(sr);
     el.appendChild(svg);
 
