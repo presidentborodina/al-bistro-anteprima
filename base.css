@@ -68,8 +68,7 @@ a.ftel,a.utel,footer a.fwa{display:inline-flex;align-items:center;gap:8px;color:
 a.ftel svg,a.utel svg,footer a.fwa svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 a.utel svg{width:14px;height:14px}
 a.ftel:hover,a.utel:hover{color:var(--peach)}
-footer a.fwa{border:1px solid var(--edge);padding:8px 16px;margin:8px 0;line-height:1.4}
-footer a.fwa:hover{border-color:var(--peach);color:var(--peach)}
+footer a.fwa:hover{color:var(--peach)}
 /* footer a larghezze intermedie: due colonne, gli orari non vanno a capo */
 footer .ore div span{white-space:nowrap}
 @media (min-width:901px) and (max-width:1320px){body footer .cols{grid-template-columns:1fr 1fr;gap:44px 72px}body footer .ore{max-width:340px}}
