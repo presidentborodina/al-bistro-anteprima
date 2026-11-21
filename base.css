@@ -16,6 +16,8 @@ img{display:block;max-width:100%}
    affiancati su schermo largo, uno sotto l'altro fino a 900 px */
 body .act{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;width:fit-content;max-width:100%}
 @media (max-width:900px){body .act{grid-auto-flow:row;grid-template-columns:1fr;width:100%;max-width:340px}}
+/* accanto al modulo la colonna è stretta: fino a 1320 px i due pulsanti stanno uno sotto l'altro */
+@media (max-width:1320px){body .form .act{grid-auto-flow:row;grid-template-columns:1fr;width:100%;max-width:340px}}
 
 /* Motivi della carta da parati: solo versioni chiare. --o = intensità, --bg = fondo della sezione */
 .mot{--bg:20 20 22;--o:.05;background:linear-gradient(rgb(var(--bg) / calc(1 - var(--o))) 0 0),var(--img) var(--px,0px) var(--py,0px)/var(--s) repeat,rgb(var(--bg))!important}
