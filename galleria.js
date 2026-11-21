@@ -66,6 +66,13 @@
     if (ritorno) ritorno.focus();
   }
 
+  // mosaico: ogni riquadro apre la foto a tutto schermo, e da li' si sfogliano tutte
+  document.querySelectorAll('.mosaico').forEach(function (m) {
+    var b = [].slice.call(m.querySelectorAll('button'));
+    var foto = b.map(function (x) { var im = x.querySelector('img'); return { src: im.getAttribute('src'), alt: im.getAttribute('alt') }; });
+    b.forEach(function (x, k) { x.addEventListener('click', function () { apri(foto, k, null, x); }); });
+  });
+
   document.querySelectorAll('.galleria').forEach(function (g) {
     var main = g.querySelector('.gal-main'), mi = main.querySelector('img');
     var th = [].slice.call(g.querySelectorAll('.gal-thumbs button'));

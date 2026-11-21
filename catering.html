@@ -44,6 +44,12 @@ em{font-style:normal;color:var(--peach)}
 .list b{font-weight:600;color:var(--peach)}
 .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px;border:12px solid #2D2D30;background:#2D2D30}
 .pics img{width:100%;height:460px;object-fit:cover}
+/* una sola foto: alta quanto la colonna di testo accanto */
+.pics.una{display:block;position:relative;align-self:stretch;min-height:460px}
+.pics.una img{position:absolute;inset:0;width:100%;height:100%}
+@media (max-width:900px){.pics.una{min-height:320px}}
+.foto{padding:0 0 90px}.foto h2{font-size:44px;text-align:center;margin-bottom:32px}
+@media (max-width:900px){.foto{padding-bottom:60px}.foto h2{font-size:36px}}
 /* fascia dettagli */
 .band{background:var(--surface);padding:90px 0;position:relative;isolation:isolate}
 .band:before{content:"";position:absolute;inset:0;background:url(assets/img/pattern-bistro.png) center/450px repeat;opacity:.05;z-index:-1}
@@ -148,8 +154,11 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
     <li><b>Intolleranze</b><span>Piatti vegetariani, senza glutine e senza lattosio</span></li>
     <li><b>Prezzo</b><span>Su misura: dipende dal menù, dalle persone e dal servizio</span></li>
   </ul></div>
-  <div class="galleria"><button type="button" class="gal-main" aria-label="Apri la foto a tutto schermo"><img src="foto/reali/image00075-scaled.jpeg" alt="Focacce tagliate a quadrotti per un buffet"></button><div class="gal-thumbs" role="group" aria-label="Scegli la foto"><button type="button" aria-pressed="true" aria-label="Mostra: Focacce tagliate a quadrotti per un buffet"><img src="foto/reali/image00075-scaled.jpeg" alt=""></button><button type="button" aria-pressed="false" aria-label="Mostra: Buffet di verdure, olive e formaggi"><img src="foto/reali/image00082-scaled.jpeg" alt=""></button><button type="button" aria-pressed="false" aria-label="Mostra: Buffet allestito su un banco, con piatti e vassoi"><img src="foto/reali/image00001-scaled.jpeg" alt=""></button><button type="button" aria-pressed="false" aria-label="Mostra: Insalate fredde in vaschette da buffet"><img src="foto/reali/image00067-scaled.jpeg" alt=""></button><button type="button" aria-pressed="false" aria-label="Mostra: Vassoi di caprese e antipasti per un buffet"><img src="foto/reali/image00135-scaled.jpeg" alt=""></button><button type="button" aria-pressed="false" aria-label="Mostra: Finger food di verdure in bicchierini"><img src="foto/reali/image00040-scaled.jpeg" alt=""></button></div></div>
+  <div class="pics una"><img src="foto/reali/image00040-scaled.jpeg" alt="Finger food di verdure in bicchierini"></div>
 </div></section>
+
+<section class="foto"><div class="wrap"><h2 class="hand">I nostri <em>buffet</em></h2>
+<div class="mosaico"><button type="button" class="grande" aria-label="Apri la foto: Buffet allestito su un banco"><img src="foto/reali/image00001-scaled.jpeg" alt="Buffet allestito su un banco" loading="lazy"><span>Buffet allestito su un banco</span></button><button type="button" aria-label="Apri la foto: Focacce a quadrotti"><img src="foto/reali/image00075-scaled.jpeg" alt="Focacce a quadrotti" loading="lazy"><span>Focacce a quadrotti</span></button><button type="button" aria-label="Apri la foto: Verdure, olive e formaggi"><img src="foto/reali/image00082-scaled.jpeg" alt="Verdure, olive e formaggi" loading="lazy"><span>Verdure, olive e formaggi</span></button><button type="button" aria-label="Apri la foto: Insalate fredde"><img src="foto/reali/image00067-scaled.jpeg" alt="Insalate fredde" loading="lazy"><span>Insalate fredde</span></button><button type="button" aria-label="Apri la foto: Caprese e antipasti"><img src="foto/reali/image00135-scaled.jpeg" alt="Caprese e antipasti" loading="lazy"><span>Caprese e antipasti</span></button></div></div></section>
 
 <section class="band mot m-rombini" data-snap="110.6" style="--bg:26 26 28;--o:.05;--s:112.5px 110.6px;--px:16.55px;--py:-19.3px"><div class="wrap">
   <h2 class="hand">Il catering <em>per ogni occasione</em></h2>
