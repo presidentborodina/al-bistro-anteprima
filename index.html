@@ -88,7 +88,7 @@ body .act{margin-inline:auto}body .intro .act{margin-inline:0}body .invito .act{
 .v .go{margin-top:14px;font-size:15px;font-weight:600;color:var(--peach);display:inline-flex;gap:8px;align-items:center}
 .v .go svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
 /* recensioni */
-.quotes{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 80px)/3);gap:40px;max-width:1100px;margin:40px auto 0;text-align:left;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.quotes{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 80px)/3);gap:40px;width:100%;min-width:0;max-width:min(1100px,100%);margin:40px auto 0;text-align:left;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .quotes::-webkit-scrollbar{display:none}
 .quotes blockquote{scroll-snap-align:start}
 .qnav{display:none;justify-content:center;gap:12px;margin-top:26px}
