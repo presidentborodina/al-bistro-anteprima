@@ -41,6 +41,10 @@ em{font-style:normal;color:var(--peach)}
 .list b{font-weight:600;color:var(--peach)}
 .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px;border:12px solid #2D2D30;background:#2D2D30}
 .pics img{width:100%;height:460px;object-fit:cover}
+/* una sola foto: alta quanto la colonna di testo accanto */
+.pics.una{display:block;position:relative;align-self:stretch;min-height:460px}
+.pics.una img{position:absolute;inset:0;width:100%;height:100%}
+@media (max-width:900px){.pics.una{min-height:360px}}
 /* fascia dettagli */
 .band{background:var(--surface);padding:90px 0;position:relative;isolation:isolate}
 .band:before{content:"";position:absolute;inset:0;background:url(assets/img/pattern-bistro.png) center/450px repeat;opacity:.05;z-index:-1}
@@ -145,7 +149,7 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
     <li><b>Dove</b><span>Via delle Ande 16, Gallaratese, Milano.<br>Metro M1 Uruguay a 10 minuti, posti auto in strada.</span></li>
     <li><b>Solo per voi</b><span>Sala riservata all'assemblea, senza altri clienti</span></li>
   </ul></div>
-  <div class="pics" style="grid-template-columns:1fr"><img src="foto/assemblee-sala-ritaglio-2026-11-21.jpg" alt="La sala principale di Al Bistrò con i tavoli"></div>
+  <div class="pics una"><img src="foto/assemblee-sala-2026-11-21.jpg" alt="La sala principale di Al Bistrò con i tavoli" style="object-position:50% 62%"></div>
 </div></section>
 
 <section class="band mot m-rombini" data-snap="110.6" style="--bg:26 26 28;--o:.05;--s:112.5px 110.6px;--px:16.55px;--py:-19.3px"><div class="wrap">
