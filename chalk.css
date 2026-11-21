@@ -3,6 +3,11 @@
    se lo script non parte, dopo 4 secondi il titolo compare comunque */
 .chalk:not(.ck-built){opacity:0;animation:ck-safe .01s 4s forwards}
 @keyframes ck-safe{to{opacity:1}}
+/* prima che la scritta sia costruita il titolo occupa gia' l'altezza finale (righe x 1.12em):
+   cosi' la testata non cambia altezza e la foto di sfondo non si ridimensiona dopo il caricamento */
+.chalk:not(.ck-built){height:1.12em;overflow:hidden}
+.chalk:not(.ck-built):has(br){height:2.24em}
+.chalk:not(.ck-built):has(br ~ br){height:3.36em}
 .chalk-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .chalk-svg{display:block;width:auto;overflow:visible;margin-inline:inherit}
 .center .chalk-svg,.txt .chalk-svg,.servizi .head .chalk-svg,.in .chalk-svg,.chalk.center .chalk-svg{margin-left:auto;margin-right:auto}
