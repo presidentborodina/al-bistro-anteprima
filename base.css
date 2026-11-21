@@ -31,7 +31,7 @@ nav.chips a{display:flex;align-items:center;justify-content:center;text-align:ce
 nav.chips a.due{white-space:normal!important;width:min-content;line-height:1.2}
 header.nav .wrap>a:first-child{display:flex;align-items:center;gap:12px;flex:0 0 auto}
 .claim{display:block;border-left:1px solid #3A3A3E;padding-left:12px;font-size:11px;line-height:1.45;letter-spacing:.1em;text-transform:uppercase;color:#CFC8BE;font-weight:500;white-space:nowrap}
-@media (min-width:901px){header.nav .wrap{gap:20px}header.nav ul{gap:14px;font-size:14px}}
+@media (min-width:901px){header.nav .wrap{gap:20px}header.nav ul{gap:24px;font-size:14px}}
 @media (min-width:901px) and (max-width:1180px){
   header.nav ul{display:none}
   header.nav .book{margin-left:auto}
