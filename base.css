@@ -85,3 +85,10 @@ section.head::before{content:"";position:absolute;inset:0;z-index:1;background:v
 @media (prefers-reduced-motion:reduce){
   section.head::before{display:none}.hero{animation:none}
 }
+/* forno acceso (forno.js): la zona della bocca del forno, ridisegnata dal canvas, e la luce del fuoco che respira */
+.fuoco{position:absolute;pointer-events:none}
+.fuoco canvas{position:absolute;left:22%;top:9%;width:56%;height:49%;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 47% 50%,#000 52%,transparent 96%);mask-image:radial-gradient(ellipse 50% 50% at 47% 50%,#000 52%,transparent 96%)}
+.fuoco i{position:absolute;display:block;mix-blend-mode:screen;will-change:opacity}
+.fuoco .b1{left:10%;top:4%;width:74%;height:60%;background:radial-gradient(ellipse at 44% 30%,rgba(255,158,60,.34),rgba(255,112,32,.15) 36%,transparent 68%);animation:tremolio 3.7s linear infinite}
+.fuoco .b3{left:14%;top:70%;width:66%;height:16%;background:radial-gradient(ellipse at 40% 50%,rgba(255,140,50,.22),transparent 68%);animation:tremolio 2.9s linear infinite}
+@keyframes tremolio{0%{opacity:.5}7%{opacity:.78}13%{opacity:.58}22%{opacity:.95}31%{opacity:.68}40%{opacity:.86}52%{opacity:.46}61%{opacity:.9}70%{opacity:.62}83%{opacity:1}91%{opacity:.7}100%{opacity:.5}}
