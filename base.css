@@ -63,3 +63,10 @@ header.nav .wrap>a:first-child{display:flex;align-items:center;gap:12px;flex:0 0
 @media (max-width:900px){header.nav img{height:48px}}
 footer .cols>div:first-child img{height:120px}
 @media (max-width:900px){footer .cols>div:first-child img{height:50px}}
+/* telefono cliccabile (tel:) e pulsante WhatsApp */
+a.ftel,a.utel,footer a.fwa{display:inline-flex;align-items:center;gap:8px;color:inherit;text-decoration:none}
+a.ftel svg,a.utel svg,footer a.fwa svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+a.utel svg{width:14px;height:14px}
+a.ftel:hover,a.utel:hover{color:var(--peach)}
+footer a.fwa{border:1px solid var(--edge);padding:8px 16px;margin:8px 0;line-height:1.4}
+footer a.fwa:hover{border-color:var(--peach);color:var(--peach)}
