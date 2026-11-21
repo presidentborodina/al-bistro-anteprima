@@ -72,3 +72,5 @@ footer a.fwa:hover{color:var(--peach)}
 /* footer a larghezze intermedie: due colonne, gli orari non vanno a capo */
 footer .ore div span{white-space:nowrap}
 @media (min-width:901px) and (max-width:1320px){body footer .cols{grid-template-columns:1fr 1fr;gap:44px 72px}body footer .ore{max-width:340px}}
+/* telefono: i pulsanti in colonna stanno al centro della pagina */
+@media (max-width:900px){body .act,body .intro .act,body .form .act{margin-inline:auto}}
