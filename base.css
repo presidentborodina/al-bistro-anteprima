@@ -32,7 +32,14 @@ nav.chips a.due{white-space:normal!important;width:min-content;line-height:1.2}
 header.nav .wrap>a:first-child{display:flex;align-items:center;gap:12px;flex:0 0 auto}
 .claim{display:block;border-left:1px solid #3A3A3E;padding-left:12px;font-size:11px;line-height:1.45;letter-spacing:.1em;text-transform:uppercase;color:#CFC8BE;font-weight:500;white-space:nowrap}
 @media (min-width:901px){header.nav .wrap{gap:20px}header.nav ul{gap:24px;font-size:14px}}
-@media (min-width:901px) and (max-width:1180px){
+/* da 1321 px: voci del menu con bordo leggero, come le pastiglie (richiesta del 21/11/2026) */
+@media (min-width:1321px){
+  header.nav ul{gap:8px;align-items:stretch}
+  header.nav li{display:flex}
+  header.nav li a,header.nav li a.due{display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid var(--edge);padding:8px 13px;text-decoration:none}
+  header.nav li a:hover,header.nav li a[aria-current]{border-color:var(--peach);color:var(--peach);text-decoration:none}
+}
+@media (min-width:901px) and (max-width:1320px){
   header.nav ul{display:none}
   header.nav .book{margin-left:auto}
   nav.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 24px;background:var(--ground);border-bottom:1px solid var(--edge);position:sticky;top:84px;z-index:19;scrollbar-width:none}
