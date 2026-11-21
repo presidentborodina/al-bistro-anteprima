@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prova: forno acceso | Al Bistrò</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preload" href="assets/fonts/Syne-Variable.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="assets/fonts/PoiretOne-Regular.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="base.css">
+<style>
+/* PAGINA DI PROVA, non collegata dal sito: tre versioni della foto del forno in testata */
+body{margin:0}
+.nota{padding:14px 20px;font-size:14px;line-height:1.5;color:#D8D2C9;background:#0B0B0C;border-bottom:1px solid var(--edge)}
+.nota b{color:var(--peach);font-weight:600}
+.forno{position:relative;height:min(74vh,640px);min-height:430px;overflow:hidden;container-type:size;background:#141416;display:flex;align-items:flex-end}
+/* il riquadro .foto si comporta come una foto "a riempimento": cosi' fiamme e bagliore restano sempre
+   agganciati allo stesso punto dell'immagine, su telefono e su schermo largo */
+.foto{position:absolute;left:50%;top:50%;width:max(100cqw,calc(100cqh*4/3));aspect-ratio:4/3;transform:translate(-50%,-50%)}
+.foto img{display:block;width:100%;height:100%;filter:brightness(.36) sepia(.45) saturate(1.4) hue-rotate(-10deg)}
+.foto i{position:absolute;display:block;pointer-events:none;mix-blend-mode:screen;will-change:opacity,transform}
+
+/* A · bagliore: la luce calda dentro il forno e il riflesso sul piano respirano in modo irregolare */
+.b1{left:10%;top:4%;width:74%;height:60%;background:radial-gradient(ellipse at 44% 30%,rgba(255,158,60,.55),rgba(255,112,32,.24) 36%,transparent 68%);animation:tremolio 3.7s linear infinite}
+.b2{left:22%;top:8%;width:52%;height:38%;background:radial-gradient(ellipse at 42% 36%,rgba(255,196,96,.42),rgba(255,130,40,.14) 45%,transparent 70%);animation:tremolio 2.3s linear infinite reverse}
+.b3{left:14%;top:70%;width:66%;height:16%;background:radial-gradient(ellipse at 40% 50%,rgba(255,140,50,.30),transparent 68%);animation:tremolio 2.9s linear infinite}
+@keyframes tremolio{0%{opacity:.5}7%{opacity:.78}13%{opacity:.58}22%{opacity:.95}31%{opacity:.68}40%{opacity:.86}52%{opacity:.46}61%{opacity:.9}70%{opacity:.62}83%{opacity:1}91%{opacity:.7}100%{opacity:.5}}
+
+/* B · fiamma viva: lingue di fuoco sopra la fiamma vera della foto, piu' qualche favilla */
+.f{border-radius:50%;transform-origin:30% 80%}
+.f1{left:31%;top:13.5%;width:13%;height:8%;background:radial-gradient(ellipse at 50% 60%,rgba(255,226,140,.85),rgba(255,150,40,.45) 45%,transparent 72%);animation:lingua 1.9s ease-in-out infinite}
+.f2{left:38%;top:14.5%;width:14%;height:9%;background:radial-gradient(ellipse at 45% 55%,rgba(255,210,110,.75),rgba(255,128,30,.4) 48%,transparent 72%);animation:lingua 2.6s ease-in-out infinite reverse}
+.f3{left:45%;top:16%;width:12%;height:8%;background:radial-gradient(ellipse at 50% 55%,rgba(255,190,90,.65),rgba(255,110,24,.34) 50%,transparent 72%);animation:lingua 1.5s ease-in-out infinite .4s}
+.f4{left:34%;top:17%;width:18%;height:7%;background:radial-gradient(ellipse at 50% 50%,rgba(255,170,70,.5),transparent 70%);animation:lingua 3.1s ease-in-out infinite .2s}
+.f5{left:50%;top:18.5%;width:9%;height:6%;background:radial-gradient(ellipse at 50% 55%,rgba(255,200,100,.55),transparent 70%);animation:lingua 2.2s ease-in-out infinite reverse .7s}
+@keyframes lingua{0%{transform:translate(0,0) scale(1,1) rotate(-6deg);opacity:.45}22%{transform:translate(6%,-10%) scale(1.18,.84) rotate(5deg);opacity:.95}47%{transform:translate(-4%,4%) scale(.88,1.12) rotate(-3deg);opacity:.55}71%{transform:translate(9%,-6%) scale(1.24,.9) rotate(8deg);opacity:1}100%{transform:translate(0,0) scale(1,1) rotate(-6deg);opacity:.45}}
+.s{width:.45%;height:.6%;border-radius:50%;background:rgba(255,214,130,.95);opacity:0}
+.s1{left:37%;top:20%;animation:favilla 3.4s linear infinite}
+.s2{left:43%;top:21%;animation:favilla 4.6s linear infinite 1.2s}
+.s3{left:48%;top:22%;animation:favilla 3.9s linear infinite 2.3s}
+.s4{left:40%;top:19%;animation:favilla 5.2s linear infinite 3.1s}
+@keyframes favilla{0%{transform:translate(0,0);opacity:0}8%{opacity:1}60%{opacity:.7}100%{transform:translate(900%,-1400%);opacity:0}}
+
+.forno[data-v="0"] .foto i{display:none}
+.forno[data-v="1"] .f,.forno[data-v="1"] .s{display:none}
+
+.testo{position:relative;z-index:1;width:100%;padding:0 24px 34px;color:#FBF7F1}
+.testo .crumb{font-size:15px;color:#D8D2C9}
+.testo h1{font-family:"Poiret One",sans-serif;font-weight:400;font-size:clamp(42px,6vw,76px);line-height:1.1;margin:8px 0 12px}
+.testo h1 em{font-style:normal;color:var(--peach)}
+.testo p{font-size:16px;line-height:1.55;max-width:60ch;margin:0}
+.scelta{display:grid;gap:10px;padding:22px 20px 8px;max-width:520px;margin:0 auto}
+.scelta button{font:600 16px Syne,sans-serif;min-height:54px;padding:8px 14px;background:none;color:var(--peach);border:2px solid var(--edge);cursor:pointer;text-align:left}
+.scelta button[aria-pressed="true"]{border-color:var(--peach);background:rgba(244,160,124,.1)}
+.scelta small{display:block;font-weight:400;font-size:13px;color:#D8D2C9;margin-top:3px}
+.piede{padding:14px 20px 40px;max-width:520px;margin:0 auto;font-size:14px;line-height:1.55;color:#B9B3AA}
+@media (prefers-reduced-motion:reduce){.foto i{animation:none!important}}
+</style></head><body class="pattern">
+<div class="nota"><b>Pagina di prova.</b> Non è collegata dal sito: serve solo a vedere come verrebbe la foto del forno «acceso». Scegli una versione qui sotto.</div>
+
+<section class="forno" id="forno" data-v="2">
+  <div class="foto"><img src="foto/reali/image00045-scaled.jpeg" alt="Le pizze nel forno">
+    <i class="b1"></i><i class="b2"></i><i class="b3"></i>
+    <i class="f f1"></i><i class="f f2"></i><i class="f f3"></i><i class="f f4"></i><i class="f f5"></i>
+    <i class="s s1"></i><i class="s s2"></i><i class="s s3"></i><i class="s s4"></i>
+  </div>
+  <div class="testo"><p class="crumb">Al Bistrò · Pizza</p><h1>Pizzeria<br><em>al Gallaratese</em>, Milano</h1><p>Pizza sottile e croccante, a lievitazione naturale di 24 ore, cotta nel forno in pietra.</p></div>
+</section>
+
+<div class="scelta" role="group" aria-label="Versione dell'effetto">
+  <button type="button" data-v="0" aria-pressed="false">Foto ferma<small>Com'è adesso sul sito</small></button>
+  <button type="button" data-v="1" aria-pressed="false">A · Bagliore<small>La luce del fuoco tremola dentro il forno e sul piano</small></button>
+  <button type="button" data-v="2" aria-pressed="true">B · Bagliore e fiamma viva<small>In più la fiamma si muove e sale qualche favilla</small></button>
+</div>
+<p class="piede">Le versioni A e B sono effetti disegnati sopra la foto: non pesano e non richiedono altro materiale. La versione più realistica resta un breve video vero del forno acceso, girato con il telefono.</p>
+
+<script>(function(){var f=document.getElementById("forno"),b=document.querySelectorAll(".scelta button");b.forEach(function(x){x.addEventListener("click",function(){f.dataset.v=x.dataset.v;b.forEach(function(y){y.setAttribute("aria-pressed",y===x?"true":"false")})})})})()</script>
+</body></html>
