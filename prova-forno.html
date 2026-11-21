@@ -29,14 +29,20 @@ body{margin:0}
 .testo h1{font-family:"Poiret One",sans-serif;font-weight:400;font-size:clamp(42px,6vw,76px);line-height:1.1;margin:8px 0 12px}
 .testo h1 em{font-style:normal;color:var(--peach)}
 .testo p{font-size:16px;line-height:1.55;max-width:60ch;margin:0}
-.scelta{display:grid;gap:10px;padding:22px 20px 8px;max-width:520px;margin:0 auto}
-.scelta button{font:600 16px Syne,sans-serif;min-height:54px;padding:8px 14px;background:none;color:var(--peach);border:2px solid var(--edge);cursor:pointer;text-align:left}
-.scelta button[aria-pressed="true"]{border-color:var(--peach);background:rgba(244,160,124,.1)}
+.scelta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px 12px;position:sticky;top:0;z-index:5;background:#0B0B0C;border-bottom:1px solid var(--edge)}
+.scelta button{font:600 14px Syne,sans-serif;min-height:52px;padding:6px 6px;background:none;color:var(--peach);border:2px solid var(--edge);cursor:pointer;text-align:center;line-height:1.25}
+.scelta button[aria-pressed="true"]{border-color:var(--peach);background:var(--peach);color:#141416}
 .scelta small{display:block;font-weight:400;font-size:13px;color:#D8D2C9;margin-top:3px}
 .piede{padding:14px 20px 40px;max-width:520px;margin:0 auto;font-size:14px;line-height:1.55;color:#B9B3AA}
 @media (prefers-reduced-motion:reduce){.foto i{animation:none!important}}
 </style></head><body class="pattern">
-<div class="nota"><b>Pagina di prova.</b> Non è collegata dal sito: serve solo a vedere come verrebbe la foto del forno «acceso». Scegli una versione qui sotto.</div>
+<div class="nota"><b>Pagina di prova.</b> Non è collegata dal sito: serve solo a vedere come verrebbe la foto del forno «acceso». Tocca uno dei tre pulsanti qui sotto per cambiare versione.</div>
+
+<div class="scelta" role="group" aria-label="Versione dell'effetto">
+  <button type="button" data-v="0" aria-pressed="false">Ferma</button>
+  <button type="button" data-v="1" aria-pressed="true">Animata leggera</button>
+  <button type="button" data-v="2" aria-pressed="false">Animata più viva</button>
+</div>
 
 <section class="forno" id="forno" data-v="1">
   <div class="foto"><img id="fotoForno" src="foto/reali/image00045-scaled.jpeg" alt="Le pizze nel forno">
@@ -46,11 +52,6 @@ body{margin:0}
   <div class="testo"><p class="crumb">Al Bistrò · Pizza</p><h1>Pizzeria<br><em>al Gallaratese</em>, Milano</h1><p>Pizza sottile e croccante, a lievitazione naturale di 24 ore, cotta nel forno in pietra.</p></div>
 </section>
 
-<div class="scelta" role="group" aria-label="Versione dell'effetto">
-  <button type="button" data-v="0" aria-pressed="false">Foto ferma<small>Com'è adesso sul sito</small></button>
-  <button type="button" data-v="1" aria-pressed="true">Foto animata · leggera<small>La fiamma della foto ondeggia e l'aria calda vibra appena</small></button>
-  <button type="button" data-v="2" aria-pressed="false">Foto animata · più viva<small>Stesso movimento, più ampio e più luminoso</small></button>
-</div>
 <p class="piede">Qui è la foto stessa a muoversi: la zona della fiamma e dell'interno del forno viene ridisegnata di continuo, deformata come fa il calore. Non servono altri materiali. La versione più realistica resta un breve video vero del forno acceso.</p>
 
 <script>
