@@ -1,5 +1,5 @@
-@font-face{font-family:"Syne";src:url(assets/fonts/Syne-Variable.ttf) format("truetype");font-weight:400 800;font-display:swap}
-@font-face{font-family:"Poiret One";src:url(assets/fonts/PoiretOne-Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Syne";src:url(assets/fonts/Syne-Variable.ttf) format("truetype");font-weight:400 800;font-display:block}
+@font-face{font-family:"Poiret One";src:url(assets/fonts/PoiretOne-Regular.ttf) format("truetype");font-weight:400;font-display:block}
 :root{
   --ground:#141416;--ground-2:#1A1A1C;--surface:#222224;--edge:#2D2D30;
   --peach:#F4A07C;--peach-deep:#E8875E;--ink:#EDE6DD;--muted:#B4B0AA;--quiet:#8E8E92;
