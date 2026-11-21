@@ -1,12 +1,15 @@
 /* Forno acceso: la foto del forno in testata si muove, in modo leggero e continuo.
-   Si attiva sulle immagini con l'attributo data-fuoco (la foto image00045, 4:3).
+   Si attiva sulle immagini con l'attributo data-fuoco (la foto image00045, 4:3): testate di Pizza e della sera,
+   diapositiva Pizza dello slider in home.
    Un canvas ridisegna i pixel veri della foto nella zona della bocca del forno, deformandoli a onde
    (piu' ampie nella fascia della fiamma); i bordi sfumano nella foto ferma. Stili in base.css (.fuoco).
    Con "riduci movimento" attivo non parte e la foto resta ferma. */
 (function () {
-  var img = document.querySelector('img[data-fuoco]');
-  if (!img || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var sec = img.parentElement;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('img[data-fuoco]').forEach(accendi);
+
+  function accendi(img) {
+  var sec = img.parentElement; // la testata della pagina, oppure una diapositiva dello slider in home
   var box = document.createElement('div');
   box.className = 'fuoco';
   box.setAttribute('aria-hidden', 'true');
@@ -15,14 +18,16 @@
   var cv = box.firstChild, ctx = cv.getContext('2d');
   cv.style.filter = getComputedStyle(img).filter; // stesso scurimento della foto
 
-  // il riquadro .fuoco ricalca la foto "a riempimento" (object-fit: cover, centrata)
+  // il riquadro .fuoco ricalca la foto "a riempimento" (object-fit: cover), rispettando object-position
   function posa() {
     if (!img.naturalWidth) return;
     var W = sec.clientWidth, H = sec.clientHeight;
     var s = Math.max(W / img.naturalWidth, H / img.naturalHeight);
     var dw = img.naturalWidth * s, dh = img.naturalHeight * s;
-    box.style.left = (W - dw) / 2 + 'px';
-    box.style.top = (H - dh) / 2 + 'px';
+    var op = getComputedStyle(img).objectPosition.split(' '), px = parseFloat(op[0]) / 100, py = parseFloat(op[1]) / 100;
+    if (isNaN(px)) px = .5; if (isNaN(py)) py = .5;
+    box.style.left = (W - dw) * px + 'px';
+    box.style.top = (H - dh) * py + 'px';
     box.style.width = dw + 'px';
     box.style.height = dh + 'px';
   }
@@ -37,6 +42,7 @@
   function disegna(ms) {
     requestAnimationFrame(disegna);
     if (!visibile || document.hidden || !img.complete || !img.naturalWidth) return;
+    if (sec.classList.contains('slide') && !sec.classList.contains('on')) return; // diapositiva non in vista
     if (ms - ultimo < 33) return; // circa 30 fotogrammi al secondo
     ultimo = ms;
     var t = ms / 1000;
@@ -58,4 +64,5 @@
     ctx.drawImage(cv, 0, 0, W, fh, 0, 0, W, fh);
   }
   requestAnimationFrame(disegna);
+  }
 })();
