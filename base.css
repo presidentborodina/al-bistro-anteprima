@@ -157,5 +157,5 @@ body .map.aperta,body .map-ph.aperta{padding:0;display:block}
 /* logo della testata: si accende come un'insegna al neon, una volta per visita
    (la classe "gia" su <html> la mette lo script in testa alle pagine dalla seconda pagina in poi) */
 @keyframes insegna{0%{opacity:0;filter:none}6%{opacity:.9;filter:drop-shadow(0 0 10px rgba(244,160,124,.9))}9%{opacity:.1}14%{opacity:.8}17%{opacity:.15}30%{opacity:.2}34%{opacity:1;filter:drop-shadow(0 0 16px rgba(244,160,124,1))}38%{opacity:.4}46%{opacity:1}70%{opacity:1;filter:drop-shadow(0 0 16px rgba(244,160,124,.9))}100%{opacity:1;filter:drop-shadow(0 0 0 rgba(244,160,124,0))}}
-html:not(.gia) header.nav .wrap>a:first-child img{animation:insegna 1.9s linear .25s both}
+html:not(.gia) header.nav .wrap>a:first-child img{animation:insegna 3.6s linear .3s both}
 @media (prefers-reduced-motion:reduce){html:not(.gia) header.nav .wrap>a:first-child img{animation:none}}
