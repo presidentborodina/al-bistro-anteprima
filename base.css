@@ -159,3 +159,8 @@ body .map.aperta,body .map-ph.aperta{padding:0;display:block}
 @keyframes insegna{0%{opacity:0;filter:none}6%{opacity:.9;filter:drop-shadow(0 0 10px rgba(244,160,124,.9))}9%{opacity:.1}14%{opacity:.8}17%{opacity:.15}30%{opacity:.2}34%{opacity:1;filter:drop-shadow(0 0 16px rgba(244,160,124,1))}38%{opacity:.4}46%{opacity:1}70%{opacity:1;filter:drop-shadow(0 0 16px rgba(244,160,124,.9))}100%{opacity:1;filter:drop-shadow(0 0 0 rgba(244,160,124,0))}}
 html:not(.gia) header.nav .wrap>a:first-child img{animation:insegna 3.6s linear .3s both}
 @media (prefers-reduced-motion:reduce){html:not(.gia) header.nav .wrap>a:first-child img{animation:none}}
+/* selettore della lingua: EN/IT nella barra in alto (visibile anche su telefono) e nel footer */
+.util a.lingua{font-weight:600;border:1px solid var(--edge);padding:2px 8px}
+.util a.lingua:hover{border-color:var(--peach);color:var(--peach)}
+@media (max-width:900px){body .util .sp{display:flex;margin-left:auto}body .util .sp>:not(.lingua){display:none}}
+footer .legal a.lingua{margin-left:14px;text-decoration:underline;text-underline-offset:3px}

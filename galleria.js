@@ -7,6 +7,7 @@
    Le foto e le didascalie si leggono dalle miniature: per aggiungerne una basta un altro <button>. */
 (function () {
   var lb, lbImg, lbCap, lista = [], pos = 0, alCambio = null, ritorno = null;
+  var EN = document.documentElement.lang === 'en';
 
   function creaLb() {
     lb = document.createElement('div');
@@ -14,11 +15,11 @@
     lb.hidden = true;
     lb.setAttribute('role', 'dialog');
     lb.setAttribute('aria-modal', 'true');
-    lb.setAttribute('aria-label', 'Foto a tutto schermo');
-    lb.innerHTML = '<button type="button" class="lb-x" aria-label="Chiudi">&times;</button>' +
-      '<button type="button" class="lb-p" aria-label="Foto precedente">&lsaquo;</button>' +
+    lb.setAttribute('aria-label', (EN ? 'Full-screen photo' : 'Foto a tutto schermo'));
+    lb.innerHTML = '<button type="button" class="lb-x" aria-label="' + (EN ? 'Close' : 'Chiudi') + '">&times;</button>' +
+      '<button type="button" class="lb-p" aria-label="' + (EN ? 'Previous photo' : 'Foto precedente') + '">&lsaquo;</button>' +
       '<img alt="">' +
-      '<button type="button" class="lb-n" aria-label="Foto successiva">&rsaquo;</button>' +
+      '<button type="button" class="lb-n" aria-label="' + (EN ? 'Next photo' : 'Foto successiva') + '">&rsaquo;</button>' +
       '<p class="lb-c"></p>';
     document.body.appendChild(lb);
     lbImg = lb.querySelector('img');
@@ -47,7 +48,7 @@
     pos = (n + lista.length) % lista.length;
     lbImg.src = lista[pos].src;
     lbImg.alt = lista[pos].alt;
-    lbCap.textContent = lista[pos].alt + ' · ' + (pos + 1) + ' di ' + lista.length;
+    lbCap.textContent = lista[pos].alt + ' · ' + (pos + 1) + (EN ? ' of ' : ' di ') + lista.length;
     if (alCambio) alCambio(pos);
   }
 
