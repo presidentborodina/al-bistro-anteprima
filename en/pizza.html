@@ -199,6 +199,7 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
 .pl b{order:2;font-variant-numeric:tabular-nums;color:var(--peach);font-weight:600}
 .pl small{display:block;font-size:14.5px;line-height:1.5;color:#B4B0AA;margin-top:4px}
 .pl i,.sub i{font-style:normal;color:var(--peach)}
+@media (max-width:900px){.pzcol .fx.vuoto{display:none}}
 .pzfoto{margin-top:30px;border:10px solid #2D2D30}
 .pzfoto img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 @media (max-width:900px){.pz{grid-template-columns:1fr;gap:0}.pzcol .fx{margin-top:34px}.pzfoto img{height:auto;aspect-ratio:16/9}}@media (max-width:900px){
@@ -235,9 +236,6 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
         <li><p><span>Marinara</span><b>€&nbsp;10</b></p><small>garlic, oregano, extra virgin olive oil · no mozzarella</small></li>
         <li><p><span>Siciliana</span><b>€&nbsp;10</b></p><small>anchovies, capers, oregano · no mozzarella</small></li>
         <li><p><span>Napoli</span><b>€&nbsp;10</b></p><small>anchovies, oregano</small></li>
-      </ul>
-      <h3 class="fx">€&nbsp;12</h3>
-      <ul class="pl">
         <li><p><span>Romana</span><b>€&nbsp;12</b></p><small>anchovies, capers, black olives, oregano</small></li>
         <li><p><span>Funghi (mushrooms)</span><b>€&nbsp;12</b></p><small>button mushrooms</small></li>
         <li><p><span>Tonno e cipolla (tuna and onion)</span><b>€&nbsp;12</b></p><small>tuna, Tropea red onion</small></li>
@@ -258,7 +256,7 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
       </ul>
     </div>
     <div class="pzcol">
-      <h3 class="fx">€&nbsp;13</h3>
+      <h3 class="fx vuoto" aria-hidden="true">&nbsp;</h3>
       <ul class="pl">
         <li><p><span>Prosciutto crudo (Parma ham)</span><b>€&nbsp;13</b></p><small>PDO Parma ham</small></li>
         <li><p><span>Zola</span><b>€&nbsp;13</b></p><small>PGI gorgonzola</small></li>
