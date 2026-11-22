@@ -76,7 +76,7 @@ footer .ore div span{white-space:nowrap}
 @media (max-width:900px){body .act,body .intro .act,body .form .act{margin-inline:auto}}
 
 /* passaggio morbido da una pagina all'altra (dove il browser lo consente) e comparsa sfumata delle foto di testata */
-@keyframes foto-in{from{opacity:0}to{opacity:1}}
+@keyframes foto-in{from{opacity:.01}to{opacity:1}}
 /* la foto non viene animata direttamente (ha un filtro: su Safari l'opacita' animata la fa sfarfallare a fine corsa):
    sopra la foto c'e' un velo del colore di fondo che si dissolve; in home sfuma l'intero riquadro dello slider */
 @keyframes velo-out{from{opacity:1}to{opacity:0}}
