@@ -41,6 +41,8 @@ em{font-style:normal;color:var(--peach)}
 .list b{font-weight:600;color:var(--peach)}
 .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px;border:12px solid #2D2D30;background:#2D2D30}
 .pics img{width:100%;height:460px;object-fit:cover}
+/* telefono: dopo il menu, le foto vengono prima del testo descrittivo, per staccare dall'elenco */
+@media (max-width:900px){.breve .pics{order:-1}.breve{border-top:1px solid var(--edge)}}
 /* fascia dettagli */
 .band{background:var(--surface);padding:90px 0;position:relative;isolation:isolate}
 .band:before{content:"";position:absolute;inset:0;background:url(assets/img/pattern-bistro.png) center/450px repeat;opacity:.05;z-index:-1}
