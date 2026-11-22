@@ -31,7 +31,7 @@
     box.style.width = dw + 'px';
     box.style.height = dh + 'px';
   }
-  if (img.complete) posa(); else img.addEventListener('load', posa);
+  posa(); img.addEventListener('load', posa); // la foto puo' arrivare dopo (slider della home)
   if (window.ResizeObserver) new ResizeObserver(posa).observe(sec); else addEventListener('resize', posa);
 
   // zona della foto ridisegnata (stesse percentuali del canvas nel CSS): x 22-78%, y 9-58%

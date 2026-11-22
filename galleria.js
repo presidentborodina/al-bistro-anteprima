@@ -91,6 +91,7 @@
       setTimeout(function () {
         var fatto = function () { main.classList.remove('cambia'); };
         mi.onload = fatto;
+        mi.removeAttribute('srcset'); // le versioni leggere valgono solo per la prima foto
         mi.src = foto[i].src;
         mi.alt = foto[i].alt;
         if (mi.complete) fatto();
