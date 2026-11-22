@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prova: logo animato | Al Bistrò</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preload" href="assets/fonts/Syne-Variable.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="base.css">
+<style>
+/* PAGINA DI PROVA, non collegata dal sito: tre proposte di logo che si compone all'apertura */
+body{margin:0}
+.nota{padding:14px 20px;font-size:14px;line-height:1.5;color:#D8D2C9;background:#0B0B0C;border-bottom:1px solid var(--edge)}
+.nota b{color:var(--peach);font-weight:600}
+.prova{padding:34px 20px 10px;text-align:center}
+.prova h2{font:700 13px Syne,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--peach);margin:0}
+.prova p{font-size:14px;line-height:1.5;color:#D8D2C9;max-width:56ch;margin:8px auto 0}
+.scena{display:grid;place-items:center;height:min(62vh,430px);margin:18px auto 0;max-width:900px;background:#141416;border:1px solid var(--edge);overflow:hidden}
+.rivedi{margin:14px auto 0;font:600 15px Syne,sans-serif;min-height:46px;padding:0 22px;background:none;color:var(--peach);border:2px solid var(--peach);cursor:pointer}
+
+/* il logo e' un riquadro 810x639 (le misure del file): tutti i pezzi sono lo stesso file, ritagliato */
+.logo{position:relative;width:min(70vw,360px);aspect-ratio:810/639}
+.logo i,.logo .intero{position:absolute;inset:0;background:url(foto/logo-bianco.png) center/100% 100% no-repeat}
+.logo svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.logo svg path{fill:none;stroke:#fff;stroke-width:17;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.logo .intero{opacity:0}
+
+/* A · si compone come il logo Obicon: la cornice si disegna, le lettere arrivano una dopo l'altra, bagliore finale */
+.a.vai svg path{animation:disegna 1.25s cubic-bezier(.6,0,.2,1) .15s forwards}
+.a i{opacity:0;transform:translateY(22%)}
+.a.vai i{animation:lettera .55s cubic-bezier(.2,.8,.2,1) forwards}
+.a.vai .intero{animation:compare .3s linear 2.05s forwards}
+.a.vai svg{animation:sparisce .3s linear 2.05s forwards}
+.a.vai{animation:bagliore 1s ease-out 1.85s}
+@keyframes disegna{to{stroke-dashoffset:0}}
+@keyframes lettera{to{opacity:1;transform:none}}
+@keyframes compare{to{opacity:1}}
+@keyframes sparisce{to{opacity:0}}
+@keyframes bagliore{0%{filter:drop-shadow(0 0 0 rgba(244,160,124,0))}35%{filter:drop-shadow(0 0 26px rgba(244,160,124,.95))}100%{filter:drop-shadow(0 0 0 rgba(244,160,124,0))}}
+
+/* B · l'insegna si accende: tremolio da neon, poi resta accesa con un alone */
+.b .intero{opacity:0}
+.b.vai .intero{animation:neon 1.9s linear .2s forwards}
+@keyframes neon{0%{opacity:0;filter:none}6%{opacity:.9;filter:drop-shadow(0 0 14px rgba(244,160,124,.9))}9%{opacity:.1}14%{opacity:.8}17%{opacity:.15}30%{opacity:.2}34%{opacity:1;filter:drop-shadow(0 0 22px rgba(244,160,124,1))}38%{opacity:.4}46%{opacity:1}70%{opacity:1;filter:drop-shadow(0 0 22px rgba(244,160,124,.9))}100%{opacity:1;filter:drop-shadow(0 0 7px rgba(244,160,124,.35))}}
+
+/* C · dalla forchetta: prima la forchetta, poi il nome si apre ai due lati, infine la cornice */
+.c i{opacity:0}
+.c.vai .forchetta{animation:forchetta .6s cubic-bezier(.2,.8,.2,1) .1s forwards}
+.c.vai .sx{animation:apri-sx .7s cubic-bezier(.2,.8,.2,1) .6s forwards}
+.c.vai .dx{animation:apri-dx .9s cubic-bezier(.2,.8,.2,1) .6s forwards}
+.c.vai .piccolo{animation:compare .5s ease 1.35s forwards}
+.c.vai svg path{animation:disegna 1.1s cubic-bezier(.6,0,.2,1) 1.2s forwards}
+.c.vai .intero{animation:compare .3s linear 2.35s forwards}
+.c.vai svg{animation:sparisce .3s linear 2.35s forwards}
+@keyframes forchetta{from{opacity:0;transform:translateY(-30%)}to{opacity:1;transform:none}}
+@keyframes apri-sx{from{opacity:0;transform:translateX(12%)}to{opacity:1;transform:none}}
+@keyframes apri-dx{from{opacity:0;transform:translateX(-12%)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){.logo *,.logo{animation:none!important}.logo .intero{opacity:1}.logo i,.logo svg{display:none}}
+</style></head><body class="pattern">
+<div class="nota"><b>Pagina di prova.</b> Non è collegata dal sito. Tre modi in cui il logo può comporsi all'apertura della home, prima che compaia la pagina. Tocca «Rivedi» per farlo ripartire.</div>
+
+<section class="prova"><h2>Proposta A · come Obicon</h2><p>La cornice si disegna da sola, le lettere arrivano una dopo l'altra da sinistra, poi «al» e «Milano», e un bagliore chiude.</p>
+<div class="scena"><div class="logo a" data-tipo="a"></div></div><button class="rivedi" type="button">Rivedi</button></section>
+
+<section class="prova"><h2>Proposta B · l'insegna si accende</h2><p>Il logo intero tremola come un'insegna al neon che parte, poi resta acceso con un alone caldo.</p>
+<div class="scena"><div class="logo b" data-tipo="b"></div></div><button class="rivedi" type="button">Rivedi</button></section>
+
+<section class="prova" style="padding-bottom:48px"><h2>Proposta C · dalla forchetta</h2><p>Prima cade la forchetta al centro, poi il nome si apre ai due lati, infine la cornice si chiude intorno.</p>
+<div class="scena"><div class="logo c" data-tipo="c"></div></div><button class="rivedi" type="button">Rivedi</button></section>
+
+<script>
+(function(){
+  var W=810,H=639;
+  // ritaglio di una zona del logo, in pixel del file
+  function pezzo(x0,x1,y0,y1,cls,ritardo){
+    var i=document.createElement('i');
+    i.style.clipPath='inset('+(y0/H*100)+'% '+((W-x1)/W*100)+'% '+((H-y1)/H*100)+'% '+(x0/W*100)+'%)';
+    if(cls)i.className=cls;
+    if(ritardo!=null)i.style.animationDelay=ritardo+'s';
+    return i;
+  }
+  var cornice='<svg viewBox="0 0 810 639" aria-hidden="true"><path pathLength="1" d="M405 15 L795 191 L795 448 L405 623 L12 448 L12 191 Z"/></svg>';
+  // colonne delle lettere nel file: B, forchetta, S, T, R, O (con l'accento)
+  var lettere=[[104,214],[216,270],[272,382],[384,489],[491,600],[602,745]];
+  document.querySelectorAll('.logo').forEach(function(l){
+    var t=l.dataset.tipo;
+    if(t==='a'){
+      l.insertAdjacentHTML('beforeend',cornice);
+      lettere.forEach(function(c,k){ l.appendChild(pezzo(c[0],c[1],k===1?140:228,406,'',0.55+k*0.11)); });
+      l.appendChild(pezzo(100,214,140,227,'',1.3));     // «al»
+      l.appendChild(pezzo(270,560,407,490,'',1.42));    // «Milano»
+    }
+    if(t==='c'){
+      l.insertAdjacentHTML('beforeend',cornice);
+      l.appendChild(pezzo(216,270,140,406,'forchetta'));
+      l.appendChild(pezzo(104,214,228,406,'sx'));
+      l.appendChild(pezzo(272,745,228,406,'dx'));
+      l.appendChild(pezzo(100,214,140,227,'piccolo'));
+      l.appendChild(pezzo(270,560,407,490,'piccolo'));
+    }
+    var intero=document.createElement('div'); intero.className='intero'; l.appendChild(intero);
+    var vai=function(){ l.classList.remove('vai'); void l.offsetWidth; l.classList.add('vai'); };
+    l.closest('.prova').querySelector('.rivedi').addEventListener('click',vai);
+    if(window.IntersectionObserver){ var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ vai(); io.disconnect(); } },{threshold:.5}); io.observe(l); } else vai();
+  });
+})();
+</script>
+</body></html>
