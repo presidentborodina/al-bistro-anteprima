@@ -148,3 +148,8 @@ body .map.aperta,body .map-ph.aperta{padding:0;display:block}
 /* prezzi dei listini: cifra e simbolo non vanno mai a capo */
 .br b,.pl b,.dl b,.rows b{white-space:nowrap}
 .br li{gap:10px}
+/* aperto/chiuso nella barra in alto (orari.js): nascosto finche' non e' calcolato, grigio quando e' chiuso */
+.util .dot:not([data-ok]){visibility:hidden}
+.util .dot.chiuso{color:#B9B3AA}
+.util .dot.chiuso::before{background:#77736D}
+.util .riapre{color:#B9B3AA}
