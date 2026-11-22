@@ -164,3 +164,7 @@ html:not(.gia) header.nav .wrap>a:first-child img{animation:insegna 3.6s linear 
 .util a.lingua:hover{border-color:var(--peach);color:var(--peach)}
 @media (max-width:900px){body .util .sp{display:flex;margin-left:auto}body .util .sp>:not(.lingua){display:none}}
 footer .legal a.lingua{margin-left:14px;text-decoration:underline;text-underline-offset:3px}
+
+/* barra in alto: niente a capo; sotto 1320 px l'orario di riapertura si legge solo passando sopra la scritta */
+.util .wrap>*,.util .sp>*{white-space:nowrap}
+@media (max-width:1320px){.util .riapre{display:none!important}}
