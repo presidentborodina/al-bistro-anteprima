@@ -85,6 +85,15 @@
       x.addEventListener('click', function () { apri(foto, k, null, x); });
       x.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); apri(foto, k, null, x); } });
     });
+    if (im.length > 4) {                      // le foto in piu': un'etichetta "+N foto" che apre la prima nascosta
+      var piu = document.createElement('button');
+      piu.type = 'button';
+      piu.className = 'pics-piu';
+      piu.textContent = '+' + (im.length - 4) + (EN ? (im.length - 4 === 1 ? ' photo' : ' photos') : ' foto');
+      piu.setAttribute('aria-label', EN ? 'See the other photos' : 'Guarda le altre foto');
+      piu.addEventListener('click', function () { apri(foto, 4, null, piu); });
+      box.appendChild(piu);
+    }
   });
 
   // foto a coppie (.pics.scorri): due visibili alla volta; con piu' di due compaiono le frecce e scorrono da sole.

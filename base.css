@@ -194,4 +194,6 @@ footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3p
 .pics.collage:has(img:nth-child(4)) img:nth-child(4){grid-column:2/4}
 .pics.collage img:nth-child(n+5){display:none}
 .pics.collage img:focus-visible{outline:2px solid var(--peach);outline-offset:-2px}
-@media (max-width:900px){.pics.collage{grid-template-rows:170px 170px}}
+@media (max-width:900px){.pics.collage{grid-template-rows:170px 170px}}.pics.collage{position:relative}
+.pics-piu{position:absolute;right:10px;bottom:10px;padding:9px 14px;border:1px solid var(--edge);background:rgba(11,11,12,.82);color:#FBF7F1;font:600 13px/1 Syne,sans-serif;letter-spacing:.06em;cursor:pointer}
+.pics-piu:hover,.pics-piu:focus-visible{border-color:var(--peach);color:var(--peach)}
