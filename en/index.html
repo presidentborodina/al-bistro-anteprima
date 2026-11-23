@@ -257,7 +257,7 @@ footer .legal{margin-top:56px;border-top:1px solid var(--edge);padding:18px 0;fo
 const s=[...document.querySelectorAll('.slide')],b=[...document.querySelectorAll('.ctrl button[data-i]')],p=document.getElementById('pause');
 let i=0,t=null;const still=matchMedia('(prefers-reduced-motion: reduce)').matches||location.hash==='#still';
 function go(n){s[i].classList.remove('on');b[i].setAttribute('aria-pressed','false');i=n;s[i].classList.add('on');b[i].setAttribute('aria-pressed','true');if(window.chalkPlay)chalkPlay(s[i])}
-function play(){t=setInterval(()=>{const n=(i+1)%s.length,m=s[n].querySelector('img');if(m&&!(m.complete&&m.naturalWidth))return;go(n)},4000)}
+function play(){t=setInterval(()=>{const n=(i+1)%s.length,m=s[n].querySelector('img');if(m&&!(m.complete&&m.naturalWidth))return;go(n)},5000)}
 // le foto delle altre diapositive si scaricano dopo il caricamento della pagina (la build mette data-src al posto di src)
 function altre(){document.querySelectorAll('.slide img[data-src]').forEach(m=>{if(m.dataset.srcset){m.sizes=m.dataset.sizes;m.srcset=m.dataset.srcset}m.src=m.dataset.src;m.removeAttribute('data-src')})}
 if(document.readyState==='complete')altre();else addEventListener('load',altre);
