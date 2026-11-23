@@ -207,3 +207,11 @@ footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3p
 .mosaico.m10 button.grande{grid-column:span 10}
 .mosaico.m10 button.bassa{grid-column:span 4;aspect-ratio:3/4}
 @media (max-width:700px){.mosaico.m10{grid-template-columns:1fr 1fr}.mosaico.m10 button,.mosaico.m10 button.bassa{grid-column:auto}.mosaico.m10 button.grande,.mosaico.m10 button.bassa:last-child{grid-column:span 2;aspect-ratio:4/3}}
+/* sezione delle foto a mosaico (tutte le pagine) e mosaico da otto: una grande, quattro piccole, sotto tre larghe */
+.piatti{padding:0 0 96px}.piatti h2{font-size:52px;margin-bottom:30px}
+@media (max-width:900px){.piatti{padding-bottom:60px}.piatti h2{font-size:38px;margin-bottom:22px}}
+.mosaico.m8{grid-template-columns:repeat(12,1fr)}
+.mosaico.m8 button{grid-column:span 3}
+.mosaico.m8 button.grande{grid-column:span 6}
+.mosaico.m8 button.larga{grid-column:span 4}
+@media (max-width:700px){.mosaico.m8{grid-template-columns:1fr 1fr}.mosaico.m8 button,.mosaico.m8 button.larga{grid-column:auto}.mosaico.m8 button.grande,.mosaico.m8 button.larga:last-child{grid-column:span 2}}
