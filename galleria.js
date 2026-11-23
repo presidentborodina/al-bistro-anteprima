@@ -74,6 +74,43 @@
     b.forEach(function (x, k) { x.addEventListener('click', function () { apri(foto, k, null, x); }); });
   });
 
+  // foto a coppie (.pics.scorri): due visibili alla volta; con piu' di due compaiono le frecce e scorrono da sole.
+  // Per aggiungere una foto basta un altro <img> dentro .pics-t.
+  document.querySelectorAll('.pics.scorri').forEach(function (box) {
+    var t = box.querySelector('.pics-t'), im = [].slice.call(t.querySelectorAll('img'));
+    var foto = im.map(function (x) { return { src: x.getAttribute('src') || x.getAttribute('data-src'), alt: x.getAttribute('alt') }; });
+    var i = 0, max = Math.max(0, im.length - 2), auto = true, vis = true;
+    function vaiA(n) {
+      i = n > max ? 0 : (n < 0 ? max : n);
+      t.style.transform = 'translateX(calc(' + i + ' * (-50% - 6px)))';
+    }
+    im.forEach(function (x, k) {
+      x.tabIndex = 0;
+      x.setAttribute('role', 'button');
+      function apriFoto() { auto = false; apri(foto, k, null, x); }
+      x.addEventListener('click', apriFoto);
+      x.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); apriFoto(); } });
+    });
+    if (max < 1) return;
+    [['pics-p', '&lsaquo;', EN ? 'Previous photos' : 'Foto precedenti', -1], ['pics-n', '&rsaquo;', EN ? 'Next photos' : 'Foto successive', 1]].forEach(function (d) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = d[0]; b.innerHTML = d[1]; b.setAttribute('aria-label', d[2]);
+      b.addEventListener('click', function () { auto = false; vaiA(i + d[3]); });
+      box.appendChild(b);
+    });
+    var x0 = null;
+    box.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 40) { auto = false; vaiA(i + (dx < 0 ? 1 : -1)); }
+    }, { passive: true });
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (window.IntersectionObserver) new IntersectionObserver(function (e) { vis = e[0].isIntersecting; }).observe(box);
+      setInterval(function () { if (auto && vis && !document.hidden && (!lb || lb.hidden)) vaiA(i + 1); }, 5000);
+    }
+  });
+
   document.querySelectorAll('.galleria').forEach(function (g) {
     var main = g.querySelector('.gal-main'), mi = main.querySelector('img');
     var th = [].slice.call(g.querySelectorAll('.gal-thumbs button'));

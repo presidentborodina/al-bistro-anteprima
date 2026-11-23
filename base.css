@@ -176,3 +176,12 @@ footer .legal a.lingua{margin-left:14px;text-decoration:underline;text-underline
 footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 /* telefoni molto stretti: i pulsanti lunghi vanno a capo e i drink stanno su una colonna */
 @media (max-width:380px){body .btn{white-space:normal;text-align:center;padding:10px 16px;font-size:16px;line-height:1.25}body .br{grid-template-columns:1fr}}
+/* foto che scorrono a coppie (galleria.js): due foto visibili, frecce e scorrimento automatico se sono piu' di due, clic = tutto schermo */
+.pics.scorri{display:block;position:relative;overflow:hidden}
+.pics-t{display:flex;gap:12px;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.pics .pics-t img{flex:0 0 calc(50% - 6px);width:calc(50% - 6px);min-width:0;cursor:zoom-in}
+.pics .pics-t img:focus-visible{outline:2px solid var(--peach);outline-offset:-2px}
+.pics.scorri>button{position:absolute;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid var(--edge);background:rgba(20,20,22,.8);color:#FBF7F1;font:400 26px/1 Syne,sans-serif;cursor:pointer}
+.pics.scorri>button:hover,.pics.scorri>button:focus-visible{border-color:var(--peach);color:var(--peach)}
+.pics-p{left:8px}.pics-n{right:8px}
+@media (prefers-reduced-motion:reduce){.pics-t{transition:none}}
