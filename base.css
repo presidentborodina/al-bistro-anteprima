@@ -224,3 +224,5 @@ body .bev>.fx{margin-top:34px}
   body .bev{order:5}
   body .pz>.pzfoto{order:6}
 }
+/* pie' di pagina su telefono: P.IVA, privacy e lingua su una riga sola */
+@media (max-width:900px){body footer .legal{flex-direction:row;flex-wrap:wrap;justify-content:flex-start;align-items:baseline;gap:4px 16px}body footer .legal a.lingua{margin-left:0}}
