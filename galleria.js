@@ -134,7 +134,9 @@
   });
 
   document.querySelectorAll('.galleria').forEach(function (g) {
-    var main = g.querySelector('.gal-main'), mi = main.querySelector('img');
+    var main = g.querySelector('.gal-main');
+    if (!main) return;                        // <section class="galleria"> con il mosaico fisso (Menu' Ristorante, Pizza)
+    var mi = main.querySelector('img');
     var th = [].slice.call(g.querySelectorAll('.gal-thumbs button'));
     var foto = th.map(function (b) {
       return { src: b.querySelector('img').getAttribute('src'), alt: b.getAttribute('aria-label').replace(/^Mostra: /, '') };
