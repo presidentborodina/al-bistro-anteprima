@@ -139,7 +139,9 @@
     var mi = main.querySelector('img');
     var th = [].slice.call(g.querySelectorAll('.gal-thumbs button'));
     var foto = th.map(function (b) {
-      return { src: b.querySelector('img').getAttribute('src'), alt: b.getAttribute('aria-label').replace(/^Mostra: /, '') };
+      var bi = b.querySelector('img');
+      return { src: bi.getAttribute('src'), srcset: bi.getAttribute('srcset'), pos: b.getAttribute('data-pos') || '',
+               alt: b.getAttribute('aria-label').replace(/^(Mostra|Show): /, '') };
     });
     var i = 0, auto = true, vis = true;
 
@@ -152,7 +154,9 @@
       setTimeout(function () {
         var fatto = function () { main.classList.remove('cambia'); };
         mi.onload = fatto;
-        mi.removeAttribute('srcset'); // le versioni leggere valgono solo per la prima foto
+        // versioni leggere: si prendono dalla miniatura (stesso elenco di copie WebP), altrimenti resta il JPEG
+        if (foto[i].srcset) mi.setAttribute('srcset', foto[i].srcset); else mi.removeAttribute('srcset');
+        mi.style.objectPosition = foto[i].pos;
         mi.src = foto[i].src;
         mi.alt = foto[i].alt;
         if (mi.complete) fatto();
