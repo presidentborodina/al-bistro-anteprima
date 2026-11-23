@@ -215,3 +215,12 @@ footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3p
 .mosaico.m8 button.grande{grid-column:span 6}
 .mosaico.m8 button.larga{grid-column:span 4}
 @media (max-width:700px){.mosaico.m8{grid-template-columns:1fr 1fr}.mosaico.m8 button,.mosaico.m8 button.larga{grid-column:auto}.mosaico.m8 button.grande,.mosaico.m8 button.larga:last-child{grid-column:span 2}}
+/* bevande dentro i menu' (Menu' Ristorante, Pizza): su computer restano nella prima colonna, su telefono vanno in fondo al menu' */
+body .bev>.sez{margin-top:44px}
+body .bev>.fx{margin-top:34px}
+@media (max-width:900px){
+  body .card,body .pz{display:flex;flex-direction:column}
+  body .card>.ccol,body .pz>.pzcol{display:contents}
+  body .bev{order:5}
+  body .pz>.pzfoto{order:6}
+}
