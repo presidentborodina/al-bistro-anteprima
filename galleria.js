@@ -74,6 +74,19 @@
     b.forEach(function (x, k) { x.addEventListener('click', function () { apri(foto, k, null, x); }); });
   });
 
+  // mosaico nel riquadro delle foto (.pics.collage): ogni foto si apre a tutto schermo e da li' si sfogliano tutte,
+  // anche quelle oltre la quarta, che nel mosaico non si vedono
+  document.querySelectorAll('.pics.collage').forEach(function (box) {
+    var im = [].slice.call(box.querySelectorAll('img'));
+    var foto = im.map(function (x) { return { src: x.getAttribute('src'), alt: x.getAttribute('alt') }; });
+    im.forEach(function (x, k) {
+      x.tabIndex = 0;
+      x.setAttribute('role', 'button');
+      x.addEventListener('click', function () { apri(foto, k, null, x); });
+      x.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); apri(foto, k, null, x); } });
+    });
+  });
+
   // foto a coppie (.pics.scorri): due visibili alla volta; con piu' di due compaiono le frecce e scorrono da sole.
   // Per aggiungere una foto basta un altro <img> dentro .pics-t.
   document.querySelectorAll('.pics.scorri').forEach(function (box) {
