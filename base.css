@@ -201,3 +201,9 @@ footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3p
 .galleria.mini{padding:0}
 .galleria.mini .gal-main{aspect-ratio:1}
 .galleria.mini .gal-thumbs{grid-template-columns:repeat(auto-fill,minmax(60px,1fr))}
+/* mosaico da dieci foto (.mosaico.m10): una grande e quattro piccole, sotto una riga di cinque verticali */
+.mosaico.m10{grid-template-columns:repeat(20,1fr)}
+.mosaico.m10 button{grid-column:span 5}
+.mosaico.m10 button.grande{grid-column:span 10}
+.mosaico.m10 button.bassa{grid-column:span 4;aspect-ratio:3/4}
+@media (max-width:700px){.mosaico.m10{grid-template-columns:1fr 1fr}.mosaico.m10 button,.mosaico.m10 button.bassa{grid-column:auto}.mosaico.m10 button.grande,.mosaico.m10 button.bassa:last-child{grid-column:span 2;aspect-ratio:4/3}}
