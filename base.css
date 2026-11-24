@@ -241,3 +241,8 @@ body .bev>.fx{margin-top:34px}
   body.scorre header.nav .book{min-height:40px;padding:0 14px;font-size:14px;margin-left:0;flex:0 0 auto}
   body.scorre header.nav .book{min-height:36px}
 }
+
+/* testata delle pagine interne: scritte e pulsanti centrati, su computer e su telefono (24/11/2026) */
+body section.head .wrap{text-align:center}
+body section.head h1,body section.head p{margin-left:auto;margin-right:auto}
+body section.head .act{justify-content:center}
