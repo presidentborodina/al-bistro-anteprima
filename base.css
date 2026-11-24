@@ -246,3 +246,5 @@ body .bev>.fx{margin-top:34px}
 body section.head .wrap{text-align:center}
 body section.head h1,body section.head p{margin-left:auto;margin-right:auto}
 body section.head .act{justify-content:center;margin-left:auto;margin-right:auto}
+/* titoli a gessetto (svg a blocco) dentro i blocchi centrati: al centro anche loro */
+body section.head h1 .chalk-svg,body .breve.centro h2 .chalk-svg{margin-left:auto;margin-right:auto}
