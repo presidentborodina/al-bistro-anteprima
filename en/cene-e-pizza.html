@@ -35,6 +35,12 @@ em{font-style:normal;color:var(--peach)}
 .breve{padding:96px 0}
 .breve .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:start}
 .breve h2{font-size:52px}
+/* blocco "La sera al Bistro" e titolo del mosaico: tutto al centro (24/11/2026) */
+.breve.centro .wrap{grid-template-columns:1fr;gap:34px;text-align:center}
+.breve.centro p.lead{margin-left:auto;margin-right:auto}
+.breve.centro .list{max-width:720px;margin-left:auto;margin-right:auto}
+.breve.centro .list li{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 24px;text-align:center}
+.piatti.centro h2{text-align:center}
 .breve p.lead{font-size:17px;line-height:1.7;color:#D8D2C9;margin-top:18px;max-width:60ch}
 .list{list-style:none;margin-top:26px;border-top:1px solid var(--edge)}
 .list li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--edge);font-size:16px;line-height:1.5}
@@ -281,7 +287,7 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
   </div>
 <p class="sub center" style="margin-top:32px">Allergens are listed on the menu: please ask the staff.</p>
 </div></section>
-<section class="breve"><div class="wrap">
+<section class="breve centro"><div class="wrap">
   <div><h2 class="hand chalk">Evenings <em>at Al Bistrò</em></h2>
   <p class="lead">On Thursday, Friday and Saturday evenings the kitchen and the pizzeria work side by side: tartare and sharing boards, paccheri with seafood, grilled spring chicken, sliced steak, burger, mixed fried seafood, or one of our 28 pizzas. And there is always a dish of the day.</p>
   <p class="lead">The pizza: a classic slow-leavened dough made with fine flours: light and fragrant. It rises naturally for 24 hours and is baked in a stone oven.</p>
@@ -291,7 +297,7 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
   </ul></div>
 </div></section>
 
-<section class="piatti"><div class="wrap"><h2 class="hand">The dishes <em>and the dining room</em></h2>
+<section class="piatti centro"><div class="wrap"><h2 class="hand">The dishes <em>and the dining room</em></h2>
 <div class="mosaico m10">
   <button type="button" class="grande" aria-label="Open the photo: The dining room, tables laid"><img loading="lazy" decoding="async" src="../foto/sala-tavoli-apparecchiati-2026-11-21.jpg" srcset="../foto/sala-tavoli-apparecchiati-2026-11-21-240.webp 240w, ../foto/sala-tavoli-apparecchiati-2026-11-21-800.webp 800w, ../foto/sala-tavoli-apparecchiati-2026-11-21-1200.webp 1200w, ../foto/sala-tavoli-apparecchiati-2026-11-21-1600.webp 1600w" sizes="(max-width:900px) 100vw, 50vw" alt="The dining room, tables laid" style="object-position:50% 62%"><span>The dining room, tables laid</span></button>
   <button type="button" aria-label="Open the photo: Grigliata Bistrò"><img loading="lazy" decoding="async" src="../foto/cena-grigliata-tavola-2026-11-23.jpg" srcset="../foto/cena-grigliata-tavola-2026-11-23-240.webp 240w, ../foto/cena-grigliata-tavola-2026-11-23-800.webp 800w, ../foto/cena-grigliata-tavola-2026-11-23-901.webp 901w" sizes="(max-width:900px) 100vw, 50vw" alt="Grigliata Bistrò (mixed grill)" style="object-position:50% 68%"><span>Grigliata Bistrò (mixed grill)</span></button>
