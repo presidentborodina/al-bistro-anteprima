@@ -248,3 +248,6 @@ body section.head h1,body section.head p{margin-left:auto;margin-right:auto}
 body section.head .act{justify-content:center;margin-left:auto;margin-right:auto}
 /* titoli a gessetto (svg a blocco) dentro i blocchi centrati: al centro anche loro */
 body section.head h1 .chalk-svg,body .breve.centro h2 .chalk-svg{margin-left:auto;margin-right:auto}
+/* mosaico da sei foto (.mosaico.m6): una grande con due piccole accanto, sotto una riga di tre */
+.mosaico.m6{grid-template-columns:repeat(3,1fr)}
+@media (max-width:700px){.mosaico.m6{grid-template-columns:1fr 1fr}.mosaico.m6 button:last-child{grid-column:span 2}}
