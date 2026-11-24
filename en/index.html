@@ -24,8 +24,8 @@ a{color:inherit;text-decoration:none}
 .chips{display:none}
 /* carosello */
 .hero{position:relative;height:calc(100vh - 126px);min-height:560px;max-height:1100px;overflow:hidden;background:#111}
-.slide{position:absolute;inset:0;opacity:0;transition:opacity .7s ease}
-.slide.on{opacity:1}
+.slide{position:absolute;inset:0;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .7s ease,visibility 0s .7s}
+.slide.on{opacity:1;pointer-events:auto;visibility:visible;z-index:1;transition:opacity .7s ease,visibility 0s}
 .slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(.85)}
 .slide.sera img{filter:brightness(.36) sepia(.5) saturate(1.5) hue-rotate(-12deg)}
 .slide .txt{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;color:#FBF7F1}
