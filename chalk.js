@@ -74,6 +74,10 @@
       t.style.animationDuration = (dur + 0.3) + 's, 0.9s';
       end = Math.max(end, d + dur + 0.3, d + dur * 0.7 + 0.9);
     });
+    // titolo centrato (text-align:center sul titolo): ogni riga va al centro della piu' lunga
+    if (getComputedStyle(el).textAlign === 'center') {
+      texts.forEach(t => t.setAttribute('x', (W - t.getComputedTextLength()) / 2));
+    }
     svg.dataset.end = end;
     const H = lines.length * lh;
     svg.setAttribute('viewBox', `-4 -4 ${W + 12} ${H + 12}`);
