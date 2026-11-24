@@ -70,7 +70,13 @@
   // mosaico: ogni riquadro apre la foto a tutto schermo, e da li' si sfogliano tutte
   document.querySelectorAll('.mosaico').forEach(function (m) {
     var b = [].slice.call(m.querySelectorAll('button'));
-    var foto = b.map(function (x) { var im = x.querySelector('img'); return { src: im.getAttribute('src'), alt: im.getAttribute('alt') }; });
+    // data-full sul <button>: la foto intera da aprire a tutto schermo quando nel riquadro c'e' un ritaglio
+    // (si usa solo il nome del file, nella stessa cartella della foto del riquadro: cosi' vale anche nelle pagine inglesi)
+    var foto = b.map(function (x) {
+      var im = x.querySelector('img'), src = im.getAttribute('src'), full = x.getAttribute('data-full');
+      if (full) src = src.replace(/[^\/]+$/, '') + full.replace(/^.*\//, '');
+      return { src: src, alt: im.getAttribute('alt') };
+    });
     b.forEach(function (x, k) { x.addEventListener('click', function () { apri(foto, k, null, x); }); });
   });
 
