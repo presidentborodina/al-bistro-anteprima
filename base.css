@@ -245,4 +245,4 @@ body .bev>.fx{margin-top:34px}
 /* testata delle pagine interne: scritte e pulsanti centrati, su computer e su telefono (24/11/2026) */
 body section.head .wrap{text-align:center}
 body section.head h1,body section.head p{margin-left:auto;margin-right:auto}
-body section.head .act{justify-content:center}
+body section.head .act{justify-content:center;margin-left:auto;margin-right:auto}
