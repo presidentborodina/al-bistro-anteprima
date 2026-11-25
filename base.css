@@ -251,3 +251,6 @@ body section.head h1 .chalk-svg,body .breve.centro h2 .chalk-svg{margin-left:aut
 /* mosaico da sei foto (.mosaico.m6): una grande con due piccole accanto, sotto una riga di tre */
 .mosaico.m6{grid-template-columns:repeat(3,1fr)}
 @media (max-width:700px){.mosaico.m6{grid-template-columns:1fr 1fr}.mosaico.m6 button:last-child{grid-column:span 2}}
+
+/* mosaico da otto o dodici: al telefono l'ultima foto occupa tutta la riga (25/11/2026) */
+@media (max-width:700px){.mosaico.m8 button:last-child{grid-column:span 2}}
