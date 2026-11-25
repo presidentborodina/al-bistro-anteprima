@@ -39,6 +39,12 @@ em{font-style:normal;color:var(--peach)}
 .breve .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:start}
 .breve h2{font-size:52px}
 .breve p.lead{font-size:17px;line-height:1.7;color:#D8D2C9;margin-top:18px;max-width:60ch}
+/* blocco in breve senza foto: una colonna, tutto al centro (25/11/2026) */
+.breve.centro .wrap{grid-template-columns:1fr;gap:34px;text-align:center}
+.breve.centro p.lead{margin-left:auto;margin-right:auto}
+.breve.centro .list{max-width:720px;margin-left:auto;margin-right:auto}
+.breve.centro .list li{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 24px;text-align:center}
+.breve.centro{padding-bottom:40px}
 .list{list-style:none;margin-top:26px;border-top:1px solid var(--edge)}
 .list li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--edge);font-size:16px;line-height:1.5}
 .list b{font-weight:600;color:var(--peach)}
@@ -143,7 +149,7 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
 <p>Aperitivi, buffet e ricevimenti nella vostra sede: casa, azienda, villa. Oppure da noi, nella sala delle feste. Dal 2020.</p>
 <div class="act"><a class="btn primary" href="#modulo">Chiedi un preventivo</a><a class="btn ghost" href="https://wa.me/393911761595" target="_blank" rel="noopener">Scrivi su WhatsApp</a></div></div></section>
 
-<section class="breve"><div class="wrap">
+<section class="breve centro"><div class="wrap">
   <div><h2 class="hand">Il catering <em>in breve</em></h2>
   <p class="lead">Dal 2020 portiamo la cucina del Bistrò nelle aziende e nelle case della zona: il finger food dell'aperitivo in ufficio, il buffet per il pranzo di lavoro, il ricevimento per una festa di famiglia. Consegniamo e allestiamo all'ora concordata, pronto da mettere in tavola.</p>
   <ul class="list">
@@ -154,7 +160,6 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
     <li><b>Intolleranze</b><span>Piatti vegetariani, senza glutine e senza lattosio</span></li>
     <li><b>Prezzo</b><span>Su misura: dipende dal menù, dalle persone e dal servizio</span></li>
   </ul></div>
-  <div class="pics una"><img loading="lazy" decoding="async" src="foto/reali/image00040-scaled.jpeg" srcset="foto/reali/image00040-scaled-240.webp 240w, foto/reali/image00040-scaled-800.webp 800w, foto/reali/image00040-scaled-1200.webp 1200w, foto/reali/image00040-scaled-1600.webp 1600w" sizes="(max-width:900px) 100vw, 50vw" alt="Finger food di verdure in bicchierini"></div>
 </div></section>
 
 <section class="foto"><div class="wrap"><h2 class="hand">I nostri <em>buffet</em></h2>
