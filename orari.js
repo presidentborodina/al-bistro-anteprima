@@ -1,7 +1,6 @@
 /* «Aperto ora» / «Chiuso ora» nella barra in alto, calcolato sugli orari veri (ora di Milano).
    Orari (aggiornare QUI se cambiano; il footer e i testi vanno aggiornati a parte):
-     lun-mer 7.30-15.30
-     gio     7.30-15.30 · 18.30-22.30   (la sera solo dal 1° dicembre 2026)
+     lun-gio 7.30-15.30   (il giovedì sera per ora chiuso, deciso il 25/11/2026)
      ven     7.30-15.30 · 18.30-22.30
      sab     8.30-15.30 · 18.30-22.30
      dom     chiuso
@@ -17,7 +16,6 @@
     if (g === 0) return [];
     if (g === 6) return [[S, P], [C1, C2]];
     if (g === 5) return [[G, P], [C1, C2]];
-    if (g === 4) return dataNum >= 20261201 ? [[G, P], [C1, C2]] : [[G, P]];
     return [[G, P]];
   }
   function ora(m) {
