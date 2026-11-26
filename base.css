@@ -255,5 +255,22 @@ body section.head h1 .chalk-svg,body .breve.centro h2 .chalk-svg{margin-left:aut
 /* mosaici m8: al telefono l'ultima foto occupa tutta la riga solo se altrimenti resterebbe da sola (numero pari di foto) (25/11/2026) */
 @media (max-width:700px){.mosaico.m8 button:nth-child(even):last-child{grid-column:span 2}.mosaico.m8 button.larga:nth-child(odd):last-child{grid-column:auto}}
 
+/* mappa di Google solo con consenso (26/11/2026): finché non si accetta, al posto della mappa
+   un riquadro con la spiegazione e i pulsanti; banner in basso solo sulle pagine con la mappa (cookie.js) */
+.map:not(.aperta) iframe,.map-ph:not(.aperta) iframe{display:none}
+.map.aperta .map-off,.map-ph.aperta .map-off{display:none}
+.map-off{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:20px}
+.map-off p{max-width:36ch;margin:0;color:#D8D2C9;line-height:1.5}
+.map-off .act{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.map-off .act a,.map-off .act button{text-decoration:none}
+#cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:720px;margin:0 auto;background:#141416;border:1px solid var(--edge);box-shadow:0 10px 40px rgba(0,0,0,.5);padding:20px 22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;color:#D8D2C9;font-size:15px;line-height:1.55}
+#cookie-banner[hidden]{display:none}
+#cookie-banner p{flex:1 1 320px;margin:0}
+#cookie-banner p a{color:var(--peach);text-decoration:underline;text-underline-offset:3px}
+#cookie-banner .act{display:flex;gap:10px;flex:0 0 auto}
+#cookie-banner .btn{min-width:118px;min-height:46px}
+#cookie-banner .btn.rifiuta{background:transparent;border:1px solid #D8D2C9;color:var(--ink)}
+#cookie-reset-ok[hidden]{display:none}
+
 /* telefono in orizzontale: footer compatto (26/11/2026, schema dell'utente): logo e indirizzo sopra, poi Contatti | Orari | Seguici */
 @media (max-width:900px) and (orientation:landscape){body footer{padding-top:40px}body footer .cols{grid-template-columns:1fr 1.6fr .8fr;gap:22px 40px;align-items:start}body footer .cols>div:nth-child(1){grid-column:1/-1}body footer h4{margin-bottom:8px}body footer li,body footer .ore div{line-height:1.6}body footer .legal{margin-top:30px}}
