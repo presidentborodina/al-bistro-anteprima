@@ -255,7 +255,12 @@ body section.head h1 .chalk-svg,body .breve.centro h2 .chalk-svg{margin-left:aut
 /* mosaici m8: al telefono l'ultima foto occupa tutta la riga solo se altrimenti resterebbe da sola (numero pari di foto) (25/11/2026) */
 @media (max-width:700px){.mosaico.m8 button:nth-child(even):last-child{grid-column:span 2}.mosaico.m8 button.larga:nth-child(odd):last-child{grid-column:auto}}
 
-/* mappa di Google solo con consenso (26/11/2026): finché non si accetta, al posto della mappa
+/* mappa come immagine (OpenStreetMap) che apre Google Maps: niente cookie, niente banner (26/11/2026) */
+a.mappa-img{position:relative;display:block;overflow:hidden;text-decoration:none}
+a.mappa-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:60% 22%;aspect-ratio:auto}
+a.mappa-img .mappa-btn{position:absolute;left:14px;bottom:14px;background:#1A73E8;color:#fff;font:600 15px Syne,sans-serif;padding:10px 16px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+a.mappa-img:hover .mappa-btn{background:#1558B0}
+/* (non più usato dal 26/11/2026, resta per storia) mappa di Google solo con consenso (26/11/2026): finché non si accetta, al posto della mappa
    un riquadro con la spiegazione e i pulsanti; banner in basso solo sulle pagine con la mappa (cookie.js) */
 .map:not(.aperta) iframe,.map-ph:not(.aperta) iframe{display:none}
 .map.aperta .map-off,.map-ph.aperta .map-off{display:none}
