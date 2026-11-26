@@ -36,6 +36,10 @@ em{font-style:normal;color:var(--peach)}
 .breve .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:start}
 .breve h2{font-size:52px}
 .breve p.lead{font-size:17px;line-height:1.7;color:#D8D2C9;margin-top:18px;max-width:60ch}
+/* titolo centrato sopra le due colonne; l'elenco a destra parte all'altezza del testo a sinistra (26/11/2026) */
+.breve .wrap>h2{grid-column:1/-1;text-align:center;margin-bottom:-24px}
+.breve .wrap>h2 .chalk-svg{margin-left:auto;margin-right:auto}
+.breve .wrap>div>p.lead:first-child{margin-top:0}
 .list{list-style:none;margin-top:26px;border-top:1px solid var(--edge)}
 .list li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--edge);font-size:16px;line-height:1.5}
 .list b{font-weight:600;color:var(--peach)}
@@ -278,8 +282,8 @@ footer .legal{margin-top:48px;border-top:1px solid var(--edge);padding:18px 0;fo
 </div></section>
 
 <section class="breve"><div class="wrap">
-  <div><h2 class="hand chalk">Il Business Lunch <em>di ogni giorno</em></h2>
-  <p class="lead">I nostri piatti variano ogni giorno e il nuovo menù viene pubblicato ogni mattina.</p>
+  <h2 class="hand chalk">Il Business Lunch <em>di ogni giorno</em></h2>
+  <div><p class="lead">I nostri piatti variano ogni giorno e il nuovo menù viene pubblicato ogni mattina.</p>
   <p class="lead">Lascia la tua mail per ricevere il menù del giorno ogni mattina.</p>
   <form class="mailmenu">
     <label>Email per il menù del giorno<input type="email" autocomplete="email" required placeholder="nome@esempio.it"></label>
