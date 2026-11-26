@@ -278,4 +278,4 @@ a.mappa-img:hover .mappa-btn{background:#1558B0}
 #cookie-reset-ok[hidden]{display:none}
 
 /* telefono in orizzontale: footer compatto (26/11/2026, schema dell'utente): logo e indirizzo sopra, poi Contatti | Orari | Seguici */
-@media (max-width:900px) and (orientation:landscape){body footer{padding-top:40px}body footer .cols{grid-template-columns:1fr 1.6fr .8fr;gap:22px 40px;align-items:start}body footer .cols>div:nth-child(1){grid-column:1/-1}body footer h4{margin-bottom:8px}body footer li,body footer .ore div{line-height:1.6}body footer .legal{margin-top:30px}}
+@media (max-width:900px) and (orientation:landscape){body footer{padding-top:40px}body footer .cols{grid-template-columns:1fr 1.6fr .8fr;gap:22px 40px;align-items:start}body footer .cols>div:nth-child(1){grid-column:1/-1}body footer .ore div{justify-content:flex-start;gap:14px}body footer .ore div span:first-child{flex:0 0 6.5em}body footer h4{margin-bottom:8px}body footer li,body footer .ore div{line-height:1.6}body footer .legal{margin-top:30px}}
