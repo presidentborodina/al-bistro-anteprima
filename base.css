@@ -255,5 +255,5 @@ body section.head h1 .chalk-svg,body .breve.centro h2 .chalk-svg{margin-left:aut
 /* mosaici m8: al telefono l'ultima foto occupa tutta la riga solo se altrimenti resterebbe da sola (numero pari di foto) (25/11/2026) */
 @media (max-width:700px){.mosaico.m8 button:nth-child(even):last-child{grid-column:span 2}.mosaico.m8 button.larga:nth-child(odd):last-child{grid-column:auto}}
 
-/* telefono in orizzontale: footer compatto su due colonne (26/11/2026) */
-@media (max-width:900px) and (orientation:landscape){body footer{padding-top:40px}body footer .cols{grid-template-columns:1fr 1fr;gap:26px 48px;align-items:start}body footer h4{margin-bottom:8px}body footer li,body footer .ore div{line-height:1.6}body footer .legal{margin-top:30px}}
+/* telefono in orizzontale: footer compatto (26/11/2026, schema dell'utente): logo e indirizzo sopra, poi Contatti | Orari | Seguici */
+@media (max-width:900px) and (orientation:landscape){body footer{padding-top:40px}body footer .cols{grid-template-columns:1fr 1.6fr .8fr;gap:22px 40px;align-items:start}body footer .cols>div:nth-child(1){grid-column:1/-1}body footer h4{margin-bottom:8px}body footer li,body footer .ore div{line-height:1.6}body footer .legal{margin-top:30px}}
