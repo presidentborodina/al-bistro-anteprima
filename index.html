@@ -56,6 +56,10 @@ em{font-style:normal;color:var(--peach)}
 /* titolo e sottotitolo al centro della colonna, paragrafi con rientro della prima riga (26/11/2026) */
 .intro h1.intro-h1{text-align:center}
 .intro .wrap>div>p{text-indent:1.6em}
+/* telefono in orizzontale e tablet (una colonna): il blocco di testo sta al centro sotto il titolo (26/11/2026) */
+@media (max-width:900px){.intro .wrap>div>p{margin-left:auto;margin-right:auto}.intro .fa{margin-left:auto;margin-right:auto}}
+/* telefono in orizzontale: testo giustificato su tutta la larghezza, stesso margine a sinistra e a destra (26/11/2026, da valutare con l'utente) */
+@media (max-width:900px) and (orientation:landscape){.intro .wrap>div>p{max-width:none;text-align:justify;hyphens:auto;-webkit-hyphens:auto}}
 .frame{border:12px solid #2D2D30;position:relative}
 .frame img{width:100%;aspect-ratio:4/3.4;object-fit:cover}
 /* da computer la foto e' alta quanto la colonna di testo accanto */
