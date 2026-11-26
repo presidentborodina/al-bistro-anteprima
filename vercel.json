@@ -6,7 +6,13 @@
     { "src": "/(.*)", "missing": [ { "type": "host", "value": "albistro.it" } ], "headers": { "X-Robots-Tag": "noindex, nofollow" }, "continue": true },
     { "src": "/assets/fonts/(.*)", "headers": { "Cache-Control": "public, max-age=31536000, immutable" }, "continue": true },
     { "src": "/robots\\.txt", "has": [ { "type": "host", "value": "albistro.it" } ], "dest": "/robots-ponte.txt" },
-    { "src": "/(?!assets/|foto/|base\\.css$).*", "has": [ { "type": "host", "value": "albistro.it" } ], "dest": "/ponte.html" },
+    { "src": "/(catering|caffetteria|contatti)/", "status": 301, "headers": { "Location": "/$1" } },
+    { "src": "/sala-eventi-a-milano/?", "status": 301, "headers": { "Location": "/feste-ed-eventi" } },
+    { "src": "/pizzeria/?", "status": 301, "headers": { "Location": "/pizza" } },
+    { "src": "/business-lunch-a-milano/?", "status": 301, "headers": { "Location": "/pranzo" } },
+    { "src": "/bistro-a-milano/?", "status": 301, "headers": { "Location": "/" } },
+    { "src": "/privacy-policy/?", "status": 301, "headers": { "Location": "/privacy" } },
+    { "src": "/ponte(\\.html)?", "status": 301, "headers": { "Location": "/" } },
     { "handle": "filesystem" },
     { "src": "/([^./]+)", "dest": "/$1.html" }
   ]
