@@ -1,14 +1,14 @@
 /* «Aperto ora» / «Chiuso ora» nella barra in alto, calcolato sugli orari veri (ora di Milano).
    Orari (aggiornare QUI se cambiano; il footer e i testi vanno aggiornati a parte):
      lun-gio 7.30-15.30   (il giovedì sera per ora chiuso, deciso il 25/11/2026)
-     ven     7.30-15.30 · 18.30-22.30
-     sab     8.30-15.30 · 18.30-22.30
+     ven     7.30-15.30 · 18.00-22.00
+     sab     8.30-15.30 · 18.00-22.00
      dom     chiuso
    Non tiene conto di festivi e chiusure straordinarie. */
 (function () {
   var el = document.querySelector('.util .dot');
   if (!el) return;
-  var G = 7 * 60 + 30, S = 8 * 60 + 30, P = 15 * 60 + 30, C1 = 18 * 60 + 30, C2 = 22 * 60 + 30;
+  var G = 7 * 60 + 30, S = 8 * 60 + 30, P = 15 * 60 + 30, C1 = 18 * 60, C2 = 22 * 60;
   var EN = document.documentElement.lang === 'en';
   var giorni = EN ? ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] : ['domenica', 'lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato'];
 
