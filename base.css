@@ -255,6 +255,8 @@ body section.head h1 .chalk-svg,body .breve.centro h2 .chalk-svg{margin-left:aut
 /* mosaici m8: al telefono l'ultima foto occupa tutta la riga solo se altrimenti resterebbe da sola (numero pari di foto) (25/11/2026) */
 @media (max-width:700px){.mosaico.m8 button:nth-child(even):last-child{grid-column:span 2}.mosaico.m8 button.larga:nth-child(odd):last-child{grid-column:auto}}
 
+/* testata delle pagine interne su telefono: scritte un po' più in alto sulla foto (27/11/2026) */
+@media (max-width:900px){body section.head .wrap{padding-bottom:88px}}
 /* iPhone in orizzontale ingrandisce da solo i testi dei blocchi larghi: lo blocchiamo, i testi restano della misura scelta (26/11/2026) */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 /* footer su telefono e tablet (fino a 1320px): orari subito dopo i giorni, non spinti a destra (26/11/2026) */
